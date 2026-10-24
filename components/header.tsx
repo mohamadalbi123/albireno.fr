@@ -17,11 +17,18 @@ export function Brand({ light = false }: { light?: boolean }) {
       aria-label={`${business.name} — accueil`}
     >
       <span className="brand-symbol" aria-hidden="true">
-        ⌑
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+          <path
+            d="M5 32V9h30v23H5Zm0-12h30M19 9v23M8 5h24"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path d="M15 13v3m8-3v3" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
       </span>
       <span>
         <strong>{business.name}</strong>
-        <small>INTÉRIEURS & AMÉNAGEMENT</small>
+        <small>{business.descriptor}</small>
       </span>
     </Link>
   );
@@ -64,7 +71,7 @@ export function Header() {
           ))}
         </nav>
         <Link href="/devis" className="button header-quote">
-          Parlons de votre projet <Icon name="arrow" width={17} />
+          Parler de mon projet <Icon name="arrow" width={17} />
         </Link>
         <button
           ref={menuRef}
@@ -84,7 +91,7 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
-          {[...links, { href: "/devis", label: "Parlons de votre projet" }].map(
+          {[...links, { href: "/devis", label: "Parler de mon projet" }].map(
             (l) => (
               <Link
                 key={l.href}

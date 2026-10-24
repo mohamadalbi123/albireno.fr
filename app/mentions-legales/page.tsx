@@ -3,7 +3,7 @@ import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Mentions légales — version de travail",
-  "Informations légales de la version préparatoire du site. Identification de la future activité en attente de validation.",
+  "Informations légales de la version préparatoire du site. Identification de la future activité ALBI RENO en attente de validation.",
   "/mentions-legales",
   true,
 );
@@ -13,7 +13,7 @@ export default function Legal() {
       <PageIntro
         eyebrow="Version préparatoire"
         title="Mentions légales"
-        text="Ce site est un prototype local non publié. Les informations légales de la future activité restent à valider avant ouverture au public."
+        text="Ce site est un prototype local non publié. Les informations légales de la future activité ALBI RENO restent à valider avant ouverture au public."
       />
       <article className="container legal-copy section">
         <h2>Responsable du projet</h2>
@@ -27,8 +27,8 @@ export default function Legal() {
           concerne le développement de sites et d’applications web (APE 62.01Z),
           sous le régime de l’entrepreneur individuel, micro-entreprise. Elle ne
           vaut pas confirmation d’une immatriculation ou d’une assurance pour
-          les prestations de rénovation et d’installation présentées dans cette
-          maquette.
+          les prestations de rénovation et d’installation de cuisines présentées
+          dans cette maquette.
         </p>
         <h2>Informations à compléter avant publication</h2>
         <p>

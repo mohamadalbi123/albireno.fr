@@ -1,6 +1,6 @@
 import { business } from "@/lib/business";
 import { ImageResponse } from "next/og";
-export const alt = "Aménagement, rénovation et installation à La Rochelle";
+export const alt = "Installation et rénovation de cuisines à La Rochelle";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -31,8 +31,8 @@ export default function Image() {
             lineHeight: 1.12,
           }}
         >
-          <div>De beaux espaces.</div>
-          <div style={{ color: "#526976" }}>De nouvelles perspectives.</div>
+          <div>Votre cuisine,</div>
+          <div style={{ color: "#526976" }}>pensée pour votre espace.</div>
         </div>
         <div
           style={{

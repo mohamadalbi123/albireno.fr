@@ -8,7 +8,7 @@ import { isIndexable, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl || "http://localhost:3000"),
   title: {
-    default: `${business.name} — Aménagement à La Rochelle`,
+    default: `${business.name} — Installation et rénovation de cuisines à La Rochelle`,
     template: `%s | ${business.name}`,
   },
   description: business.tagline,

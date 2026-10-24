@@ -1,48 +1,53 @@
 import { PageIntro, ContactCTA, Eyebrow } from "@/components/ui";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Notre approche de l’aménagement",
-  "Penser les usages avant les mètres carrés : une approche pratique, attentive aux détails et aux priorités de votre projet.",
+  "Notre approche — des solutions pour votre cuisine",
+  "ALBI RENO : comprendre vos usages, résoudre les difficultés d’aménagement et concevoir une cuisine fonctionnelle à La Rochelle.",
   "/notre-approche",
 );
 export default function Approach() {
   return (
     <>
       <PageIntro
-        eyebrow="Notre approche"
-        title="Le beau n’est pas une question de mètres carrés."
-        text="Des espaces bien pensés devraient pouvoir s’adapter à différents logements, usages et budgets."
+        eyebrow="L’esprit ALBI RENO"
+        title="Une belle cuisine commence par une bonne compréhension de votre espace."
+        text="Votre cuisine, de la conception à l’installation. Des solutions intelligentes pour chaque cuisine, même les plus petites."
       />
       <section className="container section detail-grid">
         <div>
-          <Eyebrow>Partir de ce qui compte</Eyebrow>
-          <h2>Votre quotidien comme point de départ.</h2>
+          <Eyebrow>Une approche concrète</Eyebrow>
+          <h2>Penser aux gestes, autant qu’aux meubles.</h2>
           <p className="lead">
-            Une belle pièce doit aussi être agréable à utiliser. Avant de
-            choisir une couleur ou un meuble, nous nous intéressons à la façon
-            dont vous habitez l’espace.
+            Préparer un repas, ranger les courses, ouvrir un tiroir sans gêner
+            le passage : une cuisine réussie facilite le quotidien.
           </p>
           <p>
-            Nous cherchons des solutions cohérentes : garder ce qui fonctionne,
-            améliorer ce qui gêne et concentrer l’effort sur les changements
-            utiles.
+            ALBI RENO est le projet porté par Mohamad Albi autour d’une
+            conviction : comprendre les contraintes d’un espace permet
+            d’envisager de meilleures solutions. Le projet personnel présenté
+            dans le portfolio en donne un exemple concret.
+          </p>
+          <p>
+            Nous cherchons à conserver ce qui fonctionne, à améliorer ce qui
+            gêne et à concentrer l’effort sur les changements utiles. Une petite
+            cuisine mérite autant de réflexion qu’une grande.
           </p>
         </div>
         <div className="approach-values">
+          <h3>Analyser avant de proposer</h3>
+          <p>
+            Dimensions, angles, réseaux et habitudes d’usage : le projet se
+            construit à partir de l’existant.
+          </p>
           <h3>Rendre les choix lisibles</h3>
           <p>
-            Expliquer les options, leurs contraintes et leur place dans le
-            projet.
+            Expliquer les options et leurs limites. Utiliser une visualisation
+            3D lorsqu’elle facilite la décision.
           </p>
-          <h3>Préparer avant d’intervenir</h3>
+          <h3>Préciser le cadre</h3>
           <p>
-            Préciser les dimensions, les matériaux et le périmètre. Utiliser la
-            3D quand elle aide à décider.
-          </p>
-          <h3>Avancer avec un cadre clair</h3>
-          <p>
-            Définir une proposition et un calendrier ensemble, après examen du
-            projet.
+            Un périmètre et un devis détaillés avant l’intervention, des
+            échanges organisés et une attention portée aux finitions.
           </p>
         </div>
       </section>

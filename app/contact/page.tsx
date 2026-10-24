@@ -2,8 +2,8 @@ import { PageIntro, Button } from "@/components/ui";
 import { business, whatsappUrl } from "@/lib/business";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Contact — parlons de votre intérieur",
-  "Contactez-nous par téléphone, e-mail ou WhatsApp pour échanger sur votre projet d’aménagement à La Rochelle.",
+  "Contact — parlons de votre cuisine",
+  "Contactez-nous par téléphone, e-mail ou WhatsApp pour échanger sur votre projet de cuisine à La Rochelle.",
   "/contact",
 );
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
       <PageIntro
         eyebrow="Faisons connaissance"
         title="Une idée ? Parlons-en."
-        text="Un meuble à installer, une pièce à repenser ou un projet plus large : décrivez-nous ce que vous avez en tête."
+        text="Une cuisine à installer, un rangement à repenser ou une porte à ajuster : décrivez-nous ce que vous avez en tête."
       />
       <section className="container section contact-cards">
         <a href={`tel:${business.phone.replace(/[^+\d]/g, "")}`}>

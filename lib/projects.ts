@@ -7,7 +7,7 @@ export type ProjectKind =
 export type ProjectImage = {
   src: string;
   alt: string;
-  role: "original" | "design" | "finished" | "inspiration";
+  role: "before" | "original" | "design" | "finished" | "inspiration";
   width: number;
   height: number;
 };
@@ -34,17 +34,18 @@ export const projectKindLabels: Record<ProjectKind, string> = {
 export const projects: Project[] = [
   {
     slug: "cuisine-optimisee",
-    title: "Conception et installation d’une cuisine optimisée",
+    title: "Une cuisine compacte, optimisée et fonctionnelle",
     kind: "personal",
     category: "Cuisine & rangement",
     published: true,
     description:
       "Une cuisine personnelle pensée autour des gestes du quotidien. Des façades grises, un plan de travail clair et des rangements répartis sur trois côtés composent un espace compact et fonctionnel.",
     services: [
+      "Conception avec HomeStyler",
       "Conception de l’implantation",
       "Sélection des matériaux",
       "Optimisation des rangements",
-      "Installation",
+      "Montage des meubles et installation",
     ],
     images: [
       {
@@ -64,20 +65,20 @@ export const projects: Project[] = [
     ],
     details: [
       {
-        title: "Penser l’implantation",
+        title: "Le défi : faire tenir les usages",
         text: "La disposition rapproche les zones de cuisson, de lavage et de préparation, tout en conservant un passage central.",
       },
       {
-        title: "Associer les matières",
+        title: "Les choix : une lecture claire de l’espace",
         text: "Les façades grises sont associées à un plan de travail clair à effet marbré et à un sol gris. Le contraste donne une lecture simple de l’espace.",
       },
       {
-        title: "Utiliser les retours",
+        title: "La solution : prolonger sans encombrer",
         text: "Le retour en péninsule prolonge le plan de travail et accueille des rangements. Les meubles hauts complètent la capacité de stockage.",
       },
       {
         title: "Du plan à l’installation",
-        text: "Le montage et l’agencement donnent forme à cette cuisine personnelle. Les deux photographies présentent le même espace terminé, sous deux angles.",
+        text: "Après une conception avec HomeStyler et une réflexion sur l’implantation, le montage et l’agencement donnent forme à cette cuisine personnelle. Les deux photographies présentent le même espace terminé, sous deux angles.",
       },
     ],
   },

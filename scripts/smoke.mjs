@@ -2,13 +2,11 @@ import assert from "node:assert/strict";
 const origin = process.env.TEST_BASE_URL || "http://127.0.0.1:3000";
 const paths = [
   "/",
-  "/renovation-interieure-la-rochelle",
-  "/montage-meubles-la-rochelle",
-  "/bricolage-la-rochelle",
   "/installation-cuisine-la-rochelle",
-  "/conception-3d",
-  "/mobilier-sur-mesure",
-  "/amenagement-professionnel",
+  "/renovation-cuisine-la-rochelle",
+  "/optimisation-petite-cuisine",
+  "/reparation-cuisine-la-rochelle",
+  "/conception-cuisine-3d",
   "/realisations",
   "/realisations/cuisine-optimisee",
   "/notre-approche",
@@ -27,7 +25,10 @@ for (const path of paths) {
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, path + " one H1");
   assert.match(html, /<html[^>]*lang="fr"/);
   assert.match(html, /name="description"/);
-  assert.doesNotMatch(html, /Luna|LUNA|33781844419|Suzanne Lenglen/);
+  assert.doesNotMatch(
+    html,
+    /Luna|LUNA|NOM DE MARQUE|33781844419|Suzanne Lenglen/,
+  );
   assert.doesNotMatch(html, /lazoya-beauty-center|5a59999f-0640/);
   const title = html.match(/<title>(.*?)<\/title>/)?.[1];
   assert.ok(title);
@@ -54,13 +55,24 @@ assert.equal(
   (await fetch(origin + "/realisations/lazoya-beauty-center")).status,
   404,
 );
+for (const old of [
+  "/renovation-interieure-la-rochelle",
+  "/mobilier-sur-mesure",
+  "/amenagement-professionnel",
+  "/montage-meubles-la-rochelle",
+])
+  assert.equal((await fetch(origin + old)).status, 404);
 const payload = {
   name: "Client test",
   phone: "0600000000",
   email: "test@example.com",
-  city: "Aytré",
-  workType: "Montage de meubles",
-  description: "Test local du formulaire. Aucun message à envoyer.",
+  city: "La Rochelle",
+  needs: ["reparation"],
+  answers: { repairs: ["Portes à régler"] },
+  timeframe: "Dans 1 à 3 mois",
+  budget: "",
+  comments: "",
+  sourcing: "À discuter",
   consent: true,
 };
 const post = (data, headers = {}) =>
@@ -80,7 +92,7 @@ assert.equal(
 assert.equal((await post("{")).status, 400);
 assert.equal((await post({ ...payload, consent: false })).status, 400);
 assert.equal((await post({ ...payload, website: "spam" })).status, 400);
-assert.equal((await post("x".repeat(25000))).status, 413);
+assert.equal((await post("x".repeat(3_000_001))).status, 413);
 assert.equal(
   (await post(payload)).status,
   503,

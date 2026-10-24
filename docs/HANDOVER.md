@@ -1,51 +1,36 @@
-# Audit and implementation — 24 October 2026
+# ALBI RENO — implementation status, 24 October 2026
 
-## Reused foundation
+## Current identity and scope
 
-The existing app uses Next.js 16, React 19, strict TypeScript, plain CSS and local Manrope fonts. Retained the framework, lockfile, dependency versions, reusable buttons/headings/icons, responsive menu logic, quote validation, origin/body-size protection, Turnstile/Resend delivery scaffold, metadata helpers, robots/sitemap and Vercel-compatible build configuration. No new paid dependency or service was provisioned.
+The latest owner instruction supersedes both earlier brands. Display **ALBI RENO**, followed by _Installation et rénovation de cuisines_. The owner has purchased `albireno.fr` and created https://github.com/mohamadalbi123/albireno.fr.git. The address is recorded in central configuration, but the Git remote, DNS and deployment have not been changed. Push is deferred until the site is finished.
 
-The initial uncommitted prototype was preserved as local Git commit `c5e5a69`. Redesign work is on `codex/interior-studio`; no remote push or deployment was performed.
+Preserved Next.js, React, TypeScript, local fonts, beige/brown/muted-blue colors, reusable UI/header/footer/image components, metadata helpers and the existing optional Turnstile/Resend transport. The earlier work remains preserved in local Git commits. Sharp, already installed through Next.js, is now declared directly at 0.35.5 because the API uses it to validate photos. No paid service was provisioned.
 
-## Architecture and routes
+## Implemented
 
-- `lib/business.ts`: brand placeholder, contacts, verified future approval flags. Existing digital registration is not treated as renovation registration.
-- `lib/services.ts`: seven unique service definitions, six homepage entry points.
-- `lib/projects.ts`: typed personal / own-business / client / concept / inspiration records; optional location, image roles, dimensions, service list, project details and external HomeStyler URL. Only published records generate pages.
-- `components/project-image.tsx`: Next responsive image, fixed aspect ratio, meaningful alt; hero loaded eagerly, others lazily.
-- `components/service-cards.tsx`: crawlable service and quote links; six supplied small AI thumbnails with visible labels.
-- Header/footer/UI helpers reused with new typography and beige/brown/muted-blue tokens.
-- `/`, seven service URLs from the brief, `/realisations`, `/realisations/cuisine-optimisee`, `/notre-approche`, `/devis`, `/contact`, `/mentions-legales`, `/politique-confidentialite`.
-- `app/[service]/page.tsx`: static service routes; unknown slugs 404. Service-specific content and preparation guidance come from data.
-- `app/realisations/[slug]/page.tsx`: published projects only. Lazoya deliberately returns 404.
-- `/api/devis`: server validation, spam challenge and optional e-mail transport retained; disabled without configuration.
-
-Old business identity, address, hours, Google profile, service copy and LocalBusiness schema removed. Obsolete pages/components removed rather than exposed with stale content. A verified LocalBusiness schema remains a future launch task.
+- Kitchen-specialist homepage with five service entry points, prominent optimization/problem-solving section, optional 3D workflow, real personal project and price explanation.
+- Five unique service URLs: installation-cuisine-la-rochelle, renovation-cuisine-la-rochelle, optimisation-petite-cuisine, reparation-cuisine-la-rochelle, conception-cuisine-3d. Former generic renovation, furniture and commercial-service routes removed.
+- Kitchen-focused approach, contact, portfolio and preparatory legal/privacy pages. Final brand/slogan shown in the hero, header and footer; metadata updated.
+- Real personal case study: “Une cuisine compacte, optimisée et fonctionnelle”. Planning, constraints, materials, storage and finished photographs. Image roles allow before/design/finished media, without fabricating any missing image.
+- Multi-service enquiry with visual selections, one relevant question at a time, optional contextual answers, timeframe/budget/sourcing, contacts, photos, editable summary and consent. Returning to change needs removes irrelevant answers. No draft data stored in browser persistence.
+- Ten editable pricing categories with optional amounts/ranges/units and explicit approval. No amounts invented; unapproved data never becomes a displayed price.
+- Photo limits: JPEG/PNG/WebP only, 3 files, 1 MiB each, 2 MiB combined. API body capped at 3,000,000 bytes. Enabled email requires anti-spam verification before expensive image decoding. Files are decoded, checked for format/pixel/animation constraints and re-encoded without metadata, using safe filenames. They are handled in memory and attached to email; no public upload directory or persistent lead storage.
+- Unconfigured email remains disabled and returns 503. WhatsApp preparation says nothing was sent and photos require manual attachment. Actual delivery success is not claimed without configuration and receipt testing.
 
 ## Media and HomeStyler
 
-Both the original ZIP and extracted visual-library folder contain folders/README only. The later populated ZIP contains 17 AI illustrations and the same two personal kitchen photographs. AI assets are tiny crops (service images roughly 210–227 × 170 px); they are temporary and should not be enlarged into production hero photography.
+The latest Cuisine-Reno-Photos folder contains 27 generated concept-board crops and 2 original kitchen photographs. Small generated images are visibly labelled as inspiration and used only as thumbnails; the hero/portfolio retain real photos. Old unrelated imagery removed. Provenance and dimensions: public/images/asset-manifest.json. Synthetic images marked “Avant/Après” are not used to represent a real transformation.
 
-The kitchen photographs were resized to 1200 × 1600 WebP with metadata stripped. They appear as a personal project, never a paid client case or before/after. Supplied illustrations were converted to WebP at their original dimensions; six are used as labelled service thumbnails. The others are retained in the media library for future approved use. Sources and classifications are recorded in `public/images/asset-manifest.json` and `public/images/README.md`.
+The supplied HomeStyler link was previously verified as the Lazoya beauty-centre model, not the kitchen. The owner confirmed there is no separate kitchen viewer link. It remains attached only to the unpublished Lazoya record. The reusable project template offers an external viewer link for an approved project; no kitchen iframe or invented render is shown. An attempted local iframe/browser test was blocked by automatic approval review due to a usage limit, so embed support is not verified. The temporary test page was removed.
 
-The supplied HomeStyler URL was opened in the browser on 24 October 2026. The 3D scene rendered successfully with the visible title “Lazoya Centre de beauté Oct 2026 Final” and designer “Mohamad Albi”. Its URL is attached to the unpublished Lazoya record. No claim is made that it represents the kitchen. Embedding permission/support is not yet verified; no iframe is shipped. The portfolio template supports a clearly labelled external link when a project with a viewer is approved and published.
+## Verification and limitations
 
-## Current functionality
+The ALBI RENO build and 12 unit tests passed: focused repairs, combined needs, removal of stale answers, invalid choices/injection/consent, undecided projects, optional question bounds, safe WhatsApp encoding, photo count/size/type limits, malformed/disguised files, re-encoding/metadata stripping and mismatched MIME types.
 
-Service links lead to individual pages; each quote link preselects the relevant category. The form validates name, phone, e-mail, city, category, description and consent. It prepares a WhatsApp URL and explicitly says no message has been sent. Opening that link passes the text to WhatsApp; the visitor must send it there. Invalid input is rejected. No file uploads, lead database or dashboard are provided yet.
+Browser verification of the new kitchen redesign and adaptive flow was blocked before execution by an automatic approval-review usage limit. Earlier screenshots and responsive checks belong to the previous interior-studio design and must not be used as evidence for the current version. Current browser/mobile/accessibility review remains to be completed. No real email has been sent; no enabled transport receipt verified; no iframe compatibility or Lighthouse/Core Web Vitals score claimed.
 
-## Remaining phases
+## Before launch
 
-1. Approve brand/domain, legal identity for the actual trade activities, service scope, relevant insurance, contractual terms and sourcing model; validate final legal/privacy pages and media permissions.
-2. Replace low-resolution service illustrations with final approved photos or renders; add approved HomeStyler exports and real Lazoya photos/copy. Test embedding permissions and mobile viewer behavior before enabling it.
-3. Build the guided multi-service quote wizard with conditional fields, property type/postcode, dimensions, timing, optional budget, 3D/sourcing requests and review summary. Define secure storage, upload validation and retention before adding photos.
-4. Configure delivery and anti-spam credentials, verified sender domain/hostnames, and test actual delivery/receipt and failures end to end. Currently only disabled delivery and validation are tested.
-5. Perform final launch accessibility/performance audits and external review. No Lighthouse/Core Web Vitals score or full assistive-technology certification is claimed.
-6. Publish only after explicit approval. Repo remote retains its pre-existing name; no remote rename was performed.
+Finish visual/browser flow verification when available, approve final photography and any displayed rates, complete legal/insurance and sourcing-model review, configure sender/anti-spam credentials and retention, verify delivery including attachments, connect domain/hosting, and obtain owner approval before pushing/publishing. See CLIENT-CHECKLIST.md. Noindex remains enforced until explicit flags and domain configuration are complete.
 
-## Verification results
-
-Final local production build and TypeScript check passed. All six unit tests passed. HTTP smoke checks passed for all 15 pages and 16 internal targets, unique titles/descriptions, one H1 per page, French document language, noindex headers/robots/empty sitemap, social image, unknown-route 404 and unpublished Lazoya 404. API tests cover origin rejection, unsupported content type, malformed JSON, missing consent, spam field, oversized request and disabled-delivery 503.
-
-Browser checks passed at 320, 390, 768 and 1440 px: no horizontal overflow after correcting mobile heading whitespace and using a single service-card column on narrow phones. Verified mobile menu opening/closing, service-to-quote category selection, six empty-field validation errors, prepared WhatsApp message with correct number/category, and invalidation of the prepared link after editing. No external message was sent. All six service thumbnails loaded and browser error/warning log was empty. Kitchen photography was visually inspected in desktop/tablet/mobile layouts.
-
-Limitations: no enabled-email receipt test, no file upload system, no HomeStyler iframe verification, no full Lighthouse/Core Web Vitals or screen-reader audit. Public launch check intentionally fails while the required configuration/approvals remain absent.
+Final local HTTP smoke check passed after the ALBI RENO rename: 13 pages, 14 internal targets, metadata/noindex, hidden/removed-route 404 checks, generated social image, and API origin/content/body/consent/spam/disabled-delivery checks. TypeScript, 12 unit tests and production build passed. The local preview was restarted on http://127.0.0.1:3000/ with the latest build. Browser interaction verification remains blocked as described above.

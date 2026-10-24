@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createHash } from "node:crypto";
 import { validateQuote, quoteMessage } from "@/lib/quote-validation";
+import { preparePhotos } from "@/lib/photo-validation";
+import { MAX_QUOTE_BODY_BYTES } from "@/lib/photo-rules";
 import { mailReady, contactEmail } from "@/lib/site";
 export const runtime = "nodejs";
 const reply = (body: object, status: number) =>
@@ -29,7 +31,7 @@ export async function POST(request: Request) {
       const { done, value } = await reader.read();
       if (done) break;
       size += value.byteLength;
-      if (size > 24000) {
+      if (size > MAX_QUOTE_BODY_BYTES) {
         await reader.cancel();
         return reply({ message: "La demande est trop volumineuse." }, 413);
       }
@@ -98,6 +100,20 @@ export async function POST(request: Request) {
         },
         400,
       );
+    let attachments: { filename: string; content: string }[];
+    try {
+      attachments = await preparePhotos(
+        (input as Record<string, unknown>).photos,
+      );
+    } catch (error) {
+      return reply(
+        {
+          message:
+            error instanceof Error ? error.message : "Photographies invalides.",
+        },
+        400,
+      );
+    }
     const sent = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -109,6 +125,7 @@ export async function POST(request: Request) {
         from: process.env.CONTACT_FROM_EMAIL,
         to: [contactEmail],
         reply_to: data.email,
+        attachments,
         subject: `Demande de devis — ${data.city}`,
         text:
           quoteMessage(data) +

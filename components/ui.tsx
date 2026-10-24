@@ -92,14 +92,14 @@ export function ContactCTA() {
       <div>
         <Eyebrow light>La suite commence par un échange</Eyebrow>
         <h2>
-          Votre projet mérite
+          Votre cuisine mérite
           <br />
           qu’on en parle.
         </h2>
         <p>Une idée, une question, des plans ? Faisons le point ensemble.</p>
       </div>
       <div className="cta-actions">
-        <Button>Parlons de votre projet</Button>
+        <Button>Parler de mon projet</Button>
         <a
           className="text-link light"
           href={whatsappUrl()}

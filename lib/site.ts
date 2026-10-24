@@ -63,7 +63,7 @@ export function pageMetadata(
                 url: `${siteUrl}/opengraph-image`,
                 width: 1200,
                 height: 630,
-                alt: `${business.name} — Aménagement à La Rochelle`,
+                alt: `${business.name} — Cuisines à La Rochelle`,
               },
             ],
           }

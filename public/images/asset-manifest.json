@@ -1,154 +1,234 @@
 [
   {
-    "src": "/images/hero/bedroom.webp",
-    "width": 285,
-    "height": 241,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/hero/hero-cuisine-compacte.webp",
+    "width": 225,
+    "height": 311,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/01-HERO/hero-cuisine-compacte.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/hero/kitchen.webp",
-    "width": 293,
-    "height": 241,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/hero/hero-cuisine-moderne.webp",
+    "width": 330,
+    "height": 311,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/01-HERO/hero-cuisine-moderne.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/hero/living-room.webp",
-    "width": 308,
-    "height": 241,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/installation/cuisine-blanche.webp",
+    "width": 237,
+    "height": 210,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/02-INSTALLATION/cuisine-blanche.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/services/3d-design.webp",
-    "width": 214,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/installation/meubles-en-montage.webp",
+    "width": 236,
+    "height": 93,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/02-INSTALLATION/meubles-en-montage.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/services/commercial-fitout.webp",
-    "width": 217,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/services/custom-furniture.webp",
-    "width": 210,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/services/furniture-assembly.webp",
-    "width": 215,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/services/kitchen-installation.webp",
-    "width": 227,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/services/renovation.webp",
-    "width": 218,
-    "height": 170,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/materials/blue-cabinet.webp",
-    "width": 178,
-    "height": 123,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/materials/brass.webp",
-    "width": 176,
-    "height": 123,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/materials/marble.webp",
-    "width": 182,
-    "height": 123,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/materials/wood.webp",
-    "width": 162,
-    "height": 123,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
-  },
-  {
-    "src": "/images/inspiration/bathroom.webp",
+    "src": "/images/installation/tiroirs-cuisine.webp",
     "width": 229,
-    "height": 204,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "height": 130,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/02-INSTALLATION/tiroirs-cuisine.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/inspiration/bedroom.webp",
-    "width": 218,
-    "height": 204,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/renovation/cuisine-ancienne-inspiration.webp",
+    "width": 194,
+    "height": 168,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/03-RENOVATION/cuisine-ancienne-inspiration.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/inspiration/home-office.webp",
-    "width": 209,
-    "height": 204,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/renovation/cuisine-blanche-renovee.webp",
+    "width": 236,
+    "height": 136,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/03-RENOVATION/cuisine-blanche-renovee.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
-    "src": "/images/inspiration/living-room.webp",
-    "width": 214,
-    "height": 204,
-    "kind": "ai-illustration",
-    "source": "atelier17-images-populated.zip",
-    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+    "src": "/images/renovation/cuisine-modernisee-inspiration.webp",
+    "width": 235,
+    "height": 168,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/03-RENOVATION/cuisine-modernisee-inspiration.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/optimisation/cuisine-compacte.webp",
+    "width": 163,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/04-PETITS-ESPACES/cuisine-compacte.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/optimisation/cuisine-sous-escalier.webp",
+    "width": 240,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/04-PETITS-ESPACES/cuisine-sous-escalier.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/optimisation/rangement-tournant.webp",
+    "width": 142,
+    "height": 123,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/04-PETITS-ESPACES/rangement-tournant.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/optimisation/rangement-vertical.webp",
+    "width": 142,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/04-PETITS-ESPACES/rangement-vertical.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/optimisation/rangements-angles.webp",
+    "width": 139,
+    "height": 123,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/04-PETITS-ESPACES/rangements-angles.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/reparation/charniere-ajustement.webp",
+    "width": 171,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/05-REPARATION/charniere-ajustement.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/reparation/evier-robinet.webp",
+    "width": 173,
+    "height": 128,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/05-REPARATION/evier-robinet.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/reparation/glissiere-tiroir.webp",
+    "width": 126,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/05-REPARATION/glissiere-tiroir.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/reparation/placard-charniere.webp",
+    "width": 155,
+    "height": 196,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/05-REPARATION/placard-charniere.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/conception-3d/conception-sur-ordinateur.webp",
+    "width": 225,
+    "height": 197,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/06-CONCEPTION-3D/conception-sur-ordinateur.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/conception-3d/plan-cuisine-3d.webp",
+    "width": 206,
+    "height": 197,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/06-CONCEPTION-3D/plan-cuisine-3d.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/conception-3d/plan-vue-dessus.webp",
+    "width": 205,
+    "height": 126,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/06-CONCEPTION-3D/plan-vue-dessus.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/materials/bois-strie.webp",
+    "width": 90,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/07-FINITIONS/bois-strie.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/materials/eclairage-led.webp",
+    "width": 118,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/07-FINITIONS/eclairage-led.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/materials/evier-noir.webp",
+    "width": 113,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/07-FINITIONS/evier-noir.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/materials/plan-travail.webp",
+    "width": 155,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/07-FINITIONS/plan-travail.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/inspiration/cuisine-chene.webp",
+    "width": 142,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/08-INSPIRATION/cuisine-chene.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/inspiration/cuisine-claire.webp",
+    "width": 144,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/08-INSPIRATION/cuisine-claire.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
+  },
+  {
+    "src": "/images/inspiration/cuisine-verte.webp",
+    "width": 141,
+    "height": 161,
+    "kind": "ai-inspiration",
+    "source": "Cuisine-Reno-Photos/08-INSPIRATION/cuisine-verte.jpg",
+    "usage": "Small conceptual illustration; never real project, before/after or actual HomeStyler export."
   },
   {
     "src": "/images/projects/kitchen/cuisine-01.webp",
     "width": 1200,
     "height": 1600,
     "kind": "personal-project-photo",
-    "source": "Owner-supplied original kitchen JPEG; also included in atelier17-images-populated.zip",
-    "usage": "Real finished personal project. Confirm public publication permissions before launch."
+    "source": "Owner-supplied original JPEG",
+    "usage": "Real finished personal kitchen"
   },
   {
     "src": "/images/projects/kitchen/cuisine-02.webp",
     "width": 1200,
     "height": 1600,
     "kind": "personal-project-photo",
-    "source": "Owner-supplied original kitchen JPEG; also included in atelier17-images-populated.zip",
-    "usage": "Real finished personal project. Confirm public publication permissions before launch."
+    "source": "Owner-supplied original JPEG",
+    "usage": "Real finished personal kitchen"
   }
 ]

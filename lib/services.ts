@@ -1,157 +1,149 @@
 export type Service = {
+  id: string;
   slug: string;
   title: string;
+  seoTitle: string;
   short: string;
   intro: string;
-  kind: string;
+  image: string;
   preparation: string;
-  quoteType: string;
   steps: string[];
   note: string;
+  examples: string[];
   number: string;
   confirmed: boolean;
   featured: boolean;
 };
 export const services: Service[] = [
   {
-    slug: "montage-meubles-la-rochelle",
-    title: "Montage de meubles & bricolage",
-    short: "Des meubles bien installés, un quotidien simplifié.",
+    id: "installation",
+    slug: "installation-cuisine-la-rochelle",
+    title: "Installer une cuisine",
+    seoTitle: "Installation de cuisines à La Rochelle",
+    short: "Une installation pensée dans les moindres détails.",
     intro:
-      "Monter une armoire, installer une étagère ou organiser un coin bureau : les petites interventions méritent autant d’attention que les grands projets.",
-    kind: "meubles",
+      "Une cuisine neuve commence par une implantation juste. Nous étudions le plan, les dimensions et les contraintes avant de préparer le montage des caissons, leur positionnement et les ajustements. Une cuisine IKEA, Leroy Merlin ou d’une autre marque demande de suivre ses notices et de vérifier les composants livrés.",
+    image: "/images/installation/cuisine-blanche.webp",
     preparation:
-      "Références et notices des meubles, nombre de colis, dimensions et accès à la pièce.",
-    quoteType: "Montage de meubles",
+      "Plan du fournisseur, dimensions, liste des modules, état de la livraison et caractéristiques du plan de travail.",
     steps: [
-      "Vérifier les éléments et les notices",
-      "Préparer la pièce et les surfaces de travail",
-      "Assembler, ajuster et vérifier les ouvertures",
+      "Vérifier les cotes, les supports et les accès",
+      "Monter, positionner et ajuster les meubles prévus",
+      "Vérifier les alignements, les ouvertures et les finitions",
     ],
-    note: "Une fixation murale dépend du support, des charges et des consignes du fabricant. Ces points sont examinés avant de définir l’intervention.",
+    note: "Les travaux sur les réseaux électriques, gaz ou plomberie sont examinés séparément et réservés aux professionnels compétents dans un périmètre autorisé et assuré. ALBI RENO n’est affiliée à aucune enseigne.",
+    examples: [
+      "Montage et positionnement des caissons",
+      "Pose et adaptation du plan de travail selon faisabilité",
+      "Organisation des rangements et intégration du mobilier",
+    ],
     number: "01",
     confirmed: false,
     featured: true,
   },
   {
-    slug: "renovation-interieure-la-rochelle",
-    title: "Rénovation intérieure",
-    short: "Retrouver le plaisir d’habiter votre espace.",
+    id: "renovation",
+    slug: "renovation-cuisine-la-rochelle",
+    title: "Rénover ma cuisine",
+    seoTitle: "Rénovation de cuisines à La Rochelle",
+    short: "Un nouvel élan, en partant de l’existant.",
     intro:
-      "Repenser une pièce commence par comprendre ce qui fonctionne et ce qui doit évoluer : circulation, lumière, usages et état des surfaces. Le projet se construit à partir de l’existant.",
-    kind: "renovation",
+      "Tout remplacer n’est pas toujours la meilleure réponse. Une cuisine peut évoluer grâce à de nouvelles façades compatibles, un plan de travail adapté, des rangements mieux organisés ou des finitions reprises. Le premier échange permet d’identifier ce qui peut être conservé et ce qui mérite d’être changé.",
+    image: "/images/renovation/cuisine-blanche-renovee.webp",
     preparation:
-      "Pièces concernées, surfaces approximatives, état des supports et finitions souhaitées.",
-    quoteType: "Rénovation intérieure",
+      "Photos des meubles existants, état des caissons et façades, références connues et liste des changements souhaités.",
     steps: [
-      "Faire le point sur les usages et l’existant",
-      "Définir les finitions et les priorités",
-      "Organiser les étapes et les intervenants",
+      "Examiner les éléments à conserver",
+      "Comparer les modifications et leurs contraintes",
+      "Définir la préparation et les étapes d’intervention",
     ],
-    note: "Le périmètre technique, les corps de métier nécessaires et les éventuelles contraintes du bâtiment doivent être définis avant tout engagement.",
+    note: "La compatibilité des pièces, l’état des supports et les contraintes techniques doivent être vérifiés avant de retenir une solution. Aucun résultat de rénovation n’est garanti sans examen.",
+    examples: [
+      "Moderniser certains éléments sans tout remplacer",
+      "Réorganiser les rangements existants",
+      "Améliorer les finitions et le confort d’usage",
+    ],
     number: "02",
     confirmed: false,
     featured: true,
   },
   {
-    slug: "installation-cuisine-la-rochelle",
-    title: "Cuisines & rangements",
-    short: "Chaque centimètre trouve sa fonction.",
+    id: "optimisation",
+    slug: "optimisation-petite-cuisine",
+    title: "Optimiser mon espace",
+    seoTitle: "Optimisation des petites cuisines",
+    short: "Chaque centimètre peut devenir une bonne idée.",
     intro:
-      "Une cuisine réussie associe des rangements accessibles, un plan de travail pratique et des circulations fluides. L’implantation se prépare à partir des dimensions réelles et du mobilier choisi.",
-    kind: "cuisine",
+      "Une petite surface, un angle difficile, des tuyaux apparents ou une circulation peu pratique : chaque cuisine présente ses contraintes. Nous cherchons à comprendre vos gestes et les possibilités de la pièce avant de proposer des adaptations. L’objectif est d’utiliser l’espace plus intelligemment, sans présumer que toute modification est possible.",
+    image: "/images/optimisation/cuisine-sous-escalier.webp",
     preparation:
-      "Plan coté, fournisseur, liste des meubles, caractéristiques du plan de travail et état de la cuisine existante.",
-    quoteType: "Installation de cuisine",
+      "Dimensions approximatives, photos des angles et obstacles, rangements manquants, meubles conservés et changements souhaités.",
     steps: [
-      "Vérifier les cotes et l’implantation",
-      "Préparer le montage et les ajustements",
-      "Contrôler l’alignement et l’usage des rangements",
+      "Observer les usages et les obstacles",
+      "Étudier les rangements et les implantations possibles",
+      "Valider les ajustements réalisables avant intervention",
     ],
-    note: "Les raccordements électriques, gaz et plomberie sont à identifier séparément avec les professionnels compétents. Leur réalisation n’est pas présumée incluse.",
+    note: "L’accès aux équipements, la ventilation et l’entretien des réseaux doivent être préservés. Les adaptations sont soumises à une vérification sur place.",
+    examples: [
+      "Valoriser les angles et les hauteurs disponibles",
+      "Adapter un meuble autour d’une contrainte",
+      "Repenser la place des appareils et les circulations",
+    ],
     number: "03",
     confirmed: false,
     featured: true,
   },
   {
-    slug: "conception-3d",
-    title: "Conception & aménagement 3D",
-    short: "Se projeter avant de se décider.",
+    id: "reparation",
+    slug: "reparation-cuisine-la-rochelle",
+    title: "Réparer ou modifier ma cuisine",
+    seoTitle: "Réparation et modification de cuisines à La Rochelle",
+    short: "Les bons ajustements font la différence.",
     intro:
-      "Comparer plusieurs implantations permet de prendre des décisions plus sereinement. La conception 3D aide à comprendre les volumes, la place du mobilier et l’harmonie des matières.",
-    kind: "3d",
+      "Une porte désalignée, un tiroir qui accroche ou une charnière usée peuvent gêner chaque jour. Une intervention ciblée commence par identifier le mécanisme, sa référence et l’état du meuble. Nous étudions aussi les modifications de rangement et les adaptations ponctuelles.",
+    image: "/images/reparation/placard-charniere.webp",
     preparation:
-      "Dimensions, photos de l’existant, contraintes, style souhaité et objectifs de la pièce.",
-    quoteType: "Conception 3D",
+      "Photos du problème et du mécanisme, marque ou référence si connue, nombre d’éléments concernés et dimensions utiles.",
     steps: [
-      "Comprendre vos besoins et relever les dimensions",
-      "Construire une proposition d’aménagement",
-      "Ajuster le concept avant de chiffrer les travaux",
+      "Identifier la cause et les pièces compatibles",
+      "Définir le réglage, remplacement ou ajustement",
+      "Contrôler le fonctionnement après intervention",
     ],
-    note: "Un visuel 3D est une aide à la décision. Il ne remplace pas les relevés, les études techniques ou la validation des produits et finitions.",
+    note: "Certaines pièces ne sont plus disponibles ou ne peuvent pas être adaptées sans modifier le meuble. La faisabilité et le périmètre sont précisés avant toute intervention.",
+    examples: [
+      "Réglage de portes et remplacement de charnières",
+      "Examen des coulisses et tiroirs",
+      "Ajustements de meubles et petites adaptations",
+    ],
     number: "04",
     confirmed: false,
     featured: true,
   },
   {
-    slug: "mobilier-sur-mesure",
-    title: "Mobilier sur mesure & sourcing",
-    short: "Trouver la pièce qui s’accorde à votre projet.",
+    id: "conception",
+    slug: "conception-cuisine-3d",
+    title: "Concevoir ma cuisine en 3D",
+    seoTitle: "Conception de cuisines en 3D à La Rochelle",
+    short: "Voir les possibilités avant de choisir.",
     intro:
-      "Recherche et accompagnement à l’approvisionnement de mobilier sur mesure. Un comptoir d’accueil, une bibliothèque ou un rangement peuvent être étudiés selon vos dimensions et vos usages.",
-    kind: "mobilier",
+      "La conception avec HomeStyler aide à comparer des implantations et à comprendre les volumes. À partir des dimensions et de vos besoins, une proposition permet de réfléchir à la circulation, aux rangements, aux matières et à la place de l’électroménager. Ce service est optionnel, adapté aux projets qui en ont besoin.",
+    image: "/images/conception-3d/plan-vue-dessus.webp",
     preparation:
-      "Type de meuble, dimensions, quantités, matières souhaitées, références et budget indicatif.",
-    quoteType: "Mobilier sur mesure",
+      "Dimensions, photos, plan existant si disponible, style souhaité, budget indicatif et priorités d’usage.",
     steps: [
-      "Définir un cahier des besoins précis",
-      "Rechercher et comparer des propositions",
-      "Examiner les conditions d’approvisionnement",
+      "Relever les dimensions et comprendre vos besoins",
+      "Construire une implantation et une visualisation 3D",
+      "Ajuster la proposition avant de préparer un devis",
     ],
-    note: "Le modèle d’achat, d’intermédiation ou d’importation reste à définir. Prix, conformité, transport, délais et garanties devront être vérifiés pour chaque proposition.",
+    note: "Une visualisation n’est pas un plan technique d’exécution. Les cotes, matériaux, fixations et contraintes des réseaux restent à vérifier. Une réparation simple ne nécessite pas de conception 3D.",
+    examples: [
+      "Étude de l’implantation et des rangements",
+      "Visualisation des volumes et matériaux",
+      "Échange autour des choix avant les travaux",
+    ],
     number: "05",
     confirmed: false,
     featured: true,
   },
-  {
-    slug: "amenagement-professionnel",
-    title: "Locaux professionnels",
-    short: "Un lieu qui fait travailler votre image.",
-    intro:
-      "Un espace d’accueil, un bureau ou un salon doit servir les équipes autant que les visiteurs. Le parcours, les rangements et l’identité du lieu se réfléchissent ensemble.",
-    kind: "pro",
-    preparation:
-      "Activité, plan, usages, mobilier nécessaire, contraintes d’ouverture et calendrier indicatif.",
-    quoteType: "Locaux professionnels",
-    steps: [
-      "Comprendre les parcours des équipes et visiteurs",
-      "Organiser les zones de travail et d’accueil",
-      "Définir le mobilier et les étapes du projet",
-    ],
-    note: "Les exigences propres au local et à son usage doivent être étudiées avec les intervenants appropriés avant de valider un aménagement.",
-    number: "06",
-    confirmed: false,
-    featured: true,
-  },
-  {
-    slug: "bricolage-la-rochelle",
-    title: "Bricolage à La Rochelle",
-    short: "Les petits détails qui changent le quotidien.",
-    intro:
-      "Poser des accessoires, ajuster un élément de mobilier ou organiser des rangements : une liste précise des besoins facilite la préparation des petites interventions.",
-    kind: "bricolage",
-    preparation:
-      "Liste des éléments, photos des supports, dimensions et références des produits.",
-    quoteType: "Bricolage",
-    steps: [
-      "Lister les interventions pièce par pièce",
-      "Examiner les supports et contraintes de fixation",
-      "Préparer les produits et le matériel adaptés",
-    ],
-    note: "Les demandes impliquant des réseaux, la structure du bâtiment ou une technicité particulière nécessitent une évaluation distincte.",
-    number: "07",
-    confirmed: false,
-    featured: false,
-  },
 ];
-export const featuredServices = services.filter((s) => s.featured);
+export const featuredServices = services;

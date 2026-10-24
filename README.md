@@ -1,6 +1,8 @@
-# Interior studio — local prototype
+# ALBI RENO
 
-French renovation, installation and interior planning site. Brand placeholder: `NOM DE MARQUE`. Next.js App Router, React, TypeScript, CSS, locally served Manrope; no new dependencies added for the redesign.
+**Installation et rénovation de cuisines** — La Rochelle & alentours.
+
+Next.js / React / TypeScript application reused from the earlier local prototype. The owner purchased `albireno.fr`; DNS, hosting and canonical activation have not been performed. Intended final repository: https://github.com/mohamadalbi123/albireno.fr.git. Do not push or deploy until the site is finished and the owner approves.
 
 ```sh
 npm ci
@@ -12,17 +14,17 @@ npm run start
 npm run test:smoke
 ```
 
-Smoke checks require the local production server on port 3000 and disabled mail delivery. `npm run check:launch` is expected to fail until launch requirements are satisfied. Do not publish this prototype without the owner's approval.
+Smoke checks target the production server on port 3000 with mail disabled. `check:launch` intentionally fails until legal, privacy, service, domain and delivery configuration is complete.
 
-- Brand, contacts and approval flags: `lib/business.ts`.
-- Services and independent service routes: `lib/services.ts`, `app/[service]/page.tsx`.
-- Portfolio kinds, photos and draft visibility: `lib/projects.ts`.
-- Responsive photography: `components/project-image.tsx`.
-- Service thumbnails: supplied AI illustrations, labelled as inspiration.
-- Configuration: `.env.example`. Keep secrets out of Git.
-- Audit, architecture and next phases: `docs/HANDOVER.md`.
-- Launch blockers: `docs/CLIENT-CHECKLIST.md`.
+## Configuration
 
-The site stays noindex through metadata, HTTP headers, robots and an empty sitemap until all approval flags and the final domain are configured. This is an indexing safeguard, not access control. No production deployment has been made.
+- Brand, purchased domain, repository and contacts: `lib/business.ts`.
+- Five kitchen services and SEO routes: `lib/services.ts`.
+- Adaptive questions: `lib/quote-flow.ts`; shared final validation: `lib/quote-validation.ts`.
+- Editable pricing: `lib/pricing.ts`. All rates unset/unapproved; public copy shows “Sur devis”.
+- Portfolio/media roles: `lib/projects.ts`; the kitchen is personal and Lazoya is unpublished.
+- Optional e-mail configuration: `.env.example`. No credentials in Git.
 
-The basic enquiry form supports one primary category and a free-text description of additional needs. Without delivery credentials, it only prepares an encoded WhatsApp message. Nothing is sent automatically. Multi-service conditional steps, uploads and submission summary remain Phase 3 work.
+The enquiry combines multiple needs, asks relevant questions, collects optional photographs, and shows a review summary. Without delivery configuration it only prepares a WhatsApp message. Photos must be attached manually there. The email path supports in-memory validation/re-encoding and attachments, but real email receipt remains untested until configured.
+
+See `docs/HANDOVER.md` for implementation and verification status and `docs/CLIENT-CHECKLIST.md` for launch requirements. The site remains local and noindex.

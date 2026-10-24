@@ -13,8 +13,8 @@ export default function Projects() {
     <>
       <PageIntro
         eyebrow="Le portfolio"
-        title="Des espaces à vivre."
-        text="Chaque projet a son histoire. Les projets personnels, concepts et réalisations professionnelles sont identifiés pour vous donner un regard juste sur notre travail."
+        title="Des cuisines pensées pour la vie."
+        text="Chaque cuisine a son histoire. Les projets personnels, concepts et réalisations professionnelles sont identifiés pour vous donner un regard juste sur notre travail."
       />
       <section className="container section portfolio-grid">
         {publishedProjects.map((p) => (

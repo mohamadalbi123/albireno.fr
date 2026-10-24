@@ -26,9 +26,6 @@ export function Footer() {
                 {s.title}
               </Link>
             ))}
-            <Link href="/bricolage-la-rochelle">
-              Petits travaux & bricolage
-            </Link>
           </div>
           <div>
             <h3>Faisons connaissance</h3>
