@@ -1,44 +1,60 @@
+import Image from "next/image";
 import Link from "next/link";
+import { featuredServices } from "@/lib/services";
 import { Icon } from "./icon";
-import { availableServices } from "@/lib/services";
-import { isPreview } from "@/lib/site";
+const thumbnails: Record<string, { file: string; alt: string }> = {
+  meubles: {
+    file: "furniture-assembly",
+    alt: "Illustration IA de montage de meuble",
+  },
+  renovation: {
+    file: "renovation",
+    alt: "Illustration IA de préparation et peinture d’un mur",
+  },
+  cuisine: {
+    file: "kitchen-installation",
+    alt: "Illustration IA d’une cuisine aménagée",
+  },
+  "3d": {
+    file: "3d-design",
+    alt: "Illustration IA de volumes intérieurs, sans lien avec HomeStyler",
+  },
+  mobilier: {
+    file: "custom-furniture",
+    alt: "Illustration IA d’un rangement sur mesure",
+  },
+  pro: {
+    file: "commercial-fitout",
+    alt: "Illustration IA d’un espace d’accueil",
+  },
+};
 export function ServiceCards() {
-  const items = availableServices(isPreview);
   return (
-    <>
-      {items.length ? (
-        <div className="services-grid">
-          {items.map((s) => (
-            <Link
-              className="service-card"
-              key={s.slug}
-              href={`/prestations/${s.slug}`}
-            >
-              <div className="service-card-top">
-                <Icon name={s.icon} width={34} height={34} />
-                <span>{s.number}</span>
-              </div>
-              <h3>{s.title}</h3>
-              <p>{s.short}</p>
-              <div className="service-card-bottom">
-                <span>
-                  {s.confirmed
-                    ? "Découvrir la prestation"
-                    : "Prestation à confirmer"}
-                </span>
-                <span className="circle-arrow">
-                  <Icon name="arrow" width={18} />
-                </span>
-              </div>
+    <div className="service-grid">
+      {featuredServices.map((s) => (
+        <article className={`service-card service-${s.kind}`} key={s.slug}>
+          <figure className="service-thumb">
+            <Image
+              src={`/images/services/${thumbnails[s.kind].file}.webp`}
+              alt={thumbnails[s.kind].alt}
+              width={210}
+              height={170}
+            />
+            <figcaption>Inspiration · image IA</figcaption>
+          </figure>
+          <span className="service-number">{s.number}</span>
+          <h3>
+            <Link href={`/${s.slug}`}>
+              {s.title}
+              <Icon name="diagonal" width={22} />
             </Link>
-          ))}
-        </div>
-      ) : (
-        <p>
-          Le détail des prestations sera précisé prochainement. Contactez-nous
-          pour étudier votre demande de travaux de plâtrerie.
-        </p>
-      )}
-    </>
+          </h3>
+          <p>{s.short}</p>
+          <Link className="service-enquiry" href={`/devis?service=${s.slug}`}>
+            Parler de ce projet <Icon name="arrow" width={16} />
+          </Link>
+        </article>
+      ))}
+    </div>
   );
 }

@@ -7,7 +7,7 @@ const valid = {
   phone: "06 00 00 00 00",
   email: "test@example.com",
   city: "Aytré",
-  workType: "Travaux de plâtrerie",
+  workType: "Montage de meubles",
   description: "Demande de test : repenser une pièce intérieure.",
   consent: true,
   website: "",
@@ -63,7 +63,7 @@ test("encodes user content in the WhatsApp URL without creating extra parameters
   );
   const url = new URL(whatsappUrl(message));
   assert.equal(url.hostname, "wa.me");
-  assert.equal(url.pathname, "/33781844419");
+  assert.equal(url.pathname, "/33763734372");
   assert.equal([...url.searchParams].length, 1);
   assert.equal(url.searchParams.get("text"), message);
 });

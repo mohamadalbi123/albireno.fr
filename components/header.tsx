@@ -1,30 +1,27 @@
 "use client";
+import { business } from "@/lib/business";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "./icon";
 const links = [
-  { href: "/", label: "Accueil" },
-  { href: "/prestations", label: "Prestations" },
+  { href: "/#services", label: "Nos expertises" },
   { href: "/realisations", label: "Réalisations" },
-  { href: "/a-propos", label: "À propos" },
+  { href: "/notre-approche", label: "Notre approche" },
 ];
 export function Brand({ light = false }: { light?: boolean }) {
   return (
     <Link
       className={`brand ${light ? "brand-light" : ""}`}
       href="/"
-      aria-label="Luna Plâtrerie — accueil"
+      aria-label={`${business.name} — accueil`}
     >
-      <span className="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M8 8h10v29h22v9H8V8Z" fill="currentColor" />
-          <path d="M26 2h14v27H26V2Z" fill="#d77b42" />
-        </svg>
+      <span className="brand-symbol" aria-hidden="true">
+        ⌑
       </span>
       <span>
-        <strong>LUNA</strong>
-        <small>PLÂTRERIE</small>
+        <strong>{business.name}</strong>
+        <small>INTÉRIEURS & AMÉNAGEMENT</small>
       </span>
     </Link>
   );
@@ -66,7 +63,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className="button header-quote">
+        <Link href="/devis" className="button header-quote">
           Parlons de votre projet <Icon name="arrow" width={17} />
         </Link>
         <button
@@ -87,20 +84,19 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
-          {[
-            ...links,
-            { href: "/contact", label: "Demander un devis gratuit" },
-          ].map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              aria-current={pathname === l.href ? "page" : undefined}
-            >
-              {l.label}
-              <Icon name="arrow" />
-            </Link>
-          ))}
+          {[...links, { href: "/devis", label: "Parlons de votre projet" }].map(
+            (l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                aria-current={pathname === l.href ? "page" : undefined}
+              >
+                {l.label}
+                <Icon name="arrow" />
+              </Link>
+            ),
+          )}
         </nav>
       )}
     </header>

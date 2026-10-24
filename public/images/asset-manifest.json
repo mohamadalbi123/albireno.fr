@@ -1,0 +1,154 @@
+[
+  {
+    "src": "/images/hero/bedroom.webp",
+    "width": 285,
+    "height": 241,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/hero/kitchen.webp",
+    "width": 293,
+    "height": 241,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/hero/living-room.webp",
+    "width": 308,
+    "height": 241,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/3d-design.webp",
+    "width": 214,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/commercial-fitout.webp",
+    "width": 217,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/custom-furniture.webp",
+    "width": 210,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/furniture-assembly.webp",
+    "width": 215,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/kitchen-installation.webp",
+    "width": 227,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/services/renovation.webp",
+    "width": 218,
+    "height": 170,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/materials/blue-cabinet.webp",
+    "width": 178,
+    "height": 123,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/materials/brass.webp",
+    "width": 176,
+    "height": 123,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/materials/marble.webp",
+    "width": 182,
+    "height": 123,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/materials/wood.webp",
+    "width": 162,
+    "height": 123,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/inspiration/bathroom.webp",
+    "width": 229,
+    "height": 204,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/inspiration/bedroom.webp",
+    "width": 218,
+    "height": 204,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/inspiration/home-office.webp",
+    "width": 209,
+    "height": 204,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/inspiration/living-room.webp",
+    "width": 214,
+    "height": 204,
+    "kind": "ai-illustration",
+    "source": "atelier17-images-populated.zip",
+    "usage": "Temporary inspiration only; not completed work or HomeStyler render"
+  },
+  {
+    "src": "/images/projects/kitchen/cuisine-01.webp",
+    "width": 1200,
+    "height": 1600,
+    "kind": "personal-project-photo",
+    "source": "Owner-supplied original kitchen JPEG; also included in atelier17-images-populated.zip",
+    "usage": "Real finished personal project. Confirm public publication permissions before launch."
+  },
+  {
+    "src": "/images/projects/kitchen/cuisine-02.webp",
+    "width": 1200,
+    "height": 1600,
+    "kind": "personal-project-photo",
+    "source": "Owner-supplied original kitchen JPEG; also included in atelier17-images-populated.zip",
+    "usage": "Real finished personal project. Confirm public publication permissions before launch."
+  }
+]

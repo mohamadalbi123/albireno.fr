@@ -1,6 +1,6 @@
+import { business } from "@/lib/business";
 import { ImageResponse } from "next/og";
-export const alt =
-  "Luna Plâtrerie — Votre intérieur, de nouvelles perspectives. Aytré et La Rochelle.";
+export const alt = "Aménagement, rénovation et installation à La Rochelle";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -20,7 +20,7 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", fontSize: 27, letterSpacing: 5 }}>
-          LUNA PLÂTRERIE
+          {business.name}
         </div>
         <div
           style={{
@@ -32,7 +32,7 @@ export default function Image() {
           }}
         >
           <div>De beaux espaces.</div>
-          <div style={{ color: "#b95d2a" }}>De nouvelles perspectives.</div>
+          <div style={{ color: "#526976" }}>De nouvelles perspectives.</div>
         </div>
         <div
           style={{
@@ -41,7 +41,7 @@ export default function Image() {
             justifyContent: "space-between",
           }}
         >
-          <span>AYTRÉ · LA ROCHELLE</span>
+          <span>LA ROCHELLE · CHARENTE-MARITIME</span>
           <span>Parlons de votre projet →</span>
         </div>
       </div>

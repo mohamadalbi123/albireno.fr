@@ -17,14 +17,19 @@ function canonicalOrigin() {
 }
 export const siteUrl = canonicalOrigin();
 export const isIndexable =
+  business.brandApproved &&
+  business.legalApproved &&
+  business.privacyApproved &&
+  business.servicesApproved &&
+  business.launchApproved &&
   process.env.SITE_INDEXABLE === "true" &&
   process.env.VERCEL_ENV !== "preview" &&
   !!siteUrl &&
   !new URL(siteUrl).hostname.endsWith("vercel.app") &&
   !new URL(siteUrl).hostname.endsWith("chambre17.com");
 export const isPreview = !isIndexable;
-export const contactEmail = process.env.BUSINESS_EMAIL || "";
-export const contactPhone = process.env.BUSINESS_PHONE || "";
+export const contactEmail = process.env.BUSINESS_EMAIL || business.email;
+export const contactPhone = process.env.BUSINESS_PHONE || business.phone;
 export const mailReady =
   process.env.CONTACT_FORM_ENABLED === "true" &&
   !!contactEmail &&
@@ -58,7 +63,7 @@ export function pageMetadata(
                 url: `${siteUrl}/opengraph-image`,
                 width: 1200,
                 height: 630,
-                alt: "Luna Plâtrerie — Aytré et La Rochelle",
+                alt: `${business.name} — Aménagement à La Rochelle`,
               },
             ],
           }

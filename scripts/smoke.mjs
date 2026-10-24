@@ -2,16 +2,20 @@ import assert from "node:assert/strict";
 const origin = process.env.TEST_BASE_URL || "http://127.0.0.1:3000";
 const paths = [
   "/",
-  "/prestations",
-  "/prestations/pose-plaques-platre",
-  "/prestations/faux-plafonds",
-  "/prestations/isolation-doublage",
-  "/prestations/amenagement-renovation-interieure",
+  "/renovation-interieure-la-rochelle",
+  "/montage-meubles-la-rochelle",
+  "/bricolage-la-rochelle",
+  "/installation-cuisine-la-rochelle",
+  "/conception-3d",
+  "/mobilier-sur-mesure",
+  "/amenagement-professionnel",
   "/realisations",
-  "/a-propos",
+  "/realisations/cuisine-optimisee",
+  "/notre-approche",
+  "/devis",
   "/contact",
   "/mentions-legales",
-  "/confidentialite",
+  "/politique-confidentialite",
 ];
 const titles = new Set();
 const links = new Set();
@@ -23,6 +27,8 @@ for (const path of paths) {
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, path + " one H1");
   assert.match(html, /<html[^>]*lang="fr"/);
   assert.match(html, /name="description"/);
+  assert.doesNotMatch(html, /Luna|LUNA|33781844419|Suzanne Lenglen/);
+  assert.doesNotMatch(html, /lazoya-beauty-center|5a59999f-0640/);
   const title = html.match(/<title>(.*?)<\/title>/)?.[1];
   assert.ok(title);
   assert.ok(!titles.has(title), "unique title " + path);
@@ -44,12 +50,16 @@ assert.ok(
 );
 assert.equal((await fetch(origin + "/does-not-exist")).status, 404);
 assert.equal((await fetch(origin + "/opengraph-image")).status, 200);
+assert.equal(
+  (await fetch(origin + "/realisations/lazoya-beauty-center")).status,
+  404,
+);
 const payload = {
   name: "Client test",
   phone: "0600000000",
   email: "test@example.com",
   city: "Aytré",
-  workType: "Travaux de plâtrerie",
+  workType: "Montage de meubles",
   description: "Test local du formulaire. Aucun message à envoyer.",
   consent: true,
 };

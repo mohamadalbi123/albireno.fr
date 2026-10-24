@@ -22,7 +22,13 @@ declare global {
     };
   }
 }
-export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
+export function QuoteForm({
+  mailEnabled = false,
+  initialService = "",
+}: {
+  mailEnabled?: boolean;
+  initialService?: string;
+}) {
   const id = useId();
   const [errors, setErrors] = useState<FieldErrors>({});
   const [pending, setPending] = useState(false);
@@ -108,7 +114,7 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
       }
       setSuccess(true);
       setStatus(
-        "Votre demande a bien été transmise à Luna Plâtrerie. Merci de nous avoir présenté votre projet.",
+        "Votre demande a bien été transmise. Merci de nous avoir présenté votre projet.",
       );
       form.reset();
     } catch (error) {
@@ -174,15 +180,15 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
     >
       <div className="form-heading">
         <span className="form-step">PARLONS DE VOTRE INTÉRIEUR</span>
-        <h3>Demander un devis gratuit</h3>
+        <h3>Présentez votre projet</h3>
         <p>Les champs marqués d’un * sont obligatoires.</p>
       </div>
       {!mailEnabled && (
         <div className="form-notice">
           <Icon name="chat" width={18} />
           <p>
-            L’envoi par e-mail sera bientôt disponible. Préparez votre demande
-            ici, puis envoyez-la sur WhatsApp.
+            L’envoi automatique par e-mail n’est pas activé. Préparez votre
+            demande ici, puis envoyez-la sur WhatsApp.
           </p>
         </div>
       )}
@@ -195,7 +201,7 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
         {field(
           "city",
           "Ville du projet",
-          "Ex. Aytré",
+          "Ex. La Rochelle",
           "text",
           "address-level2",
         )}
@@ -207,7 +213,7 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
         <select
           name="workType"
           id={`${id}-work`}
-          defaultValue=""
+          defaultValue={initialService}
           required
           aria-invalid={!!errors.workType}
           aria-describedby={errors.workType ? `${id}-work-error` : undefined}
@@ -272,7 +278,7 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
         />
         <span>
           J’ai lu la{" "}
-          <Link href="/confidentialite" target="_blank">
+          <Link href="/politique-confidentialite" target="_blank">
             politique de confidentialité
           </Link>{" "}
           et j’accepte que mes informations soient utilisées pour répondre à ma
@@ -326,8 +332,9 @@ export function QuoteForm({ mailEnabled = false }: { mailEnabled?: boolean }) {
         )}
       </div>
       <p className="form-privacy">
-        Vos informations restent dans cette page tant que vous ne les envoyez
-        pas. Aucun démarchage publicitaire.
+        {mailEnabled
+          ? "Vos informations sont transmises lors de l’envoi de votre demande."
+          : "Vos informations restent dans cette page jusqu’à l’ouverture du lien WhatsApp. Vous pourrez alors vérifier et envoyer le message."}
       </p>
     </form>
   );

@@ -1,18 +1,22 @@
 import type { MetadataRoute } from "next";
 import { isIndexable, siteUrl } from "@/lib/site";
 import { services } from "@/lib/services";
+import { publishedProjects } from "@/lib/projects";
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!isIndexable || !siteUrl) return [];
   return [
     "",
-    "/prestations",
     "/realisations",
-    "/a-propos",
+    "/notre-approche",
     "/contact",
-    ...services.filter((s) => s.confirmed).map((s) => `/prestations/${s.slug}`),
+    "/devis",
+    "/mentions-legales",
+    "/politique-confidentialite",
+    ...services.filter((s) => s.confirmed).map((s) => `/${s.slug}`),
+    ...publishedProjects.map((p) => `/realisations/${p.slug}`),
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     changeFrequency: "monthly",
-    priority: path === "" ? 1 : 0.7,
+    priority: path === "" ? 1 : 0.6,
   }));
 }

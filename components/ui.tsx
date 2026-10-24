@@ -3,7 +3,7 @@ import { Icon } from "./icon";
 import { whatsappUrl } from "@/lib/business";
 export function Button({
   children,
-  href = "/contact",
+  href = "/devis",
   variant = "",
   external = false,
 }: {
@@ -99,7 +99,7 @@ export function ContactCTA() {
         <p>Une idée, une question, des plans ? Faisons le point ensemble.</p>
       </div>
       <div className="cta-actions">
-        <Button>Demander un devis gratuit</Button>
+        <Button>Parlons de votre projet</Button>
         <a
           className="text-link light"
           href={whatsappUrl()}
@@ -111,23 +111,5 @@ export function ContactCTA() {
         </a>
       </div>
     </section>
-  );
-}
-export function PhotoPlaceholder({
-  label = "Photo à venir",
-  kind = "wall",
-  className = "",
-}: {
-  label?: string;
-  kind?: string;
-  className?: string;
-}) {
-  return (
-    <div className={`photo-placeholder ${kind} ${className}`}>
-      <div className="placeholder-lines" aria-hidden="true" />
-      <Icon name="image" width={30} height={30} />
-      <span>{label}</span>
-      <small>Les photos de nos chantiers seront ajoutées ici.</small>
-    </div>
   );
 }

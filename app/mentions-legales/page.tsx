@@ -1,96 +1,50 @@
 import { PageIntro } from "@/components/ui";
 import { business } from "@/lib/business";
-import { contactEmail, contactPhone, pageMetadata } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Mentions légales",
-  "Informations sur l’éditeur du site Luna Plâtrerie, la conception et l’hébergement.",
+  "Mentions légales — version de travail",
+  "Informations légales de la version préparatoire du site. Identification de la future activité en attente de validation.",
   "/mentions-legales",
-  !business.legalApproved,
+  true,
 );
-export default function LegalPage() {
+export default function Legal() {
   return (
     <>
       <PageIntro
-        eyebrow="Informations du site"
+        eyebrow="Version préparatoire"
         title="Mentions légales"
-        text="Identification de l’éditeur, conception et hébergement du site."
+        text="Ce site est un prototype local non publié. Les informations légales de la future activité restent à valider avant ouverture au public."
       />
-      <article className="prose container">
-        {!business.legalApproved && (
-          <div className="editorial-notice">
-            <strong>
-              Document préparatoire — à compléter avant publication
-            </strong>
-            <p>
-              Les informations signalées ci-dessous doivent être confirmées par
-              l’entreprise. Cette version ne constitue pas des mentions légales
-              finalisées.
-            </p>
-          </div>
-        )}
-        <h2>Éditeur du site</h2>
-        <dl>
-          <dt>Nom commercial</dt>
-          <dd>{business.name}</dd>
-          <dt>Raison sociale / identité de l’entrepreneur</dt>
-          <dd>{business.legalName || "À confirmer par l’entreprise"}</dd>
-          <dt>Forme juridique</dt>
-          <dd>{business.legalForm || "À confirmer par l’entreprise"}</dd>
-          <dt>Adresse</dt>
-          <dd>
-            {business.address}, {business.postalCode} {business.city}, France
-          </dd>
-          <dt>SIRET</dt>
-          <dd>{business.siret || "À compléter avant mise en ligne"}</dd>
-          <dt>TVA intracommunautaire</dt>
-          <dd>{business.vat || "Numéro ou régime applicable à confirmer"}</dd>
-          <dt>Téléphone</dt>
-          <dd>{contactPhone || "Numéro d’appel à confirmer"}</dd>
-          <dt>E-mail</dt>
-          <dd>{contactEmail || "Adresse professionnelle à fournir"}</dd>
-          <dt>Responsable de publication</dt>
-          <dd>{business.publicationDirector || "À compléter"}</dd>
-        </dl>
-        <h2>Conception</h2>
+      <article className="container legal-copy section">
+        <h2>Responsable du projet</h2>
         <p>
-          Site conçu et développé par{" "}
-          <a
-            href="https://chambre17.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Chambre 17
-          </a>
-          .
+          Mohamad Albi. Contact :{" "}
+          <a href={`mailto:${business.email}`}>{business.email}</a>.
         </p>
-        <h2>Hébergement</h2>
+        <h2>Activité existante et activité envisagée</h2>
         <p>
-          Hébergement prévu : Vercel. Les coordonnées complètes de l’hébergeur
-          et le domaine définitif seront renseignés après confirmation du
-          déploiement.
+          L’activité actuellement déclarée sous le nom commercial Chambre 17
+          concerne le développement de sites et d’applications web (APE 62.01Z),
+          sous le régime de l’entrepreneur individuel, micro-entreprise. Elle ne
+          vaut pas confirmation d’une immatriculation ou d’une assurance pour
+          les prestations de rénovation et d’installation présentées dans cette
+          maquette.
         </p>
-        <h2>Informations professionnelles</h2>
+        <h2>Informations à compléter avant publication</h2>
         <p>
-          {business.insurance ||
-            "Les informations relatives à l’assurance professionnelle, à son périmètre et, le cas échéant, aux qualifications seront ajoutées après vérification des justificatifs."}
+          La dénomination définitive, l’adresse professionnelle, les mentions
+          d’immatriculation applicables, le responsable de publication,
+          l’hébergeur, les conditions contractuelles et les informations propres
+          aux activités effectivement proposées devront être validés. Aucune
+          certification ni couverture d’assurance n’est revendiquée par ce
+          prototype.
         </p>
-        <h2>Contenus et visuels</h2>
+        <h2>Photographies et réalisations</h2>
         <p>
-          Les illustrations sont des éléments de présentation. Les emplacements
-          sans photographie ne représentent pas des chantiers réalisés. Les
-          droits de diffusion des futures photographies devront être vérifiés
-          avant leur publication.
-        </p>
-        <h2>Médiation de la consommation</h2>
-        <p>
-          Le nom, les coordonnées et le site du médiateur compétent sont à
-          renseigner par l’entreprise avant la mise en ligne définitive, selon
-          ses obligations applicables.
-        </p>
-        <h2>Données personnelles</h2>
-        <p>
-          Pour connaître les modalités de traitement des données, consultez la{" "}
-          <a href="/confidentialite">politique de confidentialité</a>.
+          Les photographies de cuisine ont été fournies par le responsable du
+          projet et représentent un projet personnel. Les droits et
+          autorisations de publication devront être confirmés avant le lancement
+          public.
         </p>
       </article>
     </>

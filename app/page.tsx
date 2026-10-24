@@ -1,299 +1,224 @@
 import Link from "next/link";
-import { Icon } from "@/components/icon";
-import {
-  Button,
-  Eyebrow,
-  SectionHeading,
-  PhotoPlaceholder,
-} from "@/components/ui";
-import { RoomIllustration } from "@/components/room-illustration";
+import { Button, Eyebrow, ContactCTA } from "@/components/ui";
 import { ServiceCards } from "@/components/service-cards";
-import { Reviews } from "@/components/reviews";
-import { QuoteForm } from "@/components/quote-form";
-import { business, whatsappUrl } from "@/lib/business";
-import { pageMetadata, isPreview, mailReady } from "@/lib/site";
+import { ProjectImage } from "@/components/project-image";
+import { publishedProjects } from "@/lib/projects";
+import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Plaquiste à Aytré et La Rochelle",
-  "Luna Plâtrerie vous accompagne dans votre projet intérieur à Aytré et autour de La Rochelle. Échangez sur WhatsApp ou préparez votre demande de devis gratuit.",
+  "Aménagement, rénovation et installation à La Rochelle",
+  "Du montage de meubles à la conception 3D : des espaces réfléchis pour votre quotidien à La Rochelle et en Charente-Maritime.",
   "/",
 );
 export default function Home() {
+  const kitchen = publishedProjects[0];
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <Eyebrow>Plâtrerie · Aytré & La Rochelle</Eyebrow>
-            <h1>
-              <span className="sr-only">
-                Luna Plâtrerie, plaquiste à Aytré et La Rochelle.{" "}
-              </span>
-              De beaux espaces.
-              <br />
-              De nouvelles
-              <br />
-              <span>perspectives.</span>
-            </h1>
-            <p className="hero-subtitle">
-              Votre spécialiste en plâtrerie
-              <br className="desktop-break" /> et rénovation intérieure à La
-              Rochelle.
-            </p>
-            <p className="hero-description">
-              Donnez vie à vos projets d’aménagement intérieur avec un
-              professionnel à votre écoute.
-            </p>
-            <div className="hero-actions">
-              <Button>Demander un devis gratuit</Button>
-              <a
-                className="text-link"
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon name="chat" />
-                Discuter sur WhatsApp
-              </a>
-            </div>
-            <div className="hero-note">
-              <span className="local-dot" />
-              <span>Installé à Aytré, tout près de chez vous.</span>
-            </div>
-          </div>
-          <RoomIllustration />
-        </div>
-        <div className="hero-bottom container">
-          <span>VOTRE INTÉRIEUR, NOTRE POINT DE DÉPART.</span>
-          <a href="#savoir-faire">
-            Découvrir Luna <span>↓</span>
-          </a>
-        </div>
-      </section>
-      <section className="trust-strip">
-        <div className="container">
-          <div>
-            <Icon name="pin" />
-            <span>Un artisan de proximité</span>
-          </div>
-          <div>
-            <Icon name="chat" />
-            <span>Un échange direct</span>
-          </div>
-          <div>
-            <Icon name="ruler" />
-            <span>Un projet pensé avec vous</span>
-          </div>
-          <div>
-            <Icon name="check" />
-            <span>Une demande de devis gratuite</span>
-          </div>
-        </div>
-      </section>
-      <section className="section container" id="savoir-faire">
-        <div className="section-heading-row">
-          <SectionHeading
-            eyebrow="Des idées aux volumes"
-            title="Votre intérieur a du potentiel."
-            text="Repenser une pièce, créer un nouvel espace, préparer une rénovation. Chaque projet commence par vos envies."
-          />
-          <Link className="text-link" href="/prestations">
-            Explorer les prestations <Icon name="arrow" />
-          </Link>
-        </div>
-        {isPreview && (
-          <p className="draft-note">
-            Aperçu des prestations envisagées · Périmètre à confirmer avec Luna
-            Plâtrerie.
+      <section className="hero container">
+        <div className="hero-copy">
+          <Eyebrow>La Rochelle & ses environs</Eyebrow>
+          <h1>
+            Aménagement, <br />
+            rénovation et <br />
+            installation <br />
+            <em>à La Rochelle</em>
+          </h1>
+          <p className="hero-description">
+            Donnez une nouvelle dimension à votre intérieur. Du montage de
+            meubles à la rénovation, en passant par la conception 3D et le
+            mobilier sur mesure, nous vous accompagnons dans vos projets.
           </p>
-        )}
-        <ServiceCards />
-      </section>
-      <section className="about-section">
-        <div className="container about-grid">
-          <div className="about-art">
-            <div className="about-monogram" aria-hidden="true">
-              L<span>.</span>
-            </div>
-            <span className="about-art-caption">
-              LUNA PLÂTRERIE
-              <br />
-              <small>AYTRÉ · CHARENTE-MARITIME</small>
-            </span>
-            <div className="location-stamp">
-              <Icon name="pin" width={28} height={28} />
-              <span>
-                Le sens du détail.
-                <br />
-                <strong>L’esprit local.</strong>
-              </span>
-            </div>
+          <div className="hero-actions">
+            <Button href="#services">Quel est votre projet ?</Button>
+            <Link className="text-link" href="/realisations">
+              Voir le projet cuisine <span>↗</span>
+            </Link>
           </div>
-          <div className="about-copy">
-            <Eyebrow>Un artisan, un échange, votre projet</Eyebrow>
+          <div className="hero-note">
+            <span className="small-rule" />
+            Des idées justes. Des espaces à vivre.
+          </div>
+        </div>
+        <figure className="hero-photo">
+          <ProjectImage image={kitchen.images[0]} priority />
+          <figcaption>
+            <span>01 / INTÉRIEUR VÉCU</span>
+            <Link href="/realisations/cuisine-optimisee">
+              Une cuisine, chaque détail pensé.<span>↗</span>
+            </Link>
+            <small>Projet personnel · Photographie réelle</small>
+          </figcaption>
+        </figure>
+        <div className="hero-bottom">
+          <span>CONCEVOIR. INSTALLER. TRANSFORMER.</span>
+          <a href="#services">Découvrir nos expertises ↓</a>
+        </div>
+      </section>
+      <section id="services" className="section services-section">
+        <div className="container">
+          <div className="section-top">
+            <div>
+              <Eyebrow>À chaque projet, son point de départ</Eyebrow>
+              <h2>Quel est votre projet ?</h2>
+            </div>
+            <p>
+              Du simple montage à la transformation complète de votre espace.
+            </p>
+          </div>
+          <ServiceCards />
+          <div className="unsure">
+            <p>Une envie, mais pas encore de plan précis ?</p>
+            <Link className="text-link" href="/devis">
+              Je ne sais pas par où commencer <span>↗</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="section container approach">
+        <div>
+          <Eyebrow>Notre regard</Eyebrow>
+          <h2>
+            Le beau n’est pas
+            <br />
+            une question de
+            <br />
+            <em>mètres carrés.</em>
+          </h2>
+        </div>
+        <div className="approach-copy">
+          <p className="large-copy">
+            Un intérieur réussi commence par une bonne idée, pas par une grande
+            surface.
+          </p>
+          <p>
+            Un rangement qui libère de la place. Une cuisine qui facilite les
+            gestes. Une pièce dans laquelle on se sent bien. Notre approche part
+            de votre quotidien pour donner du sens à chaque choix.
+          </p>
+          <p>
+            Nous pensons les usages, les matières et les détails ensemble, avec
+            un périmètre clair et une attention portée à votre budget.
+          </p>
+          <Button href="/notre-approche" variant="outline">
+            Découvrir notre approche
+          </Button>
+        </div>
+      </section>
+      <section className="planning-section">
+        <div className="container planning">
+          <div className="planning-process">
+            <span className="plan-label">DE L’IDÉE AU PROJET</span>
+            <ol>
+              {[
+                "Comprendre vos besoins",
+                "Relever les dimensions",
+                "Concevoir en 3D",
+                "Ajuster la proposition",
+                "Préparer le devis",
+                "Planifier les travaux validés",
+              ].map((step, i) => (
+                <li key={step}>
+                  <span>0{i + 1}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <span className="plan-foot">
+              UNE VISION PARTAGÉE, AVANT DE COMMENCER.
+            </span>
+          </div>
+          <div>
+            <Eyebrow light>Conception & projection 3D</Eyebrow>
             <h2>
-              Bien chez vous,
+              Imaginez votre espace
               <br />
-              ça commence ici.
+              <em>avant les travaux.</em>
             </h2>
             <p>
-              Luna Plâtrerie est une entreprise de plâtrerie installée à Aytré,
-              aux portes de La Rochelle. Notre point de départ : comprendre
-              votre intérieur et ce que vous souhaitez en faire.
+              Explorer une implantation, comparer les volumes, trouver la bonne
+              place pour chaque meuble. La 3D rend vos idées plus concrètes et
+              aide à décider ensemble.
             </p>
-            <p>
-              Une pièce à repenser, des volumes à aménager ou un projet de
-              rénovation ? Échangeons sur vos besoins pour définir les
-              prochaines étapes.
+            <Button href="/conception-3d" variant="cream">
+              Découvrir la conception 3D
+            </Button>
+            <p className="planning-caption">
+              Le concept guide les choix. Les dimensions et contraintes
+              techniques restent à vérifier sur place.
             </p>
-            <div className="about-values">
-              <span>
-                <Icon name="check" />À l’écoute de vos idées
-              </span>
-              <span>
-                <Icon name="check" />
-                Au plus près de votre projet
-              </span>
-            </div>
-            <Button href="/a-propos" variant="navy">
-              Faire connaissance
+          </div>
+        </div>
+      </section>
+      <section className="section container selected-project">
+        <div className="section-top">
+          <div>
+            <Eyebrow>Un espace, une histoire</Eyebrow>
+            <h2>Du dessin au quotidien.</h2>
+          </div>
+          <Link href="/realisations" className="text-link">
+            Explorer les réalisations <span>↗</span>
+          </Link>
+        </div>
+        <div className="project-feature">
+          <Link
+            href="/realisations/cuisine-optimisee"
+            className="project-feature-image"
+            aria-label="Découvrir la cuisine optimisée"
+          >
+            <ProjectImage image={kitchen.images[1]} />
+          </Link>
+          <div className="project-feature-copy">
+            <span className="tag">Projet personnel</span>
+            <p className="project-category">
+              CUISINE · AMÉNAGEMENT · INSTALLATION
+            </p>
+            <h3>{kitchen.title}</h3>
+            <p>{kitchen.description}</p>
+            <ul className="project-points">
+              <li>Une implantation en U</li>
+              <li>Un plan de travail prolongé</li>
+              <li>Des rangements intégrés à l’espace</li>
+            </ul>
+            <Button href="/realisations/cuisine-optimisee" variant="outline">
+              Entrer dans le projet
             </Button>
           </div>
         </div>
       </section>
-      <section className="section container">
-        <div className="section-heading-row">
-          <SectionHeading
-            eyebrow="Du projet à la réalisation"
-            title="Place aux transformations."
-            text="Des espaces qui évoluent, des intérieurs qui prennent forme. Notre galerie accueillera bientôt les photos de nos chantiers."
-          />
-          <Link className="text-link" href="/realisations">
-            Voir la galerie <Icon name="arrow" />
-          </Link>
-        </div>
-        <div className="before-after">
-          <div>
-            <PhotoPlaceholder label="Avant les travaux" />
-            <span className="photo-chip">AVANT</span>
-          </div>
-          <div>
-            <PhotoPlaceholder label="Après les travaux" kind="after" />
-            <span className="photo-chip">APRÈS</span>
-          </div>
-          <span className="comparison-center" aria-hidden="true">
-            ↔
-          </span>
-        </div>
-        <p className="gallery-caption">
-          <Icon name="image" width={16} />
-          Emplacements réservés aux photos réelles. Aucun chantier n’est
-          présenté à titre d’exemple fictif.
-        </p>
-      </section>
-      <Reviews />
-      <section className="process-section">
+      <section className="section process-section">
         <div className="container">
-          <SectionHeading
-            eyebrow="Simple, du premier échange à votre projet"
-            title="Et si on avançait ensemble ?"
-          />
+          <Eyebrow>Simple, du premier échange au dernier détail</Eyebrow>
+          <h2>Un projet bien accompagné.</h2>
           <div className="process-grid">
             {[
               {
-                title: "Vous nous racontez",
-                text: "Décrivez votre intérieur, vos envies et la ville de votre projet.",
+                title: "On vous écoute.",
+                text: "Vos envies, vos usages, vos contraintes. Nous commençons par comprendre ce qui compte pour vous.",
               },
               {
-                title: "Nous faisons le point",
-                text: "Précisons ensemble les besoins, les contraintes et le périmètre des travaux.",
+                title: "On précise ensemble.",
+                text: "Périmètre, choix des matériaux et visualisation si utile : les décisions se préparent avant le devis.",
               },
               {
-                title: "Vous décidez",
-                text: "Étudiez la proposition avant de vous engager et posons les bases de la suite.",
+                title: "On organise la suite.",
+                text: "Une proposition à examiner, des étapes définies et des interventions planifiées après validation.",
               },
-            ].map((s, i) => (
-              <div key={s.title}>
-                <span className="step-number">0{i + 1}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
+            ].map((p, i) => (
+              <div key={p.title}>
+                <span className="process-number">0{i + 1}</span>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-      <section className="area-section container">
-        <div className="area-art" aria-hidden="true">
-          <span className="ocean-label">L’ATLANTIQUE</span>
-          <div className="coastline" />
-          <span className="map-town rochelle">
-            <span />
-            La Rochelle
-          </span>
-          <span className="map-town aytre">
-            <Icon name="pin" width={30} height={30} />
-            Aytré<small>Notre point de départ</small>
-          </span>
-          <span className="map-label">SCHÉMA DE LOCALISATION</span>
-        </div>
-        <div>
-          <Eyebrow>Tout près de votre projet</Eyebrow>
-          <h2>
-            À Aytré.
-            <br />
-            Autour de La Rochelle.
-          </h2>
-          <p>
-            Vous avez un projet de plâtrerie ou de rénovation intérieure dans le
-            secteur rochelais ? Indiquez-nous votre commune pour vérifier les
-            possibilités d’intervention.
-          </p>
-          <div className="area-tags">
-            {business.areas.map((a) => (
-              <span key={a}>
-                <Icon name="pin" width={14} />
-                {a}
-              </span>
-            ))}
+          <div className="values-row">
+            <span>Des choix expliqués</span>
+            <span>Le souci du détail</span>
+            <span>Le respect de votre espace</span>
+            <span>Une communication organisée</span>
           </div>
-          <Button href="/contact" variant="outline">
-            Parlons de votre projet
-          </Button>
         </div>
       </section>
-      <section className="quote-section" id="devis">
-        <div className="container quote-grid">
-          <div className="quote-copy">
-            <Eyebrow light>Un premier pas, tout simplement</Eyebrow>
-            <h2>
-              Votre projet
-              <br />
-              commence{" "}
-              <br />
-              <span>ici.</span>
-            </h2>
-            <p>
-              Quelques informations suffisent pour engager la conversation. La
-              demande de devis est gratuite.
-            </p>
-            <a
-              href={whatsappUrl()}
-              className="quote-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name="chat" width={28} height={28} />
-              <span>
-                Vous préférez un message ?
-                <strong>
-                  Discutons sur WhatsApp <Icon name="diagonal" width={16} />
-                </strong>
-              </span>
-            </a>
-            <span className="quote-hours">Lundi – samedi · 8h – 18h</span>
-          </div>
-          <QuoteForm mailEnabled={mailReady} />
-        </div>
-      </section>
+      <ContactCTA />
     </>
   );
 }

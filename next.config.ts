@@ -1,6 +1,13 @@
+import { business } from "./lib/business";
 import type { NextConfig } from "next";
 const allowIndex =
-  process.env.SITE_INDEXABLE === "true" && process.env.VERCEL_ENV !== "preview";
+  business.brandApproved &&
+  business.legalApproved &&
+  business.privacyApproved &&
+  business.servicesApproved &&
+  business.launchApproved &&
+  process.env.SITE_INDEXABLE === "true" &&
+  process.env.VERCEL_ENV !== "preview";
 let canonicalHost = "";
 try {
   canonicalHost = new URL(process.env.SITE_URL || "").hostname.replace(

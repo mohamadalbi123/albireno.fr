@@ -19,8 +19,6 @@ if (
     "SITE_URL doit désigner uniquement le domaine définitif du client.",
   );
 for (const name of [
-  "BUSINESS_EMAIL",
-  "BUSINESS_PHONE",
   "CONTACT_FROM_EMAIL",
   "RESEND_API_KEY",
   "TURNSTILE_SECRET_KEY",
@@ -33,7 +31,13 @@ if (process.env.CONTACT_FORM_ENABLED !== "true")
 for (const key of ["legalName", "legalForm", "siret", "publicationDirector"])
   if (!business[key])
     errors.push(`Identité professionnelle : ${key} manquant.`);
-for (const key of ["legalApproved", "privacyApproved", "servicesApproved"])
+for (const key of [
+  "brandApproved",
+  "legalApproved",
+  "privacyApproved",
+  "servicesApproved",
+  "launchApproved",
+])
   if (!business[key]) errors.push(`Validation requise : ${key}.`);
 if (!services.some((s) => s.confirmed))
   errors.push("Confirmer au moins une prestation dans lib/services.ts.");

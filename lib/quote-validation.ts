@@ -1,7 +1,12 @@
 export const workTypes = [
-  "Travaux de plâtrerie",
-  "Projet de rénovation intérieure",
-  "Autre demande / à préciser",
+  "Montage de meubles",
+  "Rénovation intérieure",
+  "Installation de cuisine",
+  "Conception 3D",
+  "Mobilier sur mesure",
+  "Locaux professionnels",
+  "Bricolage",
+  "Plusieurs services / à préciser",
 ];
 export type QuoteData = {
   name: string;
