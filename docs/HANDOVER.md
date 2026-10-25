@@ -1,3 +1,17 @@
+# Launch update — 25 October 2026
+
+Owner authorized going live. Target repository: https://github.com/mohamadalbi123/albireno.fr.git; domain: albireno.fr.
+
+Current browser QA: all 13 pages tested at 320, 390, 768 and 1440 px without horizontal overflow. Mobile menu and Escape focus return passed. Repair enquiry tested through required-field validation, optional questions, image selection, summary and WhatsApp preparation; no message sent. Invalid-upload recovery now offers continuing without photos. Production build and 12 unit tests passed.
+
+Microenterprise operator details copied from https://www.chambre17.com/mentions-legales/ at the owner's request: Mohamad Albi, entrepreneur individuel, SIRET 131 127 979 00014, Lagord 17140. Full street address and kitchen-activity update remain unverified. No insurance claim. Keep noindex. Email delivery remains disabled; WhatsApp preparation is available.
+
+Vercel connector returned 403 for team_Z3zqRD2gdehWaW6EAisNGG4i. Suggested authorize_team_access tool is unavailable. Vercel browser login requested. No deployment or DNS change confirmed.
+
+The historical report below predates these checks; its browser-blocked and deferred-push status is superseded by this update.
+
+---
+
 # ALBI RENO — implementation status, 24 October 2026
 
 ## Current identity and scope

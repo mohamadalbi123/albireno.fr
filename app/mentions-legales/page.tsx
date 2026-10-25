@@ -2,8 +2,8 @@ import { PageIntro } from "@/components/ui";
 import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Mentions légales — version de travail",
-  "Informations légales de la version préparatoire du site. Identification de la future activité ALBI RENO en attente de validation.",
+  "Mentions légales",
+  "Identification de l’éditeur du site ALBI RENO.",
   "/mentions-legales",
   true,
 );
@@ -11,40 +11,51 @@ export default function Legal() {
   return (
     <>
       <PageIntro
-        eyebrow="Version préparatoire"
+        eyebrow="Informations légales"
         title="Mentions légales"
-        text="Ce site est un prototype local non publié. Les informations légales de la future activité ALBI RENO restent à valider avant ouverture au public."
+        text="Informations relatives à l’éditeur et au fonctionnement du site ALBI RENO."
       />
       <article className="container legal-copy section">
-        <h2>Responsable du projet</h2>
+        <h2>Éditeur du site</h2>
         <p>
-          Mohamad Albi. Contact :{" "}
-          <a href={`mailto:${business.email}`}>{business.email}</a>.
+          {business.legalName}, {business.legalForm}. ALBI RENO est le nom
+          utilisé pour ce projet de services de cuisine. Nom commercial de
+          l’entreprise existante : Chambre 17.
         </p>
-        <h2>Activité existante et activité envisagée</h2>
         <p>
-          L’activité actuellement déclarée sous le nom commercial Chambre 17
-          concerne le développement de sites et d’applications web (APE 62.01Z),
-          sous le régime de l’entrepreneur individuel, micro-entreprise. Elle ne
-          vaut pas confirmation d’une immatriculation ou d’une assurance pour
-          les prestations de rénovation et d’installation de cuisines présentées
-          dans cette maquette.
+          SIRET : {business.siret}. Établissement enregistré : 17140 Lagord,
+          France. L’adresse professionnelle complète reste à préciser.
         </p>
-        <h2>Informations à compléter avant publication</h2>
         <p>
-          La dénomination définitive, l’adresse professionnelle, les mentions
-          d’immatriculation applicables, le responsable de publication,
-          l’hébergeur, les conditions contractuelles et les informations propres
-          aux activités effectivement proposées devront être validés. Aucune
-          certification ni couverture d’assurance n’est revendiquée par ce
-          prototype.
+          Responsable de publication : {business.publicationDirector}. Contact :{" "}
+          <a href={`mailto:${business.email}`}>{business.email}</a> —{" "}
+          {business.phone}.
+        </p>
+        <h2>Activité</h2>
+        <p>
+          L’activité actuellement déclarée de Chambre 17 concerne la
+          programmation informatique (APE 62.01Z). L’ajout des activités de
+          cuisine est en cours de préparation par l’exploitant. Aucune
+          certification ni couverture d’assurance pour ces activités n’est
+          revendiquée sur ce site.
+        </p>
+        <h2>Hébergement</h2>
+        <p>
+          Hébergement prévu : Vercel Inc., 440 N Barranca Ave #4133, Covina, CA
+          91723, États-Unis. <a href="https://vercel.com">vercel.com</a>.
+        </p>
+        <h2>Demandes et prestations</h2>
+        <p>
+          Le site permet de préparer une demande et de prendre contact. Aucun
+          paiement ni commande ferme n’est effectué en ligne. Le périmètre, la
+          disponibilité et les conditions applicables sont à confirmer
+          directement avant tout engagement.
         </p>
         <h2>Photographies et réalisations</h2>
         <p>
-          Les photographies de cuisine ont été fournies par le responsable du
-          projet et représentent un projet personnel. Les droits et
-          autorisations de publication devront être confirmés avant le lancement
-          public.
+          Les photographies de cuisine fournies par le responsable du projet
+          présentent un projet personnel. Les visuels d’inspiration sont
+          identifiés comme tels et ne représentent pas des réalisations clients.
         </p>
       </article>
     </>

@@ -602,9 +602,28 @@ export function QuoteForm({
                 </p>
                 {photoBusy && <p role="status">Lecture des photos…</p>}
                 {photoError && (
-                  <p className="field-error" role="alert">
-                    {photoError}
-                  </p>
+                  <div>
+                    <p className="field-error" role="alert">
+                      {photoError}
+                    </p>
+                    <button
+                      type="button"
+                      className="wizard-back"
+                      onClick={() => {
+                        photoVersion.current++;
+                        setPhotos([]);
+                        setPhotoError("");
+                        setPhotoBusy(false);
+                        setErrors((e) => {
+                          const next = { ...e };
+                          delete next.photos;
+                          return next;
+                        });
+                      }}
+                    >
+                      Continuer sans photos
+                    </button>
+                  </div>
                 )}
                 <ul className="photo-list">
                   {photos.map((p, i) => (

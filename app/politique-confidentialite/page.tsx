@@ -2,8 +2,8 @@ import { PageIntro } from "@/components/ui";
 import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Confidentialité — version de travail",
-  "Fonctionnement du formulaire local et informations à compléter avant l’ouverture publique du site.",
+  "Politique de confidentialité",
+  "Fonctionnement du formulaire de préparation et des liens de contact ALBI RENO.",
   "/politique-confidentialite",
   true,
 );
@@ -11,9 +11,9 @@ export default function Privacy() {
   return (
     <>
       <PageIntro
-        eyebrow="Version préparatoire"
+        eyebrow="Vos informations"
         title="Politique de confidentialité"
-        text="Cette page décrit le fonctionnement actuel du prototype. La politique définitive devra être validée avant la mise en ligne."
+        text="Cette page décrit la préparation de votre demande et les moyens de contact disponibles. L’envoi automatique par e-mail est désactivé."
       />
       <article className="container legal-copy section">
         <h2>Préparation d’une demande</h2>
@@ -52,7 +52,8 @@ export default function Privacy() {
         </p>
         <h2>Contact</h2>
         <p>
-          Pour toute question sur ce prototype :{" "}
+          Pour toute question sur vos données ou pour exercer vos droits auprès
+          de Mohamad Albi :{" "}
           <a href={`mailto:${business.email}`}>{business.email}</a>.
         </p>
       </article>
