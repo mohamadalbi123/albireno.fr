@@ -48,3 +48,7 @@ Browser verification of the new kitchen redesign and adaptive flow was blocked b
 Finish visual/browser flow verification when available, approve final photography and any displayed rates, complete legal/insurance and sourcing-model review, configure sender/anti-spam credentials and retention, verify delivery including attachments, connect domain/hosting, and obtain owner approval before pushing/publishing. See CLIENT-CHECKLIST.md. Noindex remains enforced until explicit flags and domain configuration are complete.
 
 Final local HTTP smoke check passed after the ALBI RENO rename: 13 pages, 14 internal targets, metadata/noindex, hidden/removed-route 404 checks, generated social image, and API origin/content/body/consent/spam/disabled-delivery checks. TypeScript, 12 unit tests and production build passed. The local preview was restarted on http://127.0.0.1:3000/ with the latest build. Browser interaction verification remains blocked as described above.
+
+## 26 October 2026 — latest audit
+
+The live .fr host now responds through Vercel/HTTPS; old notes about hosting not being configured are historical. The latest local improvements, evidence, missing imagery and blockers are in [PRE-LAUNCH-AUDIT.md](PRE-LAUNCH-AUDIT.md). The changes described there have not been pushed or deployed. Indexing and automatic email remain disabled. The launch checker accepts WhatsApp preparation as an intentional mode, while still requiring legal/privacy/service/launch approval. The future sitemap omits deliberately noindex legal/privacy pages and unconfirmed services.

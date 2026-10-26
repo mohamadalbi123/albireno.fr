@@ -1,11 +1,12 @@
-import { business } from "@/lib/business";
-import Image from "next/image";
+import { business, whatsappUrl } from "@/lib/business";
 import Link from "next/link";
 import { Button, Eyebrow, ContactCTA } from "@/components/ui";
 import { ServiceCards } from "@/components/service-cards";
 import { ProjectImage } from "@/components/project-image";
 import { publishedProjects } from "@/lib/projects";
 import { pageMetadata } from "@/lib/site";
+import { editorialImages, inspirationDetails } from "@/lib/inspiration";
+import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
 export const metadata = pageMetadata(
   "Installateur cuisine La Rochelle — installation et rénovation",
@@ -18,45 +19,31 @@ export default function Home() {
     <>
       <section className="hero kitchen-hero container">
         <div className="hero-copy">
-          <div className="hero-brand">
-            <strong>{business.name}</strong>
-            <em>{business.descriptor}</em>
+          <div className="hero-headline">
+            <div className="hero-brand">
+              <strong>{business.name}</strong>
+              <em>{business.descriptor}</em>
+            </div>
+            <Eyebrow>La Rochelle & alentours</Eyebrow>
+            <h1>Installation et rénovation de cuisines <em>à La Rochelle</em></h1>
           </div>
-          <Eyebrow>La Rochelle & alentours</Eyebrow>
-          <h1>
-            Installation et <br />
-            rénovation <br />
-            de cuisines <br />
-            <em>à La Rochelle</em>
-          </h1>
-          <p className="hero-subtitle">
-            Votre cuisine, pensée pour votre espace.
-          </p>
-          <p className="hero-description">
-            Installation de cuisines neuves, rénovation, optimisation des petits
-            espaces et solutions d’aménagement personnalisées. Nous vous
-            accompagnons pour créer une cuisine fonctionnelle, élégante et
-            adaptée à votre quotidien.
-          </p>
-          <div className="hero-actions">
-            <Button>Parler de mon projet</Button>
-            <Link className="text-link" href="/realisations">
-              Découvrir nos réalisations <span>↗</span>
-            </Link>
-          </div>
-          <div className="hero-note">
-            <span className="small-rule" />
-            Des solutions intelligentes, même pour les petites cuisines.
+          <div className="hero-intro">
+            <p className="hero-subtitle">Votre cuisine, pensée pour votre espace.</p>
+            <p className="hero-description">Une cuisine à installer, à rénover ou à mieux organiser ? Partons de vos usages pour étudier un aménagement fonctionnel et adapté à votre espace.</p>
+            <div className="hero-actions">
+              <Button>Demander un devis</Button>
+              <a className="text-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+              <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
+            </div>
+            <div className="hero-note"><span className="small-rule" />Des solutions intelligentes, même pour les petites cuisines.</div>
           </div>
         </div>
-        <figure className="hero-photo">
-          <ProjectImage image={kitchen.images[0]} priority />
+        <figure className="hero-photo editorial-hero-photo">
+          <ProjectImage image={editorialImages.hero} priority sizes="(max-width: 700px) 100vw, (max-width: 1440px) 92vw, 1320px" />
           <figcaption>
-            <span>UN VRAI PROJET, DES SOLUTIONS CONCRÈTES</span>
-            <Link href="/realisations/cuisine-optimisee">
-              Une cuisine compacte, bien pensée.<span>↗</span>
-            </Link>
-            <small>Projet personnel · Photographie réelle</small>
+            <span>UNE INSPIRATION POUR VOTRE CUISINE</span>
+            <p>Imaginer un espace à votre mesure.</p>
+            <small>Inspiration générée par IA · pas une réalisation ALBI RENO</small>
           </figcaption>
         </figure>
         <div className="hero-bottom">
@@ -114,26 +101,8 @@ export default function Home() {
               allient fonctionnalité et esthétique.
             </p>
             <div className="solution-thumbnails">
-              {[
-                {
-                  src: "rangement-vertical",
-                  alt: "Inspiration IA de rangement vertical",
-                },
-                {
-                  src: "rangement-tournant",
-                  alt: "Inspiration IA de rangement d’angle",
-                },
-              ].map((i) => (
-                <figure key={i.src}>
-                  <Image
-                    src={`/images/optimisation/${i.src}.webp`}
-                    alt={i.alt}
-                    width={142}
-                    height={160}
-                  />
-                  <figcaption>Inspiration · image IA</figcaption>
-                </figure>
-              ))}
+              <InspirationFigure image={inspirationDetails.pullout} />
+              <InspirationFigure image={inspirationDetails.drawers} />
             </div>
             <Button href="/optimisation-petite-cuisine" variant="outline">
               Explorer les possibilités

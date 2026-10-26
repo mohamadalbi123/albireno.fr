@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { business } from "./business";
 function canonicalOrigin() {
-  const raw = process.env.SITE_URL;
+  const raw = process.env.SITE_URL || "https://www.albireno.fr";
   if (!raw) return undefined;
   try {
     const url = new URL(raw);
     return url.protocol === "https:" &&
       url.pathname === "/" &&
       !url.search &&
-      !url.hash
+      !url.hash &&
+      !url.username && !url.password
       ? url.origin
       : undefined;
   } catch {
@@ -31,6 +32,8 @@ export const isPreview = !isIndexable;
 export const contactEmail = process.env.BUSINESS_EMAIL || business.email;
 export const contactPhone = process.env.BUSINESS_PHONE || business.phone;
 export const mailReady =
+  business.emailDeliveryApproved &&
+  business.legalApproved && business.privacyApproved && business.servicesApproved &&
   process.env.CONTACT_FORM_ENABLED === "true" &&
   !!contactEmail &&
   !!process.env.CONTACT_FROM_EMAIL &&

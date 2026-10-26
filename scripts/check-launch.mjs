@@ -18,16 +18,14 @@ if (
   errors.push(
     "SITE_URL doit désigner uniquement le domaine définitif du client.",
   );
-for (const name of [
-  "CONTACT_FROM_EMAIL",
-  "RESEND_API_KEY",
-  "TURNSTILE_SECRET_KEY",
-  "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
-  "TURNSTILE_HOSTNAMES",
-])
-  if (!process.env[name]) errors.push(`${name} : à configurer.`);
-if (process.env.CONTACT_FORM_ENABLED !== "true")
-  errors.push("L’envoi du formulaire doit être activé et testé en réception.");
+// WhatsApp preparation is an intentional supported delivery mode.
+// Email requires explicit approval, provider configuration and receipt testing.
+if (process.env.CONTACT_FORM_ENABLED === "true") {
+  if (!business.emailDeliveryApproved)
+    errors.push("Envoi e-mail : validation explicite et test de réception requis.");
+  for (const name of ["CONTACT_FROM_EMAIL", "RESEND_API_KEY", "TURNSTILE_SECRET_KEY", "NEXT_PUBLIC_TURNSTILE_SITE_KEY", "TURNSTILE_HOSTNAMES"])
+    if (!process.env[name]) errors.push(`${name} : à configurer pour l’envoi e-mail.`);
+}
 for (const key of ["legalName", "legalForm", "siret", "publicationDirector"])
   if (!business[key])
     errors.push(`Identité professionnelle : ${key} manquant.`);
@@ -49,6 +47,6 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    "Configuration de lancement complète. Vérifier aussi réception e-mail, DNS/HTTPS, données légales et accord du client.",
+    "Configuration de lancement complète. Vérifier aussi le parcours WhatsApp (ou la réception e-mail si activée), DNS/HTTPS, données légales et accord du client.",
   );
 }

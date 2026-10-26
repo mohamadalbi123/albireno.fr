@@ -4,6 +4,7 @@ export type Service = {
   title: string;
   seoTitle: string;
   short: string;
+  seoDescription: string;
   intro: string;
   image: string;
   preparation: string;
@@ -17,6 +18,7 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "installation",
+    seoDescription: "Installation de cuisines à La Rochelle : étude de l’implantation, montage des meubles, ajustements et finitions selon le périmètre à confirmer.",
     slug: "installation-cuisine-la-rochelle",
     title: "Installer une cuisine",
     seoTitle: "Installation de cuisines à La Rochelle",
@@ -43,6 +45,7 @@ export const services: Service[] = [
   },
   {
     id: "renovation",
+    seoDescription: "Rénovation de cuisines à La Rochelle : étudier les façades, plans de travail et rangements à conserver ou adapter selon l’état de votre cuisine.",
     slug: "renovation-cuisine-la-rochelle",
     title: "Rénover ma cuisine",
     seoTitle: "Rénovation de cuisines à La Rochelle",
@@ -69,6 +72,7 @@ export const services: Service[] = [
   },
   {
     id: "optimisation",
+    seoDescription: "Optimisation des petites cuisines à La Rochelle : circulation, angles et rangements. Découvrez des pistes adaptées aux contraintes de votre espace.",
     slug: "optimisation-petite-cuisine",
     title: "Optimiser mon espace",
     seoTitle: "Optimisation des petites cuisines",
@@ -95,6 +99,7 @@ export const services: Service[] = [
   },
   {
     id: "reparation",
+    seoDescription: "Réparation et modification de cuisines à La Rochelle : portes, charnières, tiroirs et meubles. Préparez les références et photos pour étudier la faisabilité.",
     slug: "reparation-cuisine-la-rochelle",
     title: "Réparer ou modifier ma cuisine",
     seoTitle: "Réparation et modification de cuisines à La Rochelle",
@@ -121,6 +126,7 @@ export const services: Service[] = [
   },
   {
     id: "conception",
+    seoDescription: "Conception de cuisines en 3D à La Rochelle avec HomeStyler : comparer l’implantation, les volumes et les rangements avant de choisir.",
     slug: "conception-cuisine-3d",
     title: "Concevoir ma cuisine en 3D",
     seoTitle: "Conception de cuisines en 3D à La Rochelle",

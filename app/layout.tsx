@@ -28,6 +28,13 @@ export default function RootLayout({
         <a className="skip-link" href="#contenu">
           Aller au contenu
         </a>
+        {isIndexable && siteUrl && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org", "@type": "Organization",
+            "@id": `${siteUrl}/#organization`, name: business.name, url: siteUrl,
+            telephone: business.phone, email: business.email,
+          }).replace(/</g, "\\u003c") }} />
+        )}
         <Header />
         <main id="contenu">{children}</main>
         <Footer />

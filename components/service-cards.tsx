@@ -1,20 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
 import { featuredServices } from "@/lib/services";
+import { serviceEditorialImage } from "@/lib/inspiration";
+import { ProjectImage } from "./project-image";
 import { Icon } from "./icon";
 export function ServiceCards() {
   return (
     <div className="service-grid kitchen-services">
       {featuredServices.map((s) => (
         <article className={`service-card service-${s.id}`} key={s.slug}>
-          <figure className="service-thumb">
-            <Image
-              src={s.image}
-              alt={`Illustration conceptuelle IA : ${s.title}`}
-              width={210}
-              height={170}
-            />
-            <figcaption>Inspiration · image IA</figcaption>
+          <figure className="service-thumb photo-thumb">
+            <Link href={`/${s.slug}`} tabIndex={-1} aria-hidden="true">
+              <ProjectImage image={serviceEditorialImage(s.id)} sizes="(max-width: 700px) 90vw, (max-width: 1000px) 45vw, 50vw" />
+            </Link>
+            <figcaption>Inspiration générée par IA · illustration du service</figcaption>
           </figure>
           <span className="service-number">
             {s.number}

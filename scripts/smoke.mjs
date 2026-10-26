@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 const origin = process.env.TEST_BASE_URL || "http://127.0.0.1:3000";
 const paths = [
   "/",
@@ -17,6 +18,7 @@ const paths = [
 ];
 const titles = new Set();
 const links = new Set();
+const descriptions = new Set();
 for (const path of paths) {
   const r = await fetch(origin + path);
   assert.equal(r.status, 200, path);
@@ -30,6 +32,11 @@ for (const path of paths) {
     /Luna|LUNA|NOM DE MARQUE|33781844419|Suzanne Lenglen/,
   );
   assert.doesNotMatch(html, /lazoya-beauty-center|5a59999f-0640/);
+  const description = html.match(/name="description" content="([^"]+)"/)?.[1];
+  assert.ok(description && !descriptions.has(description), "unique description " + path);
+  descriptions.add(description);
+  const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
+  assert.equal(canonical?.replace(/\/$/, ""), `https://www.albireno.fr${path}`.replace(/\/$/, ""), "canonical " + path);
   const title = html.match(/<title>(.*?)<\/title>/)?.[1];
   assert.ok(title);
   assert.ok(!titles.has(title), "unique title " + path);
@@ -42,13 +49,18 @@ for (const path of paths) {
 for (const path of links) {
   assert.equal((await fetch(origin + path)).status, 200, "link " + path);
 }
-assert.match(
-  await (await fetch(origin + "/robots.txt")).text(),
-  /Disallow: \//,
-);
+const robots = await (await fetch(origin + "/robots.txt")).text();
+assert.match(robots, /Allow: \/\n/);
+assert.match(robots, /Disallow: \/api\//);
+assert.doesNotMatch(robots, /Disallow: \/\n/);
 assert.ok(
   !(await (await fetch(origin + "/sitemap.xml")).text()).includes("<loc>"),
 );
+const assets = JSON.parse(await readFile(new URL("../public/images/asset-manifest.json", import.meta.url), "utf8"));
+for (const asset of assets) assert.equal((await fetch(origin + asset.src)).status, 200, asset.src);
+const avif = await fetch(origin + "/_next/image?url=%2Fimages%2Fprojects%2Fkitchen%2Fcuisine-01.webp&w=640&q=75", { headers: { Accept: "image/avif" } });
+assert.equal(avif.status, 200);
+assert.match(avif.headers.get("content-type"), /image\/avif/);
 assert.equal((await fetch(origin + "/does-not-exist")).status, 404);
 assert.equal((await fetch(origin + "/opengraph-image")).status, 200);
 assert.equal(
@@ -99,5 +111,5 @@ assert.equal(
   "unconfigured delivery must not claim success",
 );
 console.log(
-  `PASS: ${paths.length} pages, ${links.size} internal targets, preview SEO, 404, social image, and API validation/fail-closed checks.`,
+  `PASS: ${paths.length} pages, ${links.size} internal targets, ${assets.length} assets, AVIF negotiation, preview SEO, 404, social image, and API validation/fail-closed checks.`,
 );

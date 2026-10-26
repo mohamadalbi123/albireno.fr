@@ -2,7 +2,7 @@
 
 **Installation et rénovation de cuisines** — La Rochelle & alentours.
 
-Next.js / React / TypeScript application reused from the earlier local prototype. The owner purchased `albireno.fr`; DNS, hosting and canonical activation have not been performed. Intended final repository: https://github.com/mohamadalbi123/albireno.fr.git. Do not push or deploy until the site is finished and the owner approves.
+Next.js / React / TypeScript application reused from the earlier local prototype. The owner purchased `albireno.fr`; The .fr domain and Vercel hosting now respond publicly. The visual update was approved for publication on 26 October 2026. Indexing and automatic email remain disabled pending their separate approvals. Intended final repository: https://github.com/mohamadalbi123/albireno.fr.git. Do not push or deploy until the site is finished and the owner approves.
 
 ```sh
 npm ci
@@ -27,4 +27,4 @@ Smoke checks target the production server on port 3000 with mail disabled. `chec
 
 The enquiry combines multiple needs, asks relevant questions, collects optional photographs, and shows a review summary. Without delivery configuration it only prepares a WhatsApp message. Photos must be attached manually there. The email path supports in-memory validation/re-encoding and attachments, but real email receipt remains untested until configured.
 
-See `docs/HANDOVER.md` for implementation and verification status and `docs/CLIENT-CHECKLIST.md` for launch requirements. The site remains local and noindex.
+See `docs/HANDOVER.md` for implementation and verification status and `docs/CLIENT-CHECKLIST.md` for launch requirements. Indexing remains intentionally disabled pending owner approvals. See `docs/PRE-LAUNCH-AUDIT.md` for the latest live/source audit, local improvements and launch blockers.

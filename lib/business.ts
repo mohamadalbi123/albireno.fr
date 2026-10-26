@@ -20,6 +20,7 @@ export const business = {
   privacyApproved: false,
   servicesApproved: false,
   launchApproved: false,
+  emailDeliveryApproved: false,
 };
 export const whatsappMessage =
   "Bonjour, je souhaite vous parler de mon projet de cuisine.";

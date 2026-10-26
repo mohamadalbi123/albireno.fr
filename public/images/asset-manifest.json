@@ -230,5 +230,141 @@
     "kind": "personal-project-photo",
     "source": "Owner-supplied original JPEG",
     "usage": "Real finished personal kitchen"
+  },
+  {
+    "src": "/images/inspiration-kit/cabinet-hinge-repair.webp",
+    "width": 374,
+    "height": 332,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/cabinet_hinge_repair.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/cabinet-installation.webp",
+    "width": 374,
+    "height": 332,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/cabinet_installation.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/drawer-organizers.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/drawer_organizers.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/finished-kitchen.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/finished_kitchen.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/hero-kitchen.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/hero_kitchen.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/kitchen-3d-design.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/kitchen_3d_design.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/kitchen-before-after-concept.webp",
+    "width": 374,
+    "height": 332,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/kitchen_before_after_concept.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/kitchen-sink.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/kitchen_sink.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/modern-kitchen.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/modern_kitchen.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/pullout-storage.webp",
+    "width": 374,
+    "height": 332,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/pullout_storage.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/sink-detail.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/sink_detail.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/inspiration-kit/small-kitchen-storage.webp",
+    "width": 374,
+    "height": 331,
+    "kind": "illustrative-concept",
+    "source": "Owner-supplied albireno_12_separate_images/small_kitchen_storage.png",
+    "usage": "Illustrative concept crop, not completed ALBI RENO work or an actual HomeStyler export. Display no wider than source dimensions."
+  },
+  {
+    "src": "/images/editorial/kitchen-hero.webp",
+    "width": 1536,
+    "height": 1024,
+    "kind": "ai-inspiration",
+    "source": "Built-in image_gen; brief and original path in docs/audit/generated-image-sources.json",
+    "usage": "Generated editorial inspiration. Not actual ALBI RENO work or a real HomeStyler export."
+  },
+  {
+    "src": "/images/editorial/small-kitchen-storage.webp",
+    "width": 1536,
+    "height": 1024,
+    "kind": "ai-inspiration",
+    "source": "Built-in image_gen; brief and original path in docs/audit/generated-image-sources.json",
+    "usage": "Generated editorial inspiration. Not actual ALBI RENO work or a real HomeStyler export."
+  },
+  {
+    "src": "/images/editorial/cabinet-hinge-detail.webp",
+    "width": 1536,
+    "height": 1024,
+    "kind": "ai-inspiration",
+    "source": "Built-in image_gen; brief and original path in docs/audit/generated-image-sources.json",
+    "usage": "Generated editorial inspiration. Not actual ALBI RENO work or a real HomeStyler export."
+  },
+  {
+    "src": "/images/editorial/cabinet-installation.webp",
+    "width": 1536,
+    "height": 1024,
+    "kind": "ai-inspiration",
+    "source": "Built-in image_gen; brief and original path in docs/audit/generated-image-sources.json",
+    "usage": "Generated editorial inspiration. Not actual ALBI RENO work or a real HomeStyler export."
+  },
+  {
+    "src": "/images/editorial/kitchen-design-study.webp",
+    "width": 1536,
+    "height": 1024,
+    "kind": "ai-inspiration",
+    "source": "Built-in image_gen; brief and original path in docs/audit/generated-image-sources.json",
+    "usage": "Generated editorial inspiration. Not actual ALBI RENO work or a real HomeStyler export."
   }
 ]

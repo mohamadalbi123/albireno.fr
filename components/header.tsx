@@ -71,7 +71,7 @@ export function Header() {
           ))}
         </nav>
         <Link href="/devis" className="button header-quote">
-          Parler de mon projet <Icon name="arrow" width={17} />
+          Demander un devis <Icon name="arrow" width={17} />
         </Link>
         <button
           ref={menuRef}
@@ -91,7 +91,7 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
-          {[...links, { href: "/devis", label: "Parler de mon projet" }].map(
+          {[...links, { href: "/devis", label: "Demander un devis" }].map(
             (l) => (
               <Link
                 key={l.href}

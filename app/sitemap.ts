@@ -10,8 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/notre-approche",
     "/contact",
     "/devis",
-    "/mentions-legales",
-    "/politique-confidentialite",
     ...services.filter((s) => s.confirmed).map((s) => `/${s.slug}`),
     ...publishedProjects.map((p) => `/realisations/${p.slug}`),
   ].map((path) => ({

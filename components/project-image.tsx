@@ -19,6 +19,7 @@ export function ProjectImage({
         fill
         sizes={sizes}
         priority={priority}
+        fetchPriority={priority ? "high" : undefined}
       />
     </div>
   );

@@ -1,22 +1,16 @@
-import { business } from "./lib/business";
+import { isIndexable, siteUrl } from "./lib/site";
 import type { NextConfig } from "next";
-const allowIndex =
-  business.brandApproved &&
-  business.legalApproved &&
-  business.privacyApproved &&
-  business.servicesApproved &&
-  business.launchApproved &&
-  process.env.SITE_INDEXABLE === "true" &&
-  process.env.VERCEL_ENV !== "preview";
+const allowIndex = isIndexable;
 let canonicalHost = "";
 try {
-  canonicalHost = new URL(process.env.SITE_URL || "").hostname.replace(
+  canonicalHost = new URL(siteUrl || "").hostname.replace(
     /[.*+?^${}()|[\]\\]/g,
     "\\$&",
   );
 } catch {}
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: { formats: ["image/avif", "image/webp"] },
   async headers() {
     return [
       {

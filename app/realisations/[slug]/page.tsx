@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { publishedProjects, projectKindLabels } from "@/lib/projects";
 import { PageIntro, ContactCTA } from "@/components/ui";
-import { ProjectImage } from "@/components/project-image";
+import { ProjectGallery } from "@/components/project-gallery";
 import { pageMetadata } from "@/lib/site";
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -34,14 +34,8 @@ export default async function Project({
         text={p.description}
       />
       <section className="container section">
-        <div className="project-gallery">
-          {p.images.map((image) => (
-            <figure key={image.src}>
-              <ProjectImage image={image} />
-              <figcaption>Photographie du projet personnel terminé</figcaption>
-            </figure>
-          ))}
-        </div>
+        <ProjectGallery images={p.images} label={projectKindLabels[p.kind]} />
+        <p className="case-study-context">Deux angles d’un même espace terminé. Ce projet personnel présente une démarche d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant/après.</p>
         <div className="project-tags">
           {p.services.map((s) => (
             <span key={s}>{s}</span>

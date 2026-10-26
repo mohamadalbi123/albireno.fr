@@ -99,7 +99,7 @@ export function ContactCTA() {
         <p>Une idée, une question, des plans ? Faisons le point ensemble.</p>
       </div>
       <div className="cta-actions">
-        <Button>Parler de mon projet</Button>
+        <Button>Demander un devis</Button>
         <a
           className="text-link light"
           href={whatsappUrl()}

@@ -2,12 +2,12 @@
   --ivory: #f8f5ef;
   --sand: #eee8de;
   --ink: #352f2b;
-  --muted: #736c63;
+  --muted: #696259;
   --blue: #455f6a;
   --deep: #314a55;
   --line: #d9d1c5;
   --white: #fffdfa;
-  --brown: #82634c;
+  --brown: #7c5d46;
   --navy: var(--deep);
 }
 * {
@@ -521,7 +521,7 @@ ol {
 }
 .planning-process li span {
   font-size: 10px;
-  color: #c4b59f;
+  color: #e1ccb0;
 }
 .plan-foot {
   letter-spacing: 1px;
@@ -2339,4 +2339,204 @@ ol {
   .kitchen-hero .hero-copy {
     padding-top: 12px;
   }
+}
+
+/* Pre-launch refinement: preserve the palette; give real photography room. */
+.kitchen-hero {
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  column-gap: clamp(28px, 4vw, 64px);
+}
+.kitchen-hero h1 { font-size: clamp(43px, 4vw, 62px); }
+.kitchen-hero .hero-photo { min-height: 780px; }
+.kitchen-hero .hero-copy { align-self: center; padding-block: 15px 35px; }
+.hero-photo figcaption { position: relative; inset: auto; margin-top: 14px; padding: 0; background: transparent; }
+.hero-photo .project-image { position: relative; inset: auto; aspect-ratio: 3/4; }
+.hero-photo { display: flex; flex-direction: column; justify-content: center; }
+.hero-photo .project-image { flex: 1; }
+.hero-actions .text-link { min-height: 44px; display: inline-flex; align-items: center; }
+.hero-bottom { gap: 20px; }
+.kitchen-services { gap: 24px; }
+.kitchen-services .service-card,
+.kitchen-services .service-card:nth-child(n + 4),
+.kitchen-services .service-optimisation {
+  display: flex; flex-direction: column; grid-column: span 2;
+  padding: 24px; min-height: 0;
+}
+.kitchen-services .service-card:nth-child(n + 4) { grid-column: span 3; }
+.kitchen-services .service-card > :not(.service-thumb) { grid-column: auto; }
+.kitchen-services .service-thumb,
+.kitchen-services .service-card:nth-child(n + 4) .service-thumb,
+.kitchen-services .service-optimisation .service-thumb { max-width: none; width: 100%; margin: 0 0 24px; }
+.service-thumb .project-image { aspect-ratio: 4/3; }
+.service-thumb .project-image img { width: 100%; height: 100%; aspect-ratio: auto; }
+.service-thumb figcaption { font-size: 11px; line-height: 1.5; margin-top: 10px; }
+.service-thumb.concept-thumb { min-height: 210px; display: flex; align-items: center; gap: 24px; background: var(--sand); padding: 18px; }
+.service-thumb.concept-thumb a { flex-shrink: 0; max-width: 55%; }
+.service-thumb.concept-thumb img { width: auto; height: auto; aspect-ratio: auto; object-fit: contain; }
+.service-card p { font-size: 14px; }
+.service-card h3 { font-size: 30px; }
+.service-enquiry { margin-top: auto; padding-block: 12px; min-height: 44px; }
+.solution-thumbnails figure { max-width: 142px; }
+.solution-thumbnails img { width: auto; height: auto; max-width: 100%; }
+.solution-thumbnails figcaption { font-size: 11px; line-height: 1.5; margin-top: 10px; }
+.project-feature { grid-template-columns: 1.15fr 1fr; }
+.project-feature-image .project-image { aspect-ratio: 3/4; min-height: 0; }
+.portfolio-grid { max-width: 1200px; }
+.portfolio-grid article .project-image { aspect-ratio: 4/3; }
+.service-visual { padding-top: 52px; display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
+.service-main-photo .project-image { aspect-ratio: 4/5; }
+.service-main-photo figcaption,
+.service-concept figcaption { font-size: 12px; line-height: 1.65; margin-top: 14px; color: var(--muted); }
+.service-visual-copy h2 { font-size: clamp(32px, 3vw, 46px); margin-bottom: 24px; }
+.service-visual-copy .button { margin-top: 25px; }
+.service-visual-copy > .text-link { display: block; margin-top: 22px; }
+.service-concept { display: flex; gap: 20px; align-items: center; background: var(--sand); padding: 20px; }
+.service-concept img { width: auto; height: auto; max-width: 55%; flex-shrink: 0; }
+.service-concept figcaption { margin: 0; }
+.related-services { padding-bottom: 80px; }
+.related-services ul { display: flex; flex-wrap: wrap; gap: 14px 30px; list-style: none; padding: 0; margin: 30px 0 0; }
+.related-services a { display: inline-flex; padding-block: 10px; border-bottom: 1px solid var(--line); }
+.case-study-context { max-width: 760px; margin: 30px 0; }
+.gallery-open { border: 0; padding: 0; background: transparent; width: 100%; position: relative; display: block; text-align: left; }
+.gallery-hint { position: absolute; bottom: 15px; right: 15px; padding: 8px 14px; background: var(--ivory); font-size: 12px; color: var(--ink); }
+.project-gallery figcaption { font-size: 12px; }
+.image-dialog { border: 1px solid var(--line); padding: 20px; width: min(920px, 95vw); max-height: 95dvh; color: var(--ink); background: var(--ivory); }
+.image-dialog::backdrop { background: rgb(30 25 20 / 80%); }
+.image-dialog > img { display: block; width: auto; height: auto; max-height: 70dvh; max-width: 100%; margin-inline: auto; object-fit: contain; }
+.image-dialog > p { font-size: 13px; margin: 10px 0 0; }
+.dialog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.dialog-toolbar p { margin: 0; font-size: 13px; }
+.dialog-toolbar button { min-height: 44px; background: transparent; color: var(--ink); border: 0; padding: 10px; }
+.wizard-phases { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; padding: 22px 30px; margin: 0; border-bottom: 1px solid var(--line); gap: 12px; }
+.wizard-phases li { font-size: 12px; display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.wizard-phases span { border: 1px solid var(--line); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.wizard-phases [aria-current] { color: var(--deep); font-weight: 650; }
+.wizard-phases [aria-current] span { background: var(--deep); color: white; border-color: var(--deep); }
+.wizard-delivery-note { font-size: 13px; margin: 22px 38px 0; }
+.wizard-caption { font-size: 12px !important; }
+.summary-edit, .quote-summary dd button, .summary-heading button, .photo-list button { min-height: 44px; font-size: 12px; }
+@media (max-width: 1000px) {
+  .kitchen-hero { column-gap: 28px; }
+  .kitchen-hero .hero-photo { min-height: 650px; }
+  .service-card h3 { font-size: 27px; }
+  .service-concept { flex-wrap: wrap; }
+  .service-thumb.concept-thumb { gap: 15px; }
+}
+@media (max-width: 700px) {
+  .container { width: calc(100% - 40px); }
+  .section { padding-block: 64px; }
+  .kitchen-hero { grid-template-columns: 1fr; row-gap: 28px; }
+  .kitchen-hero .hero-copy { display: contents; }
+  .hero-brand { grid-row: 1; margin: 5px 0 0; }
+  .kitchen-hero .hero-copy > .eyebrow { grid-row: 2; margin: 0; }
+  .kitchen-hero h1 { grid-row: 3; font-size: clamp(39px, 9vw, 60px); }
+  .kitchen-hero h1 br { display: none; }
+  .kitchen-hero h1 em { display: block; }
+  .kitchen-hero .hero-photo { grid-row: 4; min-height: 0; aspect-ratio: auto; margin-inline: -20px; }
+  .hero-photo .project-image { aspect-ratio: 3/4; flex: auto; }
+  .hero-photo figcaption { margin: 15px 20px 0; }
+  .hero-photo figcaption > span { font-size: 10px; }
+  .hero-photo figcaption small { font-size: 12px; }
+  .hero-subtitle { grid-row: 5; margin: 0; font-size: 25px; }
+  .kitchen-hero .hero-description { grid-row: 6; margin: 0; font-size: 15px; }
+  .hero-actions { grid-row: 7; gap: 12px 24px; }
+  .hero-actions .button { width: 100%; font-size: 14px; }
+  .kitchen-hero .hero-note { grid-row: 8; margin: 0; font-size: 12px; }
+  .hero-bottom { grid-row: 9; flex-direction: column; align-items: flex-start; }
+  .hero-bottom span, .hero-bottom a { font-size: 10px; white-space: normal; }
+  .kitchen-services { grid-template-columns: 1fr; }
+  .kitchen-services .service-card,
+  .kitchen-services .service-card:nth-child(n + 4),
+  .kitchen-services .service-optimisation { grid-column: auto; padding: 20px; display: flex; }
+  .service-card p { font-size: 14px; }
+  .service-card h3 { font-size: 32px; }
+  .service-enquiry { font-size: 13px; }
+  .service-thumb.concept-thumb { min-height: 180px; }
+  .service-visual { grid-template-columns: 1fr; padding-top: 35px; }
+  .service-main-photo .project-image { aspect-ratio: 3/4; }
+  .service-concept { flex-wrap: nowrap; }
+  .service-concept figcaption { font-size: 12px; }
+  .service-visual-copy .button { width: 100%; }
+  .project-feature { grid-template-columns: 1fr; }
+  .project-feature-image .project-image { aspect-ratio: 3/4; }
+  .portfolio-grid article .project-image { aspect-ratio: 3/4; }
+  .project-gallery { grid-template-columns: 1fr; }
+  .wizard-phases { padding: 18px; gap: 12px 8px; grid-template-columns: 1fr 1fr; }
+  .wizard-delivery-note { margin: 20px 18px 0; }
+  .contact-cards h2 { overflow-wrap: anywhere; }
+  .page-intro .lead { font-size: 16px; }
+  .footer-grid > div > a:not(.brand) { font-size: 13px; padding-block: 6px; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .kitchen-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kitchen-services .service-card,
+  .kitchen-services .service-card:nth-child(n + 4) { grid-column: auto; }
+  .kitchen-services .service-card:last-child { grid-column: 1/-1; }
+}
+
+/* Large editorial imagery: sharp generated inspiration, separately attributed. */
+.kitchen-hero { grid-template-columns: 1fr; row-gap: 36px; }
+.kitchen-hero .hero-copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(35px, 6vw, 100px); align-items: end; padding: 0; }
+.kitchen-hero h1 { font-size: clamp(42px, 4.1vw, 64px); max-width: 650px; }
+.kitchen-hero h1 em { display: block; }
+.hero-intro { padding-bottom: 8px; }
+.hero-intro .hero-subtitle { font-size: 29px; margin: 0 0 20px; }
+.hero-intro .hero-description { margin: 0 0 26px; max-width: 530px; font-size: 15px; line-height: 1.8; }
+.kitchen-hero .hero-note { font-size: 12px; line-height: 1.6; margin-top: 20px; }
+.kitchen-hero .hero-photo { min-height: 0; }
+.editorial-hero-photo .project-image { flex: auto; aspect-ratio: 16/9; }
+.hero-photo figcaption p { font-family: Georgia, serif; font-size: 23px; line-height: 1.3; margin: 0; color: var(--ink); }
+.hero-photo figcaption small { font-size: 12px; }
+.hero-photo figcaption > span { font-size: 10px; }
+.kitchen-services .service-thumb .project-image { aspect-ratio: 4/3; }
+.kitchen-services .service-card:nth-child(n + 4) .project-image { aspect-ratio: 3/2; }
+.solution-thumbnails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.solution-thumbnails figure { max-width: 374px; min-width: 0; }
+.solution-thumbnails img { width: 100%; height: auto; }
+.inspiration-detail { max-width: 374px; min-width: 0; }
+.inspiration-detail img { display: block; width: 100%; max-width: 374px; height: auto; }
+.inspiration-detail figcaption { margin-top: 14px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.inspiration-detail figcaption strong { display: block; font-family: Georgia, serif; font-size: 23px; line-height: 1.2; font-weight: 400; margin-bottom: 9px; color: var(--ink); }
+.inspiration-detail figcaption span { display: block; }
+.service-visual { display: block; }
+.service-main-photo .project-image { aspect-ratio: 16/9; }
+.service-visual-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 60px; margin-top: 38px; align-items: start; }
+.service-visual-copy .eyebrow { grid-column: 1; margin-bottom: 0; }
+.service-visual-copy h2 { grid-column: 1; margin: 0; }
+.service-visual-copy > p { grid-column: 2; grid-row: 1/3; margin: 0; font-size: 16px; }
+.service-visual-copy .button { grid-column: 1; justify-self: start; margin: 0; }
+.service-visual-copy > .text-link { grid-column: 2; grid-row: 3; margin: 0; align-self: center; }
+.inspiration-section { padding-block: 0 80px; }
+.inspiration-section h2 { margin-bottom: 25px; }
+.inspiration-intro { max-width: 700px; }
+.inspiration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 35px; }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .kitchen-hero .hero-copy { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .hero-intro .hero-subtitle { font-size: 25px; }
+  .inspiration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+}
+@media (max-width: 700px) {
+  .kitchen-hero { row-gap: 30px; }
+  .kitchen-hero .hero-copy { display: contents; }
+  .hero-headline { grid-row: 1; }
+  .hero-headline .hero-brand { margin: 0 0 26px; }
+  .hero-headline > .eyebrow { margin-bottom: 22px; }
+  .kitchen-hero h1 { font-size: clamp(39px, 10vw, 58px); }
+  .kitchen-hero .hero-photo { grid-row: 2; }
+  .editorial-hero-photo .project-image { aspect-ratio: 4/5; }
+  .hero-intro { grid-row: 3; padding: 0; }
+  .hero-intro .hero-subtitle { font-size: 29px; margin: 0 0 22px; }
+  .hero-intro .hero-description { margin: 0 0 25px; }
+  .kitchen-hero .hero-bottom { grid-row: 4; }
+  .service-main-photo { margin-inline: -20px; }
+  .service-main-photo .project-image { aspect-ratio: 4/3; }
+  .service-main-photo figcaption { margin-inline: 20px; }
+  .service-visual-copy { display: block; margin-top: 30px; }
+  .service-visual-copy .eyebrow { margin-bottom: 22px; }
+  .service-visual-copy h2 { margin-bottom: 22px; }
+  .service-visual-copy .button { margin-top: 25px; }
+  .service-visual-copy > .text-link { margin-top: 20px; }
+  .inspiration-grid { grid-template-columns: 1fr; gap: 35px; }
+  .inspiration-detail { margin-inline: auto; }
+  .inspiration-section { padding-bottom: 65px; }
 }

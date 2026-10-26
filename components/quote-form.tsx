@@ -115,6 +115,7 @@ export function QuoteForm({
   const contextStep = qs.length + 1,
     contactStep = qs.length + 2,
     reviewStep = qs.length + 3;
+  const phase = step === 0 ? 0 : step < contactStep ? 1 : step === contactStep ? 2 : 3;
   const currentQuestion =
     step > 0 && step <= qs.length ? qs[step - 1] : undefined;
   useEffect(() => {
@@ -138,12 +139,14 @@ export function QuoteForm({
     });
   }
   function answer(id: string, value: Answer) {
+    setSuccess(false);
     setData((d) => ({ ...d, answers: { ...d.answers, [id]: value } }));
     setErrors({});
     setPrepared("");
     setStatus("");
   }
   function toggleNeed(id: Need) {
+    setSuccess(false);
     let next: Need[] =
       id === "autre"
         ? ["autre"]
@@ -221,6 +224,11 @@ export function QuoteForm({
     try {
       const selected: PhotoPayload[] = [];
       for (const file of files) {
+        // A MIME label alone does not prove the file is a readable photograph.
+        const bitmap = await createImageBitmap(file);
+        const usable = bitmap.width > 0 && bitmap.height > 0 && bitmap.width * bitmap.height <= 40_000_000;
+        bitmap.close();
+        if (!usable) throw new Error("Image illisible ou trop grande.");
         const content = await new Promise<string>((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = () => resolve(String(reader.result).split(",")[1]);
@@ -234,7 +242,7 @@ export function QuoteForm({
     } catch {
       if (version === photoVersion.current)
         setPhotoError(
-          "Une photo n’a pas pu être lue. Réessayez avec un autre fichier.",
+          "Une photo n’a pas pu être lue. Choisissez un fichier JPEG, PNG ou WebP valide de moins de 40 mégapixels.",
         );
     } finally {
       if (version === photoVersion.current) setPhotoBusy(false);
@@ -314,6 +322,7 @@ export function QuoteForm({
           id={name}
           name={name}
           type={type}
+          inputMode={type === "tel" ? "tel" : type === "email" ? "email" : "text"}
           autoComplete={autoComplete}
           value={data[name]}
           onChange={(e) => change(name, e.target.value)}
@@ -341,10 +350,16 @@ export function QuoteForm({
             : "Tout est juste ? Vérifions ensemble.");
   return (
     <div className="quote-wizard">
+      <ol className="wizard-phases" aria-label="Les quatre étapes de votre demande">
+        {["Besoins", "Votre cuisine", "Coordonnées", "Vérification"].map((label, i) => (
+          <li key={label} aria-current={phase === i ? "step" : undefined}><span>{i + 1}</span>{label}</li>
+        ))}
+      </ol>
+      {!mailEnabled && <p className="wizard-delivery-note">Votre demande sera préparée pour WhatsApp. Vous déciderez de l’envoyer dans l’application ; les photos seront à joindre manuellement.</p>}
       <div className="wizard-progress">
         <span>VOTRE CUISINE, VOTRE PROJET</span>
         <span>
-          Étape {step + 1} / {reviewStep + 1}
+          Écran {step + 1} / {reviewStep + 1}
         </span>
         <progress
           aria-label="Avancement de votre demande"
@@ -376,6 +391,8 @@ export function QuoteForm({
                     type="button"
                     className={`need-card ${data.needs.includes(n.id) ? "selected" : ""}`}
                     aria-pressed={data.needs.includes(n.id)}
+                    aria-invalid={!!errors.needs}
+                    aria-describedby={errors.needs ? "needs-error" : undefined}
                     key={n.id}
                     onClick={() => toggleNeed(n.id)}
                   >
@@ -393,10 +410,10 @@ export function QuoteForm({
                 ))}
               </div>
               <p className="wizard-caption">
-                Vignettes d’inspiration générées par IA.
+                Vignettes d’inspiration illustratives · pas des chantiers ALBI RENO.
               </p>
               {errors.needs && (
-                <p className="field-error" role="alert">
+                <p className="field-error" id="needs-error" role="alert">
                   {errors.needs}
                 </p>
               )}
@@ -508,13 +525,14 @@ export function QuoteForm({
                       checked={data.timeframe === t}
                       onChange={() => change("timeframe", t)}
                       aria-invalid={!!errors.timeframe}
+                      aria-describedby={errors.timeframe ? "timeframe-error" : undefined}
                     />
                     {t}
                   </label>
                 ))}
               </fieldset>
               {errors.timeframe && (
-                <p className="field-error" role="alert">
+                <p className="field-error" id="timeframe-error" role="alert">
                   {errors.timeframe}
                 </p>
               )}
@@ -592,7 +610,7 @@ export function QuoteForm({
                   accept="image/jpeg,image/png,image/webp"
                   multiple
                   onChange={selectPhotos}
-                  aria-describedby="photo-privacy"
+                  aria-describedby={photoError ? "photo-privacy photo-error" : "photo-privacy"}
                   aria-invalid={!!photoError}
                 />
                 <p id="photo-privacy">
@@ -603,7 +621,7 @@ export function QuoteForm({
                 {photoBusy && <p role="status">Lecture des photos…</p>}
                 {photoError && (
                   <div>
-                    <p className="field-error" role="alert">
+                    <p className="field-error" id="photo-error" role="alert">
                       {photoError}
                     </p>
                     <button
@@ -736,6 +754,7 @@ export function QuoteForm({
                   checked={data.consent}
                   onChange={(e) => change("consent", e.target.checked)}
                   aria-invalid={!!errors.consent}
+                  aria-describedby={errors.consent ? "consent-error" : undefined}
                 />
                 <span>
                   J’ai lu la{" "}
@@ -751,7 +770,7 @@ export function QuoteForm({
                 </span>
               </label>
               {errors.consent && (
-                <p className="field-error" role="alert">
+                <p className="field-error" id="consent-error" role="alert">
                   {errors.consent}
                 </p>
               )}
@@ -829,7 +848,7 @@ export function QuoteForm({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ouvrir WhatsApp et envoyer ↗
+                Ouvrir WhatsApp pour vérifier ↗
               </a>
             )}
             {success && (

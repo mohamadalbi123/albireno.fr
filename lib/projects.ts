@@ -74,7 +74,7 @@ export const projects: Project[] = [
       },
       {
         title: "La solution : prolonger sans encombrer",
-        text: "Le retour en péninsule prolonge le plan de travail et accueille des rangements. Les meubles hauts complètent la capacité de stockage.",
+        text: "Le retour en péninsule ajoute une zone de préparation tout en gardant les rangements accessibles depuis l’intérieur du U. Les meubles hauts utilisent la hauteur disponible. La circulation centrale et l’ouverture des portes restent des points à vérifier lors du choix d’une implantation.",
       },
       {
         title: "Du plan à l’installation",
