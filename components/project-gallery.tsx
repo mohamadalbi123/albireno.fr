@@ -8,13 +8,15 @@ const roleLabels: Record<Media["role"], string> = { before: "Avant intervention"
 
 export function ProjectGallery({ images, label }: { images: Media[]; label: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement | null>(null);
   const [selected, setSelected] = useState(0);
   return (
     <>
       <div className="project-gallery">
         {images.map((image, i) => (
           <figure key={image.src}>
-            <button className="gallery-open" type="button" aria-label={`Agrandir : ${image.alt}`} onClick={() => {
+            <button className="gallery-open" type="button" aria-label={`Agrandir : ${image.alt}`} onClick={(event) => {
+              trigger.current = event.currentTarget;
               setSelected(i);
               dialog.current?.showModal();
             }}>
@@ -25,7 +27,7 @@ export function ProjectGallery({ images, label }: { images: Media[]; label: stri
           </figure>
         ))}
       </div>
-      <dialog ref={dialog} className="image-dialog" aria-labelledby="gallery-title" onClick={(e) => {
+      <dialog ref={dialog} onClose={() => trigger.current?.focus()} className="image-dialog" aria-labelledby="gallery-title" onClick={(e) => {
         if (e.target === e.currentTarget) dialog.current?.close();
       }}>
         <div className="dialog-toolbar">

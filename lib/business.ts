@@ -4,6 +4,7 @@ export const business = {
   registeredDomain: "albireno.fr",
   repository: "https://github.com/mohamadalbi123/albireno.fr.git",
   descriptor: "Installation et rénovation de cuisines",
+  preparationNotice: "Activité cuisine en préparation. Aucune prestation payante ni réservation d’intervention n’est proposée à ce stade.",
   tagline: "Installation et rénovation de cuisines",
   phone: "+33 7 63 73 43 72",
   email: "mohalbi123@icloud.com",

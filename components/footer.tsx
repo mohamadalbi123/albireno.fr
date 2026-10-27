@@ -9,7 +9,7 @@ export function Footer() {
         <div className="footer-grid">
           <div className="footer-about">
             <Brand light />
-            <p>{business.tagline}</p>
+            <p>{business.tagline}. {business.preparationNotice}</p>
             <span>La Rochelle · Charente-Maritime</span>
           </div>
           <div>

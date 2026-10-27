@@ -12,7 +12,7 @@ export default function Contact() {
       <PageIntro
         eyebrow="Faisons connaissance"
         title="Une idée ? Parlons-en."
-        text="Une cuisine à installer, un rangement à repenser ou une porte à ajuster : décrivez-nous ce que vous avez en tête."
+        text="L’activité cuisine est en préparation. Vous pouvez partager vos idées pour un futur projet, sans réservation ni prestation payante à ce stade."
       />
       <section className="container section contact-cards">
         <a href={`tel:${business.phone.replace(/[^+\d]/g, "")}`}>

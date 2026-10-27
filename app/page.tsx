@@ -29,9 +29,9 @@ export default function Home() {
           </div>
           <div className="hero-intro">
             <p className="hero-subtitle">Votre cuisine, pensée pour votre espace.</p>
-            <p className="hero-description">Une cuisine à installer, à rénover ou à mieux organiser ? Partons de vos usages pour étudier un aménagement fonctionnel et adapté à votre espace.</p>
+            <p className="hero-description">Activité cuisine en préparation. Une cuisine à installer, à rénover ou à mieux organiser ? Partons de vos usages pour étudier un aménagement fonctionnel et adapté à votre espace.</p>
             <div className="hero-actions">
-              <Button>Demander un devis</Button>
+              <Button>Parler de mon projet</Button>
               <a className="text-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
               <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
             </div>

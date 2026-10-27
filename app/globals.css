@@ -1,4 +1,10 @@
+/* Shared reading scale; headings keep the existing editorial proportions. */
 :root {
+  --type-body: 1.09375rem;
+  --type-control: 1rem;
+  --type-small: .9375rem;
+  --type-caption: .875rem;
+  --type-label: .8125rem;
   --ivory: #f8f5ef;
   --sand: #eee8de;
   --ink: #352f2b;
@@ -22,7 +28,7 @@ body {
   background: var(--ivory);
   color: var(--ink);
   font-family: "Manrope Variable", sans-serif;
-  font-size: 15px;
+  font-size: var(--type-body);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
@@ -105,7 +111,7 @@ ol {
   padding-block: 108px;
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: var(--type-label);
   font-weight: 650;
   letter-spacing: 2.1px;
   text-transform: uppercase;
@@ -133,7 +139,7 @@ ol {
   background: var(--blue);
   border: 1px solid var(--blue);
   color: white;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 550;
   line-height: 1.5;
   transition:
@@ -164,7 +170,7 @@ ol {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 600;
   padding-block: 9px;
   border-bottom: 1px solid var(--line);
@@ -215,19 +221,19 @@ ol {
 .brand strong {
   display: block;
   letter-spacing: 2px;
-  font-size: 15px;
+  font-size: var(--type-body);
   font-weight: 600;
 }
 .brand small {
   display: block;
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 1.7px;
   margin-top: 4px;
 }
 .desktop-nav {
   display: flex;
   gap: 29px;
-  font-size: 11px;
+  font-size: var(--type-caption);
 }
 .desktop-nav a {
   padding: 10px 0;
@@ -237,7 +243,7 @@ ol {
   border-bottom: 1px solid var(--blue);
 }
 .header-quote {
-  font-size: 11px;
+  font-size: var(--type-caption);
   min-height: 45px;
   padding: 13px 19px;
   gap: 18px;
@@ -261,7 +267,7 @@ ol {
   justify-content: space-between;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  font-size: var(--type-body);
 }
 .hero {
   padding-top: 45px;
@@ -277,7 +283,7 @@ ol {
   letter-spacing: -0.045em;
 }
 .hero-description {
-  font-size: 13px;
+  font-size: var(--type-small);
   max-width: 445px;
   margin: 30px 0 27px;
   line-height: 1.9;
@@ -293,7 +299,7 @@ ol {
   align-items: center;
   gap: 12px;
   margin-top: 39px;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   letter-spacing: 0.6px;
 }
@@ -335,7 +341,7 @@ ol {
   gap: 5px;
 }
 .hero-photo figcaption > span {
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 1.7px;
   color: var(--muted);
 }
@@ -343,11 +349,11 @@ ol {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  font-size: 17px;
+  font-size: var(--type-body);
   font-family: Georgia, serif;
 }
 .hero-photo figcaption small {
-  font-size: 9px;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .hero-bottom {
@@ -355,7 +361,7 @@ ol {
   display: flex;
   justify-content: space-between;
   padding: 29px 0 31px;
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 1.7px;
   color: var(--muted);
 }
@@ -371,7 +377,7 @@ ol {
 }
 .section-top > p {
   max-width: 285px;
-  font-size: 13px;
+  font-size: var(--type-small);
   margin-bottom: 3px;
 }
 .services-section {
@@ -398,7 +404,7 @@ ol {
   background: var(--ivory);
 }
 .service-number {
-  font-size: 10px;
+  font-size: var(--type-label);
   letter-spacing: 1px;
   color: var(--brown);
   margin-bottom: 19px;
@@ -419,12 +425,12 @@ ol {
   color: var(--blue);
 }
 .service-card p {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin: 15px 0 21px;
   max-width: 240px;
 }
 .service-enquiry {
-  font-size: 10px;
+  font-size: var(--type-label);
   display: flex;
   gap: 10px;
   align-items: center;
@@ -441,7 +447,7 @@ ol {
   margin-top: 26px;
 }
 .unsure p {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin: 0;
 }
 .approach {
@@ -464,7 +470,7 @@ ol {
   color: var(--ink);
 }
 .approach-copy > p:not(.large-copy) {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .approach-copy .button {
   margin-top: 12px;
@@ -487,13 +493,13 @@ ol {
   color: #d5c4ab;
 }
 .planning p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: var(--type-small);
   color: #d3dce0;
   max-width: 470px;
   margin-top: 27px;
 }
 .planning .planning-caption {
-  font-size: 10px !important;
+  font-size: var(--type-label) !important;
   max-width: 380px;
 }
 .planning-process {
@@ -503,7 +509,7 @@ ol {
 }
 .plan-label,
 .plan-foot {
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 1.7px;
   color: #d5c4ab;
 }
@@ -517,10 +523,10 @@ ol {
   gap: 20px;
   padding: 15px 0;
   border-bottom: 1px solid #617681;
-  font-size: 14px;
+  font-size: var(--type-body);
 }
 .planning-process li span {
-  font-size: 10px;
+  font-size: var(--type-label);
   color: #e1ccb0;
 }
 .plan-foot {
@@ -547,14 +553,14 @@ ol {
 }
 .tag {
   display: inline-block;
-  font-size: 9px;
+  font-size: var(--type-label);
   color: var(--blue);
   border: 1px solid #acb6b7;
   padding: 3px 9px;
   letter-spacing: 0.5px;
 }
 .project-category {
-  font-size: 8px;
+  font-size: var(--type-label);
   letter-spacing: 1.4px;
   margin: 24px 0 15px;
 }
@@ -564,7 +570,7 @@ ol {
   margin-bottom: 22px;
 }
 .project-feature-copy > p:not(.project-category) {
-  font-size: 12px;
+  font-size: var(--type-small);
 }
 .project-points {
   list-style: none;
@@ -572,7 +578,7 @@ ol {
   margin: 0 0 28px;
 }
 .project-points li {
-  font-size: 11px;
+  font-size: var(--type-caption);
   padding: 9px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -592,7 +598,7 @@ ol {
   margin-top: 55px;
 }
 .process-number {
-  font-size: 12px;
+  font-size: var(--type-small);
   color: var(--brown);
   display: block;
   margin-bottom: 20px;
@@ -602,7 +608,7 @@ ol {
   margin-bottom: 18px;
 }
 .process-grid p {
-  font-size: 12px;
+  font-size: var(--type-small);
   max-width: 320px;
 }
 .values-row {
@@ -612,7 +618,7 @@ ol {
   margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .cta-section {
@@ -632,7 +638,7 @@ ol {
   margin-bottom: 23px;
 }
 .cta-section p:not(.eyebrow) {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin: 0;
 }
 .cta-actions {
@@ -642,7 +648,7 @@ ol {
   gap: 18px;
 }
 .cta-actions .text-link {
-  font-size: 11px;
+  font-size: var(--type-caption);
 }
 .site-footer {
   background: #302e2a;
@@ -658,25 +664,25 @@ ol {
   color: #b8c7cb;
 }
 .footer-about p {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin-top: 25px;
   color: #ccc3b6;
   max-width: 230px;
 }
 .footer-about > span {
   color: #aaa193;
-  font-size: 10px;
+  font-size: var(--type-label);
 }
 .footer-grid h3 {
   font-family: inherit;
-  font-size: 10px;
+  font-size: var(--type-label);
   font-weight: 650;
   letter-spacing: 0.5px;
   margin-bottom: 23px;
 }
 .footer-grid > div > a:not(.brand) {
   display: block;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: #ccc3b6;
   margin: 11px 0;
   overflow-wrap: anywhere;
@@ -692,7 +698,7 @@ ol {
   justify-content: space-between;
   gap: 20px;
   color: #b5ad9f;
-  font-size: 9px;
+  font-size: var(--type-label);
 }
 .footer-bottom > div {
   display: flex;
@@ -711,7 +717,7 @@ ol {
 }
 .breadcrumb {
   display: block;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin-bottom: 35px;
 }
@@ -724,7 +730,7 @@ ol {
 }
 .page-intro .lead {
   max-width: 750px;
-  font-size: 15px;
+  font-size: var(--type-body);
   margin: 28px 0 0;
 }
 .detail-grid {
@@ -737,10 +743,10 @@ ol {
   margin-bottom: 25px;
 }
 .detail-grid p {
-  font-size: 14px;
+  font-size: var(--type-body);
 }
 .detail-grid .lead {
-  font-size: 17px;
+  font-size: var(--type-body);
 }
 .detail-steps {
   padding: 0;
@@ -754,12 +760,12 @@ ol {
   padding: 20px 0;
   display: flex;
   gap: 20px;
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .detail-steps li::before {
   content: "0" counter(steps);
   color: var(--brown);
-  font-size: 11px;
+  font-size: var(--type-caption);
 }
 .preparation {
   background: var(--sand);
@@ -791,7 +797,7 @@ ol {
   margin: 19px 0;
 }
 .portfolio-grid p {
-  font-size: 14px;
+  font-size: var(--type-body);
   max-width: 700px;
 }
 .portfolio-grid .tag {
@@ -803,7 +809,7 @@ ol {
   gap: 25px;
 }
 .project-gallery figcaption {
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin-top: 10px;
 }
@@ -814,7 +820,7 @@ ol {
   margin: 35px 0 60px;
 }
 .project-tags span {
-  font-size: 11px;
+  font-size: var(--type-caption);
   border: 1px solid var(--line);
   padding: 6px 12px;
 }
@@ -828,7 +834,7 @@ ol {
   margin-bottom: 20px;
 }
 .project-details p {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .contact-cards {
   display: grid;
@@ -840,7 +846,7 @@ ol {
   padding: 28px 25px;
 }
 .contact-cards span {
-  font-size: 9px;
+  font-size: var(--type-label);
   color: var(--brown);
   letter-spacing: 1.2px;
 }
@@ -850,7 +856,7 @@ ol {
   overflow-wrap: anywhere;
 }
 .contact-cards p {
-  font-size: 11px;
+  font-size: var(--type-caption);
   margin: 0;
 }
 .contact-end {
@@ -872,10 +878,10 @@ ol {
   margin-bottom: 25px;
 }
 .contact-page aside p {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .contact-page .quiet-note {
-  font-size: 11px;
+  font-size: var(--type-caption);
   border-top: 1px solid var(--line);
   padding-top: 20px;
 }
@@ -886,7 +892,7 @@ ol {
   min-width: 0;
 }
 .form-step {
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 1.5px;
   color: var(--brown);
 }
@@ -895,7 +901,7 @@ ol {
   margin: 12px 0;
 }
 .form-heading > p {
-  font-size: 11px;
+  font-size: var(--type-caption);
 }
 .form-notice {
   display: flex;
@@ -905,7 +911,7 @@ ol {
   margin: 23px 0;
 }
 .form-notice p {
-  font-size: 11px;
+  font-size: var(--type-caption);
   margin: 0;
 }
 .form-notice svg {
@@ -922,7 +928,7 @@ ol {
 }
 .form-field label {
   display: block;
-  font-size: 11px;
+  font-size: var(--type-caption);
   margin-bottom: 8px;
 }
 .form-field label span {
@@ -938,7 +944,7 @@ ol {
   background: var(--ivory);
   border-radius: 0;
   color: var(--ink);
-  font-size: 14px;
+  font-size: var(--type-body);
   min-height: 47px;
 }
 .form-field textarea {
@@ -950,11 +956,11 @@ ol {
 .field-error {
   display: block;
   color: #963535;
-  font-size: 11px;
+  font-size: var(--type-caption);
   margin-top: 5px;
 }
 .photo-help {
-  font-size: 11px;
+  font-size: var(--type-caption);
   display: flex;
   gap: 10px;
 }
@@ -969,7 +975,7 @@ ol {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin: 22px 0;
 }
@@ -988,7 +994,7 @@ ol {
   margin-top: 9px;
 }
 .form-status {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin-top: 20px;
 }
 .form-status:empty {
@@ -998,7 +1004,7 @@ ol {
   color: var(--ink);
 }
 .form-privacy {
-  font-size: 9px;
+  font-size: var(--type-label);
   margin-top: 15px;
   margin-bottom: 0;
 }
@@ -1010,7 +1016,7 @@ ol {
   margin-bottom: 20px;
 }
 .legal-copy p {
-  font-size: 14px;
+  font-size: var(--type-body);
   margin-bottom: 40px;
 }
 .legal-copy a {
@@ -1042,7 +1048,7 @@ ol {
     gap: 17px;
   }
   .brand strong {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .header-inner {
     gap: 16px;
@@ -1060,10 +1066,10 @@ ol {
     gap: 15px;
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .hero-description {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .approach,
   .planning {
@@ -1118,12 +1124,12 @@ ol {
     min-height: 530px;
   }
   .hero .eyebrow {
-    font-size: 8px;
+    font-size: var(--type-label);
     letter-spacing: 1.2px;
   }
   .hero-note {
     margin-top: 20px;
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .hero-photo figcaption {
     bottom: 12px;
@@ -1132,7 +1138,7 @@ ol {
     padding: 14px;
   }
   .hero-photo figcaption a {
-    font-size: 15px;
+    font-size: var(--type-body);
   }
   .section {
     padding-block: 72px;
@@ -1165,7 +1171,7 @@ ol {
     padding: 25px;
   }
   .planning-process li {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .planning h2 {
     font-size: 36px;
@@ -1195,7 +1201,7 @@ ol {
     font-size: 39px;
   }
   .cta-actions .button {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .contact-cards {
     grid-template-columns: 1fr;
@@ -1228,7 +1234,7 @@ ol {
     padding: 12px 0 0;
   }
   .hero .eyebrow {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .hero h1 {
     font-size: clamp(42px, 11.5vw, 62px);
@@ -1241,7 +1247,7 @@ ol {
     display: block;
   }
   .hero-description {
-    font-size: 12px;
+    font-size: var(--type-small);
     line-height: 1.9;
     margin-top: 23px;
   }
@@ -1250,7 +1256,7 @@ ol {
   }
   .hero-actions .button {
     padding: 15px 18px;
-    font-size: 11px;
+    font-size: var(--type-caption);
     gap: 16px;
   }
   .hero-note {
@@ -1270,11 +1276,11 @@ ol {
     padding: 0 0 25px;
     gap: 15px;
     align-items: center;
-    font-size: 7px;
+    font-size: var(--type-label);
     letter-spacing: 0.8px;
   }
   .hero-bottom a {
-    font-size: 8px;
+    font-size: var(--type-label);
     letter-spacing: 0;
     white-space: nowrap;
   }
@@ -1290,7 +1296,7 @@ ol {
     margin-top: 15px;
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: var(--type-label);
     letter-spacing: 1.6px;
     margin-bottom: 21px;
   }
@@ -1308,11 +1314,11 @@ ol {
     width: 15px;
   }
   .service-card p {
-    font-size: 10px;
+    font-size: var(--type-label);
     margin: 14px 0 19px;
   }
   .service-enquiry {
-    font-size: 9px;
+    font-size: var(--type-label);
     gap: 5px;
   }
   .service-number {
@@ -1322,11 +1328,11 @@ ol {
     display: block;
   }
   .unsure p {
-    font-size: 11px;
+    font-size: var(--type-caption);
     margin-bottom: 10px;
   }
   .unsure .text-link {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .approach,
   .planning {
@@ -1347,13 +1353,13 @@ ol {
     margin-top: 20px;
   }
   .planning-process li {
-    font-size: 14px;
+    font-size: var(--type-body);
   }
   .planning h2 {
     font-size: 38px;
   }
   .planning p:not(.eyebrow) {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .project-feature {
     grid-template-columns: 1fr;
@@ -1395,7 +1401,7 @@ ol {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    font-size: 9px;
+    font-size: var(--type-label);
     margin-top: 30px;
   }
   .cta-section {
@@ -1426,7 +1432,7 @@ ol {
     margin-bottom: 15px;
   }
   .footer-grid > div > a:not(.brand) {
-    font-size: 10px;
+    font-size: var(--type-label);
   }
   .footer-bottom {
     flex-direction: column;
@@ -1451,7 +1457,7 @@ ol {
     gap: 8px;
   }
   .project-tags span {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .contact-end {
     display: block;
@@ -1471,10 +1477,10 @@ ol {
   .form-field input,
   .form-field textarea,
   .form-field select {
-    font-size: 16px;
+    font-size: var(--type-body);
   }
   .form-submit {
-    font-size: 11px;
+    font-size: var(--type-caption);
     padding-inline: 12px;
     gap: 12px;
   }
@@ -1485,13 +1491,13 @@ ol {
     gap: 25px;
   }
   .page-intro .lead {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .detail-grid h2 {
     font-size: 34px;
   }
   .detail-grid .lead {
-    font-size: 15px;
+    font-size: var(--type-body);
   }
   .preparation {
     padding: 25px;
@@ -1500,13 +1506,13 @@ ol {
     padding-left: 23px;
   }
   .project-gallery figcaption {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .portfolio-grid h2 {
     font-size: 30px;
   }
   .legal-copy p {
-    font-size: 13px;
+    font-size: var(--type-small);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1532,7 +1538,7 @@ ol {
   object-fit: cover;
 }
 .service-thumb figcaption {
-  font-size: 8px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin-top: 5px;
   letter-spacing: 0.25px;
@@ -1551,7 +1557,7 @@ ol {
     margin-bottom: 14px;
   }
   .service-thumb figcaption {
-    font-size: 7px;
+    font-size: var(--type-label);
   }
 }
 @media (max-width: 380px) {
@@ -1591,7 +1597,7 @@ ol {
 }
 .brand small {
   letter-spacing: 0.8px;
-  font-size: 8px;
+  font-size: var(--type-label);
 }
 .brand strong {
   font-size: 19px;
@@ -1648,7 +1654,7 @@ ol {
   gap: 100px;
 }
 .solutions-story > p:not(.large-copy) {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .solution-thumbnails {
   display: flex;
@@ -1661,7 +1667,7 @@ ol {
   height: 160px;
 }
 .solution-thumbnails figcaption {
-  font-size: 8px;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .solution-principles > div {
@@ -1675,18 +1681,18 @@ ol {
   left: 0;
   top: 3px;
   color: var(--brown);
-  font-size: 10px;
+  font-size: var(--type-label);
 }
 .solution-principles h3 {
   font-size: 30px;
   margin-bottom: 16px;
 }
 .solution-principles p {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin: 0;
 }
 .quiet-note {
-  font-size: 11px;
+  font-size: var(--type-caption);
   color: var(--muted);
 }
 .pricing-section {
@@ -1702,7 +1708,7 @@ ol {
   margin-bottom: 25px;
 }
 .pricing-grid p {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .pricing-grid ul {
   list-style: none;
@@ -1714,11 +1720,11 @@ ol {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 12px;
+  font-size: var(--type-small);
 }
 .pricing-grid li strong {
   white-space: nowrap;
-  font-size: 10px;
+  font-size: var(--type-label);
   font-weight: 500;
   color: var(--blue);
 }
@@ -1731,7 +1737,7 @@ ol {
   margin-top: 35px;
 }
 .service-examples {
-  font-size: 13px;
+  font-size: var(--type-small);
   padding-left: 20px;
   margin: 20px 0 30px;
 }
@@ -1763,7 +1769,7 @@ ol {
   flex-wrap: wrap;
   gap: 18px;
   padding: 23px 38px 0;
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 1px;
   color: var(--muted);
 }
@@ -1794,7 +1800,7 @@ ol {
   outline: none;
 }
 .wizard-inner > form > p {
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .need-grid {
   display: grid;
@@ -1828,25 +1834,25 @@ ol {
 }
 .need-card strong {
   display: block;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 600;
   line-height: 1.5;
 }
 .need-card small {
   display: block;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   line-height: 1.5;
   margin-top: 5px;
 }
 .choice-mark {
   align-self: flex-start;
-  font-size: 17px;
+  font-size: var(--type-body);
   color: var(--blue);
   width: 17px;
 }
 .wizard-caption {
-  font-size: 9px !important;
+  font-size: var(--type-label) !important;
   margin: 12px 0 0;
 }
 .wizard-actions {
@@ -1862,7 +1868,7 @@ ol {
 .wizard-back {
   background: none;
   border: 0;
-  font-size: 12px;
+  font-size: var(--type-small);
   padding: 12px 0;
   color: var(--ink);
 }
@@ -1882,7 +1888,7 @@ ol {
   background: var(--ivory);
   padding: 20px;
   border: 1px solid var(--line);
-  font-size: 13px;
+  font-size: var(--type-small);
   cursor: pointer;
 }
 .choice-card input {
@@ -1898,7 +1904,7 @@ ol {
   border: 0;
 }
 .sourcing-choices legend {
-  font-size: 12px;
+  font-size: var(--type-small);
   margin-bottom: 15px;
 }
 .sourcing-choices label {
@@ -1906,17 +1912,17 @@ ol {
   align-items: center;
   gap: 8px;
   margin-right: 25px;
-  font-size: 12px;
+  font-size: var(--type-small);
 }
 .sourcing-choices input {
   accent-color: var(--blue);
 }
 .wizard-inner .form-field label {
-  font-size: 12px;
+  font-size: var(--type-small);
 }
 .wizard-inner .form-field input,
 .wizard-inner .form-field textarea {
-  font-size: 16px;
+  font-size: var(--type-body);
 }
 .photo-upload {
   background: var(--ivory);
@@ -1926,16 +1932,16 @@ ol {
 }
 .photo-upload label {
   display: block;
-  font-size: 13px;
+  font-size: var(--type-small);
 }
 .photo-upload label span {
   display: block;
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin: 7px 0 17px;
 }
 .photo-upload input {
-  font-size: 12px;
+  font-size: var(--type-small);
   max-width: 100%;
 }
 .photo-upload input::file-selector-button {
@@ -1947,7 +1953,7 @@ ol {
   cursor: pointer;
 }
 .photo-upload p {
-  font-size: 10px;
+  font-size: var(--type-label);
   margin: 15px 0 0;
 }
 .photo-list {
@@ -1959,7 +1965,7 @@ ol {
   display: flex;
   gap: 15px;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: var(--type-caption);
   padding: 8px 0;
 }
 .photo-list li span {
@@ -1973,7 +1979,7 @@ ol {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: none;
-  font-size: 10px;
+  font-size: var(--type-label);
   padding: 3px 0;
   color: var(--blue);
   flex-shrink: 0;
@@ -1996,7 +2002,7 @@ ol {
   font-size: 25px;
 }
 .quote-summary p {
-  font-size: 12px;
+  font-size: var(--type-small);
   overflow-wrap: anywhere;
 }
 .quote-summary dl {
@@ -2007,13 +2013,13 @@ ol {
   padding: 14px 0;
 }
 .quote-summary dt {
-  font-size: 10px;
+  font-size: var(--type-label);
   color: var(--muted);
   margin-bottom: 5px;
 }
 .quote-summary dd {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--type-small);
   overflow-wrap: anywhere;
   display: flex;
   align-items: flex-start;
@@ -2027,7 +2033,7 @@ ol {
   white-space: pre-wrap;
 }
 .wizard-endnote {
-  font-size: 11px;
+  font-size: var(--type-caption);
   text-align: center;
   margin: 24px auto 0;
   max-width: 600px;
@@ -2085,7 +2091,7 @@ ol {
     grid-column: 2;
   }
   .kitchen-hero .hero-note {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .solutions-grid {
     gap: 35px;
@@ -2119,10 +2125,10 @@ ol {
 }
 @media (max-width: 600px) {
   .brand strong {
-    font-size: 17px;
+    font-size: var(--type-body);
   }
   .brand small {
-    font-size: 7px;
+    font-size: var(--type-label);
     letter-spacing: 0.3px;
   }
   .kitchen-hero h1 {
@@ -2136,14 +2142,14 @@ ol {
     min-height: 0;
   }
   .kitchen-hero .hero-description {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .kitchen-hero .hero-note {
-    font-size: 9px;
+    font-size: var(--type-label);
     line-height: 1.6;
   }
   .hero-actions .text-link {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .hero-bottom {
     align-items: flex-start;
@@ -2182,7 +2188,7 @@ ol {
     padding-block: 55px;
   }
   .pricing-grid li {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .wizard-container {
     padding-top: 30px;
@@ -2192,7 +2198,7 @@ ol {
   }
   .wizard-progress {
     padding: 20px 18px 0;
-    font-size: 8px;
+    font-size: var(--type-label);
     letter-spacing: 0.5px;
   }
   .wizard-inner h2 {
@@ -2207,10 +2213,10 @@ ol {
     min-height: 160px;
   }
   .need-card strong {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .need-card small {
-    font-size: 9px;
+    font-size: var(--type-label);
   }
   .need-card img {
     width: 55px;
@@ -2222,13 +2228,13 @@ ol {
   }
   .choice-card {
     padding: 16px;
-    font-size: 13px;
+    font-size: var(--type-small);
   }
   .wizard-actions {
     gap: 15px;
   }
   .wizard-actions .button {
-    font-size: 11px;
+    font-size: var(--type-caption);
     padding: 15px 16px;
     gap: 14px;
   }
@@ -2243,24 +2249,24 @@ ol {
     font-size: 23px;
   }
   .quote-summary dd {
-    font-size: 12px;
+    font-size: var(--type-small);
   }
   .photo-upload {
     padding: 16px;
   }
   .photo-upload input {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
   .sourcing-choices label {
     margin-right: 15px;
   }
   .form-status .button {
-    font-size: 11px;
+    font-size: var(--type-caption);
     padding: 15px 12px;
     gap: 10px;
   }
   .wizard-inner .consent {
-    font-size: 11px;
+    font-size: var(--type-caption);
   }
 }
 @media (max-width: 380px) {
@@ -2315,7 +2321,7 @@ ol {
   margin-bottom: 18px;
 }
 .brand small {
-  font-size: 9px;
+  font-size: var(--type-label);
   letter-spacing: 0;
   font-style: italic;
   text-transform: none;
@@ -2334,7 +2340,7 @@ ol {
     font-size: 18px;
   }
   .brand small {
-    font-size: 8px;
+    font-size: var(--type-label);
   }
   .kitchen-hero .hero-copy {
     padding-top: 12px;
@@ -2369,16 +2375,16 @@ ol {
 .kitchen-services .service-optimisation .service-thumb { max-width: none; width: 100%; margin: 0 0 24px; }
 .service-thumb .project-image { aspect-ratio: 4/3; }
 .service-thumb .project-image img { width: 100%; height: 100%; aspect-ratio: auto; }
-.service-thumb figcaption { font-size: 11px; line-height: 1.5; margin-top: 10px; }
+.service-thumb figcaption { font-size: var(--type-caption); line-height: 1.5; margin-top: 10px; }
 .service-thumb.concept-thumb { min-height: 210px; display: flex; align-items: center; gap: 24px; background: var(--sand); padding: 18px; }
 .service-thumb.concept-thumb a { flex-shrink: 0; max-width: 55%; }
 .service-thumb.concept-thumb img { width: auto; height: auto; aspect-ratio: auto; object-fit: contain; }
-.service-card p { font-size: 14px; }
+.service-card p { font-size: var(--type-body); }
 .service-card h3 { font-size: 30px; }
 .service-enquiry { margin-top: auto; padding-block: 12px; min-height: 44px; }
 .solution-thumbnails figure { max-width: 142px; }
 .solution-thumbnails img { width: auto; height: auto; max-width: 100%; }
-.solution-thumbnails figcaption { font-size: 11px; line-height: 1.5; margin-top: 10px; }
+.solution-thumbnails figcaption { font-size: var(--type-caption); line-height: 1.5; margin-top: 10px; }
 .project-feature { grid-template-columns: 1.15fr 1fr; }
 .project-feature-image .project-image { aspect-ratio: 3/4; min-height: 0; }
 .portfolio-grid { max-width: 1200px; }
@@ -2386,7 +2392,7 @@ ol {
 .service-visual { padding-top: 52px; display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
 .service-main-photo .project-image { aspect-ratio: 4/5; }
 .service-main-photo figcaption,
-.service-concept figcaption { font-size: 12px; line-height: 1.65; margin-top: 14px; color: var(--muted); }
+.service-concept figcaption { font-size: var(--type-small); line-height: 1.65; margin-top: 14px; color: var(--muted); }
 .service-visual-copy h2 { font-size: clamp(32px, 3vw, 46px); margin-bottom: 24px; }
 .service-visual-copy .button { margin-top: 25px; }
 .service-visual-copy > .text-link { display: block; margin-top: 22px; }
@@ -2398,23 +2404,23 @@ ol {
 .related-services a { display: inline-flex; padding-block: 10px; border-bottom: 1px solid var(--line); }
 .case-study-context { max-width: 760px; margin: 30px 0; }
 .gallery-open { border: 0; padding: 0; background: transparent; width: 100%; position: relative; display: block; text-align: left; }
-.gallery-hint { position: absolute; bottom: 15px; right: 15px; padding: 8px 14px; background: var(--ivory); font-size: 12px; color: var(--ink); }
-.project-gallery figcaption { font-size: 12px; }
+.gallery-hint { position: absolute; bottom: 15px; right: 15px; padding: 8px 14px; background: var(--ivory); font-size: var(--type-small); color: var(--ink); }
+.project-gallery figcaption { font-size: var(--type-small); }
 .image-dialog { border: 1px solid var(--line); padding: 20px; width: min(920px, 95vw); max-height: 95dvh; color: var(--ink); background: var(--ivory); }
 .image-dialog::backdrop { background: rgb(30 25 20 / 80%); }
 .image-dialog > img { display: block; width: auto; height: auto; max-height: 70dvh; max-width: 100%; margin-inline: auto; object-fit: contain; }
-.image-dialog > p { font-size: 13px; margin: 10px 0 0; }
+.image-dialog > p { font-size: var(--type-small); margin: 10px 0 0; }
 .dialog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-.dialog-toolbar p { margin: 0; font-size: 13px; }
+.dialog-toolbar p { margin: 0; font-size: var(--type-small); }
 .dialog-toolbar button { min-height: 44px; background: transparent; color: var(--ink); border: 0; padding: 10px; }
 .wizard-phases { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; padding: 22px 30px; margin: 0; border-bottom: 1px solid var(--line); gap: 12px; }
-.wizard-phases li { font-size: 12px; display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.wizard-phases li { font-size: var(--type-small); display: flex; align-items: center; gap: 10px; color: var(--muted); }
 .wizard-phases span { border: 1px solid var(--line); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; }
 .wizard-phases [aria-current] { color: var(--deep); font-weight: 650; }
 .wizard-phases [aria-current] span { background: var(--deep); color: white; border-color: var(--deep); }
-.wizard-delivery-note { font-size: 13px; margin: 22px 38px 0; }
-.wizard-caption { font-size: 12px !important; }
-.summary-edit, .quote-summary dd button, .summary-heading button, .photo-list button { min-height: 44px; font-size: 12px; }
+.wizard-delivery-note { font-size: var(--type-small); margin: 22px 38px 0; }
+.wizard-caption { font-size: var(--type-small) !important; }
+.summary-edit, .quote-summary dd button, .summary-heading button, .photo-list button { min-height: 44px; font-size: var(--type-small); }
 @media (max-width: 1000px) {
   .kitchen-hero { column-gap: 28px; }
   .kitchen-hero .hero-photo { min-height: 650px; }
@@ -2435,27 +2441,27 @@ ol {
   .kitchen-hero .hero-photo { grid-row: 4; min-height: 0; aspect-ratio: auto; margin-inline: -20px; }
   .hero-photo .project-image { aspect-ratio: 3/4; flex: auto; }
   .hero-photo figcaption { margin: 15px 20px 0; }
-  .hero-photo figcaption > span { font-size: 10px; }
-  .hero-photo figcaption small { font-size: 12px; }
+  .hero-photo figcaption > span { font-size: var(--type-label); }
+  .hero-photo figcaption small { font-size: var(--type-small); }
   .hero-subtitle { grid-row: 5; margin: 0; font-size: 25px; }
-  .kitchen-hero .hero-description { grid-row: 6; margin: 0; font-size: 15px; }
+  .kitchen-hero .hero-description { grid-row: 6; margin: 0; font-size: var(--type-body); }
   .hero-actions { grid-row: 7; gap: 12px 24px; }
-  .hero-actions .button { width: 100%; font-size: 14px; }
-  .kitchen-hero .hero-note { grid-row: 8; margin: 0; font-size: 12px; }
+  .hero-actions .button { width: 100%; font-size: var(--type-body); }
+  .kitchen-hero .hero-note { grid-row: 8; margin: 0; font-size: var(--type-small); }
   .hero-bottom { grid-row: 9; flex-direction: column; align-items: flex-start; }
-  .hero-bottom span, .hero-bottom a { font-size: 10px; white-space: normal; }
+  .hero-bottom span, .hero-bottom a { font-size: var(--type-label); white-space: normal; }
   .kitchen-services { grid-template-columns: 1fr; }
   .kitchen-services .service-card,
   .kitchen-services .service-card:nth-child(n + 4),
   .kitchen-services .service-optimisation { grid-column: auto; padding: 20px; display: flex; }
-  .service-card p { font-size: 14px; }
+  .service-card p { font-size: var(--type-body); }
   .service-card h3 { font-size: 32px; }
-  .service-enquiry { font-size: 13px; }
+  .service-enquiry { font-size: var(--type-small); }
   .service-thumb.concept-thumb { min-height: 180px; }
   .service-visual { grid-template-columns: 1fr; padding-top: 35px; }
   .service-main-photo .project-image { aspect-ratio: 3/4; }
   .service-concept { flex-wrap: nowrap; }
-  .service-concept figcaption { font-size: 12px; }
+  .service-concept figcaption { font-size: var(--type-small); }
   .service-visual-copy .button { width: 100%; }
   .project-feature { grid-template-columns: 1fr; }
   .project-feature-image .project-image { aspect-ratio: 3/4; }
@@ -2464,8 +2470,8 @@ ol {
   .wizard-phases { padding: 18px; gap: 12px 8px; grid-template-columns: 1fr 1fr; }
   .wizard-delivery-note { margin: 20px 18px 0; }
   .contact-cards h2 { overflow-wrap: anywhere; }
-  .page-intro .lead { font-size: 16px; }
-  .footer-grid > div > a:not(.brand) { font-size: 13px; padding-block: 6px; }
+  .page-intro .lead { font-size: var(--type-body); }
+  .footer-grid > div > a:not(.brand) { font-size: var(--type-small); padding-block: 6px; }
 }
 @media (min-width: 701px) and (max-width: 1000px) {
   .kitchen-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2481,13 +2487,13 @@ ol {
 .kitchen-hero h1 em { display: block; }
 .hero-intro { padding-bottom: 8px; }
 .hero-intro .hero-subtitle { font-size: 29px; margin: 0 0 20px; }
-.hero-intro .hero-description { margin: 0 0 26px; max-width: 530px; font-size: 15px; line-height: 1.8; }
-.kitchen-hero .hero-note { font-size: 12px; line-height: 1.6; margin-top: 20px; }
+.hero-intro .hero-description { margin: 0 0 26px; max-width: 530px; font-size: var(--type-body); line-height: 1.8; }
+.kitchen-hero .hero-note { font-size: var(--type-small); line-height: 1.6; margin-top: 20px; }
 .kitchen-hero .hero-photo { min-height: 0; }
 .editorial-hero-photo .project-image { flex: auto; aspect-ratio: 16/9; }
 .hero-photo figcaption p { font-family: Georgia, serif; font-size: 23px; line-height: 1.3; margin: 0; color: var(--ink); }
-.hero-photo figcaption small { font-size: 12px; }
-.hero-photo figcaption > span { font-size: 10px; }
+.hero-photo figcaption small { font-size: var(--type-small); }
+.hero-photo figcaption > span { font-size: var(--type-label); }
 .kitchen-services .service-thumb .project-image { aspect-ratio: 4/3; }
 .kitchen-services .service-card:nth-child(n + 4) .project-image { aspect-ratio: 3/2; }
 .solution-thumbnails { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -2495,7 +2501,7 @@ ol {
 .solution-thumbnails img { width: 100%; height: auto; }
 .inspiration-detail { max-width: 374px; min-width: 0; }
 .inspiration-detail img { display: block; width: 100%; max-width: 374px; height: auto; }
-.inspiration-detail figcaption { margin-top: 14px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.inspiration-detail figcaption { margin-top: 14px; font-size: var(--type-small); line-height: 1.7; color: var(--muted); }
 .inspiration-detail figcaption strong { display: block; font-family: Georgia, serif; font-size: 23px; line-height: 1.2; font-weight: 400; margin-bottom: 9px; color: var(--ink); }
 .inspiration-detail figcaption span { display: block; }
 .service-visual { display: block; }
@@ -2503,7 +2509,7 @@ ol {
 .service-visual-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 60px; margin-top: 38px; align-items: start; }
 .service-visual-copy .eyebrow { grid-column: 1; margin-bottom: 0; }
 .service-visual-copy h2 { grid-column: 1; margin: 0; }
-.service-visual-copy > p { grid-column: 2; grid-row: 1/3; margin: 0; font-size: 16px; }
+.service-visual-copy > p { grid-column: 2; grid-row: 1/3; margin: 0; font-size: var(--type-body); }
 .service-visual-copy .button { grid-column: 1; justify-self: start; margin: 0; }
 .service-visual-copy > .text-link { grid-column: 2; grid-row: 3; margin: 0; align-self: center; }
 .inspiration-section { padding-block: 0 80px; }
@@ -2540,3 +2546,80 @@ ol {
   .inspiration-detail { margin-inline: auto; }
   .inspiration-section { padding-bottom: 65px; }
 }
+
+/* Reading text uses one scale across landing, service, project and legal pages. */
+body,
+.section-top > p,
+.unsure p,
+.planning p:not(.eyebrow):not(.planning-caption),
+.project-feature-copy > p:not(.project-category),
+.process-grid p,
+.project-details p,
+.contact-cards p,
+.hero-intro .hero-description,
+.kitchen-hero .hero-description,
+.service-card p,
+.solutions-story > p:not(.large-copy),
+.solution-principles p,
+.pricing-grid p,
+.pricing-grid li,
+.service-examples,
+.service-visual-copy > p,
+.approach-copy > p:not(.large-copy),
+.cta-section p:not(.eyebrow),
+.legal-copy p,
+.wizard-inner > form > p,
+.quote-summary p,
+.quote-summary dd { font-size: var(--type-body); }
+
+.desktop-nav, .mobile-menu a,
+.button, .header-quote, .hero-actions .button,
+.text-link, .cta-actions .text-link,
+.need-card strong, .choice-card,
+.wizard-inner .form-field label,
+.sourcing-choices legend, .sourcing-choices label,
+.photo-upload label,
+.form-field input, .form-field textarea, .form-field select,
+.wizard-inner .form-field input, .wizard-inner .form-field textarea {
+  font-size: var(--type-control);
+}
+.eyebrow { letter-spacing: 1.7px; }
+.brand small { font-size: 10px; }
+.desktop-nav { flex-wrap: wrap; row-gap: 0; }
+.desktop-nav a { white-space: nowrap; }
+.header-quote { flex-shrink: 0; }
+.header-inner > .brand { flex-shrink: 0; }
+.footer-grid > div { min-width: 0; }
+.brand > span:last-child { min-width: 0; }
+.button { text-align: center; }
+.pricing-grid li > span { min-width: 0; }
+.wizard-phases li { min-width: 0; }
+
+@media (max-width: 1100px) {
+  .desktop-nav { gap: 16px; }
+}
+@media (min-width: 801px) and (max-width: 1050px) {
+  .desktop-nav, .header-quote { display: none; }
+  .menu-toggle { display: flex; flex-shrink: 0; }
+}
+@media (max-width: 700px) {
+  :root {
+    --type-body: 1.03125rem;
+    --type-small: .90625rem;
+    --type-caption: .84375rem;
+    --type-label: .78125rem;
+  }
+}
+
+/* Keep section labels and supporting actions distinct from reading copy. */
+main p.eyebrow { font-size: var(--type-label); }
+.service-enquiry { font-size: var(--type-small); }
+
+/* Let enquiry cards reflow when the reader enlarges text. */
+.need-card { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .need-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(9rem, calc(50% - 5px))), 1fr));
+  }
+}
+.legal-copy a { overflow-wrap: anywhere; }

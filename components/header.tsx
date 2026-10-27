@@ -39,14 +39,14 @@ export function Header() {
   const menuRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && open) {
         setOpen(false);
         menuRef.current?.focus();
       }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, []);
+  }, [open]);
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -71,7 +71,7 @@ export function Header() {
           ))}
         </nav>
         <Link href="/devis" className="button header-quote">
-          Demander un devis <Icon name="arrow" width={17} />
+          Parler de mon projet <Icon name="arrow" width={17} />
         </Link>
         <button
           ref={menuRef}
@@ -91,7 +91,7 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
-          {[...links, { href: "/devis", label: "Demander un devis" }].map(
+          {[...links, { href: "/devis", label: "Parler de mon projet" }].map(
             (l) => (
               <Link
                 key={l.href}

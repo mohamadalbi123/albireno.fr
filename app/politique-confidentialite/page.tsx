@@ -45,6 +45,16 @@ export default function Privacy() {
           modalités d’exercice des droits seront précisés avant cette activation
           publique.
         </p>
+        <h2>Hébergement et données techniques</h2>
+        <p>
+          Le site est hébergé par Vercel. Son affichage et sa sécurité impliquent
+          le traitement de données techniques par cet hébergeur, distinctes des
+          informations que vous saisissez dans la préparation de votre demande.
+          Vous pouvez consulter la{" "}
+          <a href="https://vercel.com/legal/privacy-notice">
+            notice de confidentialité de Vercel
+          </a>.
+        </p>
         <h2>Mesure d’audience</h2>
         <p>
           Aucun outil publicitaire ou de mesure d’audience n’est installé dans

@@ -5,7 +5,7 @@ export function PricingOverview() {
     <section className="pricing-section">
       <div className="container pricing-grid">
         <div>
-          <Eyebrow>Un périmètre clair, un devis adapté</Eyebrow>
+          <Eyebrow>Préparer le budget d’un futur projet</Eyebrow>
           <h2>
             Ce qui fait
             <br />
@@ -22,8 +22,8 @@ export function PricingOverview() {
         </div>
         <div>
           <p className="pricing-note">
-            Chaque demande fait l’objet d’une étude. Aucun tarif automatique ne
-            vaut devis définitif.
+            L’activité est en préparation. Aucun devis ni prestation payante
+            n’est proposé à ce stade ; les futurs tarifs restent à définir.
           </p>
           <ul>
             {pricing
@@ -44,7 +44,7 @@ export function PricingOverview() {
                     <strong>
                       {rate
                         ? `${rate.amount}${rate.maximum ? `–${rate.maximum}` : ""} € / ${rate.unit}`
-                        : "Sur devis"}
+                        : "À définir"}
                     </strong>
                   </li>
                 );

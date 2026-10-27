@@ -1,3 +1,4 @@
+import { business } from "@/lib/business";
 import { ProjectImage } from "@/components/project-image";
 import { serviceEditorialImage, serviceDetailImages } from "@/lib/inspiration";
 import { InspirationFigure } from "@/components/inspiration-figure";
@@ -29,7 +30,7 @@ export default async function ServicePage({
   if (!s) notFound();
   return (
     <>
-      <PageIntro eyebrow="Nos expertises" title={s.seoTitle} text={s.short} />
+      <PageIntro eyebrow="Nos expertises" title={s.seoTitle} text={`${s.short} ${business.preparationNotice}`} />
       <section className="container service-visual" aria-label="Le service en images">
         <figure className="service-main-photo">
           <ProjectImage image={serviceEditorialImage(s.id)} priority sizes="(max-width: 700px) 100vw, (max-width: 1440px) 92vw, 1320px" />
@@ -39,7 +40,7 @@ export default async function ServicePage({
           <Eyebrow>Une idée à explorer</Eyebrow>
           <h2>{s.title}</h2>
           <p>{s.examples[0]}. Le choix dépend des dimensions, de l’existant et du périmètre à confirmer.</p>
-          <Button href={`/devis?service=${s.slug}`}>Demander un devis</Button>
+          <Button href={`/devis?service=${s.slug}`}>Parler de mon projet</Button>
           <Link className="text-link" href="/realisations/cuisine-optimisee">Explorer le projet personnel ↗</Link>
         </div>
       </section>
@@ -75,7 +76,7 @@ export default async function ServicePage({
           <Eyebrow>Pour commencer</Eyebrow>
           <h3>Préparer notre échange</h3>
           <p>{s.preparation}</p>
-          <Button href={`/devis?service=${s.slug}`}>Demander un devis</Button>
+          <Button href={`/devis?service=${s.slug}`}>Parler de mon projet</Button>
         </aside>
       </section>
       <section className="container inspiration-section" aria-label="Exemples illustratifs">
