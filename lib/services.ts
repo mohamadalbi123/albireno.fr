@@ -24,7 +24,7 @@ export const services: Service[] = [
     seoTitle: "Installation de cuisines à La Rochelle",
     short: "Une installation pensée dans les moindres détails.",
     intro:
-      "Une cuisine neuve commence par une implantation juste. Nous étudions le plan, les dimensions et les contraintes avant de préparer le montage des caissons, leur positionnement et les ajustements. Une cuisine IKEA, Leroy Merlin ou d’une autre marque demande de suivre ses notices et de vérifier les composants livrés.",
+      "Une cuisine neuve commence par une implantation juste. Nous étudions le plan, les dimensions et les contraintes avant de préparer le montage des caissons, leur positionnement et les ajustements. Une cuisine IKEA, Leroy Merlin ou d’une autre marque nécessite de suivre les notices du fabricant et de vérifier les composants livrés.",
     image: "/images/installation/cuisine-blanche.webp",
     preparation:
       "Plan du fournisseur, dimensions, liste des modules, état de la livraison et caractéristiques du plan de travail.",
@@ -33,10 +33,10 @@ export const services: Service[] = [
       "Monter, positionner et ajuster les meubles prévus",
       "Vérifier les alignements, les ouvertures et les finitions",
     ],
-    note: "Les travaux sur les réseaux électriques, gaz ou plomberie sont examinés séparément et réservés aux professionnels compétents dans un périmètre autorisé et assuré. ALBI RENO n’est affiliée à aucune enseigne.",
+    note: "Les travaux sur les réseaux électriques, de gaz ou de plomberie sont examinés séparément et réservés aux professionnels compétents dans un périmètre autorisé et assuré. ALBI RENO n’est affiliée à aucune enseigne.",
     examples: [
       "Montage et positionnement des caissons",
-      "Pose et adaptation du plan de travail selon faisabilité",
+      "Pose et adaptation du plan de travail, sous réserve de faisabilité",
       "Organisation des rangements et intégration du mobilier",
     ],
     number: "01",
@@ -45,7 +45,7 @@ export const services: Service[] = [
   },
   {
     id: "renovation",
-    seoDescription: "Rénovation de cuisines à La Rochelle : étudier les façades, plans de travail et rangements à conserver ou adapter selon l’état de votre cuisine.",
+    seoDescription: "Rénovation de cuisines à La Rochelle : étudier les façades, plans de travail et rangements à conserver ou à adapter selon l’état de votre cuisine.",
     slug: "renovation-cuisine-la-rochelle",
     title: "Rénover ma cuisine",
     seoTitle: "Rénovation de cuisines à La Rochelle",
@@ -54,7 +54,7 @@ export const services: Service[] = [
       "Tout remplacer n’est pas toujours la meilleure réponse. Une cuisine peut évoluer grâce à de nouvelles façades compatibles, un plan de travail adapté, des rangements mieux organisés ou des finitions reprises. Le premier échange permet d’identifier ce qui peut être conservé et ce qui mérite d’être changé.",
     image: "/images/renovation/cuisine-blanche-renovee.webp",
     preparation:
-      "Photos des meubles existants, état des caissons et façades, références connues et liste des changements souhaités.",
+      "Photos des meubles existants, état des caissons et des façades, références connues et liste des changements souhaités.",
     steps: [
       "Examiner les éléments à conserver",
       "Comparer les modifications et leurs contraintes",
@@ -85,7 +85,7 @@ export const services: Service[] = [
     steps: [
       "Observer les usages et les obstacles",
       "Étudier les rangements et les implantations possibles",
-      "Valider les ajustements réalisables avant intervention",
+      "Valider les ajustements réalisables avant toute intervention",
     ],
     note: "L’accès aux équipements, la ventilation et l’entretien des réseaux doivent être préservés. Les adaptations sont soumises à une vérification sur place.",
     examples: [
@@ -99,7 +99,7 @@ export const services: Service[] = [
   },
   {
     id: "reparation",
-    seoDescription: "Réparation et modification de cuisines à La Rochelle : portes, charnières, tiroirs et meubles. Préparez les références et photos pour étudier la faisabilité.",
+    seoDescription: "Réparation et modification de cuisines à La Rochelle : portes, charnières, tiroirs et meubles. Préparez les références et les photos pour étudier la faisabilité.",
     slug: "reparation-cuisine-la-rochelle",
     title: "Réparer ou modifier ma cuisine",
     seoTitle: "Réparation et modification de cuisines à La Rochelle",
@@ -111,13 +111,13 @@ export const services: Service[] = [
       "Photos du problème et du mécanisme, marque ou référence si connue, nombre d’éléments concernés et dimensions utiles.",
     steps: [
       "Identifier la cause et les pièces compatibles",
-      "Définir le réglage, remplacement ou ajustement",
+      "Définir le réglage, le remplacement ou l’ajustement nécessaire",
       "Contrôler le fonctionnement après intervention",
     ],
     note: "Certaines pièces ne sont plus disponibles ou ne peuvent pas être adaptées sans modifier le meuble. La faisabilité et le périmètre sont précisés avant toute intervention.",
     examples: [
       "Réglage de portes et remplacement de charnières",
-      "Examen des coulisses et tiroirs",
+      "Examen des coulisses et des tiroirs",
       "Ajustements de meubles et petites adaptations",
     ],
     number: "04",
@@ -144,7 +144,7 @@ export const services: Service[] = [
     note: "Une visualisation n’est pas un plan technique d’exécution. Les cotes, matériaux, fixations et contraintes des réseaux restent à vérifier. Une réparation simple ne nécessite pas de conception 3D.",
     examples: [
       "Étude de l’implantation et des rangements",
-      "Visualisation des volumes et matériaux",
+      "Visualisation des volumes et des matériaux",
       "Échange autour des choix avant les travaux",
     ],
     number: "05",

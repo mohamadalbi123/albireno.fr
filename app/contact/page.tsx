@@ -32,7 +32,7 @@ export default function Contact() {
         </a>
       </section>
       <section className="container contact-end">
-        <h2>Posons les premières idées.</h2>
+        <h2>Donnons forme à vos premières idées.</h2>
         <Button href="/devis">Préparer ma demande</Button>
       </section>
     </>

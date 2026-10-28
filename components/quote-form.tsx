@@ -264,12 +264,12 @@ export function QuoteForm({
         whatsappUrl(
           quoteMessage(checked.data) +
             (photos.length
-              ? `\n\n${photos.length} photo(s) à joindre manuellement dans WhatsApp.`
+              ? `\n\nPhotos à joindre manuellement dans WhatsApp : ${photos.length}.`
               : ""),
         ),
       );
       setStatus(
-        "Votre message est prêt. Aucun message ni photo n’a été envoyé. Ouvrez WhatsApp pour vérifier le texte et l’envoyer ; les photos devront être jointes manuellement.",
+        "Votre message est prêt. Aucun message n’a été envoyé et aucune photo n’a été transmise. Ouvrez WhatsApp pour vérifier le texte et l’envoyer ; les photos devront être jointes manuellement.",
       );
       requestAnimationFrame(() => result.current?.focus());
       return;
@@ -347,7 +347,7 @@ export function QuoteForm({
           ? "Quel calendrier avez-vous en tête ?"
           : step === contactStep
             ? "Faisons connaissance."
-            : "Tout est juste ? Vérifions ensemble.");
+            : "Tout est correct ? Vérifions ensemble.");
   return (
     <div className="quote-wizard">
       <ol className="wizard-phases" aria-label="Les quatre étapes de votre demande">
@@ -426,7 +426,7 @@ export function QuoteForm({
                   (currentQuestion.type === "multiple"
                     ? "Plusieurs réponses sont possibles."
                     : currentQuestion.optional
-                      ? "Cette question est facultative. Vous pouvez passer si vous ne savez pas encore."
+                      ? "Cette question est facultative. Vous pouvez la passer si vous n’avez pas encore la réponse."
                       : "Choisissez la réponse qui correspond le mieux à votre projet.")}
               </p>
               {currentQuestion.type === "text" ? (
@@ -543,12 +543,12 @@ export function QuoteForm({
                   value={data.budget}
                   maxLength={100}
                   onChange={(e) => change("budget", e.target.value)}
-                  placeholder="Votre enveloppe ou fourchette, si elle est définie"
+                  placeholder="Un montant ou une fourchette, si vous en avez une idée"
                 />
               </div>
               <fieldset className="sourcing-choices">
                 <legend>
-                  Souhaitez-vous une aide au choix des meubles ou matériaux ?
+                  Souhaitez-vous de l’aide pour choisir les meubles ou les matériaux ?
                 </legend>
                 {["Oui", "Non", "À discuter"].map((value) => (
                   <label key={value}>
@@ -567,7 +567,7 @@ export function QuoteForm({
           {step === contactStep && (
             <>
               <p>
-                Les champs marqués d’un * sont nécessaires pour vous
+                Les champs marqués d’un astérisque (*) sont nécessaires pour vous
                 recontacter. Vos informations ne sont pas enregistrées pendant
                 les étapes.
               </p>
@@ -666,8 +666,8 @@ export function QuoteForm({
           {step === reviewStep && (
             <>
               <p>
-                Relisez votre demande avant de la transmettre. Aucun tarif ni
-                engagement de travaux n’est calculé automatiquement.
+                Relisez votre demande avant de la transmettre. Aucun tarif n’est calculé et aucun
+                engagement de travaux n’est pris automatiquement.
               </p>
               <section className="quote-summary">
                 <div className="summary-heading">
@@ -712,7 +712,7 @@ export function QuoteForm({
                     <dd>{data.budget || "Non précisé"}</dd>
                   </div>
                   <div>
-                    <dt>Aide au choix / sourcing</dt>
+                    <dt>Aide au choix des meubles et des matériaux</dt>
                     <dd>{data.sourcing}</dd>
                   </div>
                 </dl>
@@ -742,7 +742,7 @@ export function QuoteForm({
                   <p className="summary-comments">{data.comments}</p>
                 )}
                 <p>
-                  {photos.length} photo(s) sélectionnée(s)
+                  Nombre de photos sélectionnées : {photos.length}
                   {!mailEnabled && photos.length > 0
                     ? " — à joindre manuellement dans WhatsApp"
                     : ""}

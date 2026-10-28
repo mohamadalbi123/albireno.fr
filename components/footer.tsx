@@ -62,7 +62,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Built by <strong>Chambre17</strong>
+            Créé par <strong>Chambre17</strong>
           </a>
         </div>
       </div>

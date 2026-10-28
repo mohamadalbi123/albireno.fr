@@ -9,7 +9,7 @@ import { editorialImages, inspirationDetails } from "@/lib/inspiration";
 import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
 export const metadata = pageMetadata(
-  "Installateur cuisine La Rochelle — installation et rénovation",
+  "Installateur de cuisine à La Rochelle — installation et rénovation",
   "ALBI RENO : installation, rénovation, réparation et optimisation de cuisines à La Rochelle. Conception 3D et solutions adaptées aux petits espaces.",
   "/",
 );
@@ -24,7 +24,7 @@ export default function Home() {
               <strong>{business.name}</strong>
               <em>{business.descriptor}</em>
             </div>
-            <Eyebrow>La Rochelle & alentours</Eyebrow>
+            <Eyebrow>La Rochelle et ses alentours</Eyebrow>
             <h1>Installation et rénovation de cuisines <em>à La Rochelle</em></h1>
           </div>
           <div className="hero-intro">
@@ -42,7 +42,7 @@ export default function Home() {
           <ProjectImage image={editorialImages.hero} priority sizes="(max-width: 700px) 100vw, (max-width: 1440px) 92vw, 1320px" />
           <figcaption>
             <span>UNE INSPIRATION POUR VOTRE CUISINE</span>
-            <p>Imaginer un espace à votre mesure.</p>
+            <p>Imaginez un espace à votre mesure.</p>
             <small>Inspiration générée par IA · pas une réalisation ALBI RENO</small>
           </figcaption>
         </figure>
@@ -97,7 +97,7 @@ export default function Home() {
               Une petite surface, un angle difficile, des tuyaux apparents ou un
               agencement peu pratique ? Chaque cuisine présente ses propres
               contraintes. Notre approche consiste à analyser votre espace,
-              imaginer des solutions adaptées et réaliser des aménagements qui
+              à imaginer des solutions adaptées et à réaliser des aménagements qui
               allient fonctionnalité et esthétique.
             </p>
             <div className="solution-thumbnails">
@@ -231,7 +231,7 @@ export default function Home() {
                 text: "Choisissez vos besoins, partagez les contraintes de votre cuisine et vos envies. Un seul projet peut réunir plusieurs interventions.",
               },
               {
-                title: "On étudie les options.",
+                title: "Nous étudions les options.",
                 text: "Dimensions, état des meubles, accès, budget : nous précisons le périmètre et examinons les solutions adaptées.",
               },
               {

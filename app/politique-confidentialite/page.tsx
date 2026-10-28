@@ -26,7 +26,7 @@ export default function Privacy() {
         </p>
         <h2>Contact direct</h2>
         <p>
-          Les liens de téléphone et d’e-mail ouvrent l’application choisie sur
+          Les liens de contact par téléphone et par e-mail ouvrent l’application choisie sur
           votre appareil. Les échanges sont ensuite traités par les services que
           vous utilisez. Les photos sélectionnées restent en mémoire dans la
           page lorsque l’envoi automatique est désactivé. Elles ne sont pas
@@ -35,7 +35,7 @@ export default function Privacy() {
         </p>
         <h2>Envoi automatique futur</h2>
         <p>
-          L’activation de l’envoi par e-mail nécessite de configurer et vérifier
+          L’activation de l’envoi par e-mail nécessite de configurer et de vérifier
           les prestataires d’envoi et de protection anti-spam. Lorsque cet envoi
           est activé, les photos sont vérifiées et réencodées sans métadonnées,
           puis transmises en pièces jointes. Aucune galerie publique ni base de
@@ -49,7 +49,7 @@ export default function Privacy() {
         <p>
           Le site est hébergé par Vercel. Son affichage et sa sécurité impliquent
           le traitement de données techniques par cet hébergeur, distinctes des
-          informations que vous saisissez dans la préparation de votre demande.
+          informations que vous saisissez pour préparer votre demande.
           Vous pouvez consulter la{" "}
           <a href="https://vercel.com/legal/privacy-notice">
             notice de confidentialité de Vercel

@@ -45,13 +45,13 @@ const detail = (filename: string, title: string, alt: string, height = 331, disc
   src: `/images/inspiration-kit/${filename}.webp`, title, alt, role: "inspiration", width: 374, height, disclosure,
 });
 export const inspirationDetails = {
-  installation: detail("cabinet-installation", "Aligner avec précision", "Illustration d’un montage de meuble de cuisine avec un niveau", 332),
+  installation: detail("cabinet-installation", "Aligner avec précision", "Illustration du montage d’un meuble de cuisine avec un niveau", 332),
   hinge: detail("cabinet-hinge-repair", "Retrouver une ouverture fluide", "Illustration du réglage d’une charnière de porte de meuble", 332),
   drawers: detail("drawer-organizers", "Une place pour chaque ustensile", "Illustration de séparateurs en bois dans un tiroir de cuisine"),
   finished: detail("finished-kitchen", "Bois clair et lignes sobres", "Inspiration de cuisine en bois clair avec plan de travail en pierre"),
   island: detail("hero-kitchen", "Un îlot pour se retrouver", "Inspiration d’îlot central en pierre avec tabourets et suspensions"),
-  design: detail("kitchen-3d-design", "Comparer les volumes", "Illustration d’une conception de cuisine sur ordinateur, sans lien avec un export HomeStyler réel"),
-  comparison: detail("kitchen-before-after-concept", "Deux ambiances imaginées", "Comparaison conceptuelle de deux ambiances de cuisine, sans chantier réel", 332, "Comparaison illustrative fournie · ni avant/après réel, ni chantier ALBI RENO."),
+  design: detail("kitchen-3d-design", "Comparer les volumes", "Illustration d’une conception de cuisine sur ordinateur, sans lien avec un véritable export HomeStyler"),
+  comparison: detail("kitchen-before-after-concept", "Deux ambiances imaginées", "Comparaison conceptuelle de deux ambiances de cuisine, sans chantier réel", 332, "Comparaison illustrative fournie · ni avant-après réel ni chantier ALBI RENO."),
   sink: detail("kitchen-sink", "Soigner le point d’eau", "Inspiration d’évier intégré dans un plan clair sous des meubles en bois"),
   modern: detail("modern-kitchen", "Une cuisine qui respire", "Inspiration de cuisine lumineuse avec péninsule en pierre claire"),
   pullout: detail("pullout-storage", "Exploiter les rangements bas", "Illustration de paniers coulissants et de casseroles accessibles", 332),

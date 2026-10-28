@@ -56,7 +56,7 @@ export default function Legal() {
         <p>
           Les photographies de cuisine fournies par le responsable du projet
           présentent un projet personnel. Les visuels d’inspiration sont
-          identifiés comme tels et ne représentent pas des réalisations clients.
+          identifiés comme tels et ne représentent pas de réalisations pour des clients.
         </p>
       </article>
     </>

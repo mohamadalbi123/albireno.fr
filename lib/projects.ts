@@ -36,7 +36,7 @@ export const projects: Project[] = [
     slug: "cuisine-optimisee",
     title: "Une cuisine compacte, optimisée et fonctionnelle",
     kind: "personal",
-    category: "Cuisine & rangement",
+    category: "Cuisine et rangement",
     published: true,
     description:
       "Une cuisine personnelle pensée autour des gestes du quotidien. Des façades grises, un plan de travail clair et des rangements répartis sur trois côtés composent un espace compact et fonctionnel.",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     ],
     details: [
       {
-        title: "Le défi : faire tenir les usages",
+        title: "Le défi : réunir toutes les fonctions dans un espace réduit",
         text: "La disposition rapproche les zones de cuisson, de lavage et de préparation, tout en conservant un passage central.",
       },
       {

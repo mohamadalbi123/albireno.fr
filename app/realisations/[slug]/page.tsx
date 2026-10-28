@@ -35,7 +35,7 @@ export default async function Project({
       />
       <section className="container section">
         <ProjectGallery images={p.images} label={projectKindLabels[p.kind]} />
-        <p className="case-study-context">Deux angles d’un même espace terminé. Ce projet personnel présente une démarche d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant/après.</p>
+        <p className="case-study-context">Deux angles d’un même espace terminé. Ce projet personnel présente une démarche d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant-après.</p>
         <div className="project-tags">
           {p.services.map((s) => (
             <span key={s}>{s}</span>

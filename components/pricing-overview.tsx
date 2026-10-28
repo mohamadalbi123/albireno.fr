@@ -22,8 +22,8 @@ export function PricingOverview() {
         </div>
         <div>
           <p className="pricing-note">
-            L’activité est en préparation. Aucun devis ni prestation payante
-            n’est proposé à ce stade ; les futurs tarifs restent à définir.
+            L’activité est en préparation. Nous ne proposons ni devis ni prestation payante
+            à ce stade ; les futurs tarifs restent à définir.
           </p>
           <ul>
             {pricing

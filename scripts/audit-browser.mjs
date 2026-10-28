@@ -53,8 +53,8 @@ for(const needs of [['installation'],['renovation'],['optimisation'],['reparatio
  await page.getByRole('button',{name:'Vérifier ma demande',exact:true}).click();
  await page.getByRole('button',{name:'Préparer le message WhatsApp',exact:true}).click();assert.ok(await page.locator('#consent-error').isVisible());
  await page.locator('.consent input').check();await page.getByRole('button',{name:'Préparer le message WhatsApp',exact:true}).click();
- const link=page.getByRole('link',{name:'Ouvrir WhatsApp pour vérifier'});await link.waitFor();const href=await link.getAttribute('href');assert.ok(href.startsWith('https://wa.me/33763734372?text='));assert.ok(decodeURIComponent(href).includes('photo(s) à joindre manuellement'));
- assert.match(await page.locator('.form-status').innerText(),/Aucun message ni photo n’a été envoyé/);
+ const link=page.getByRole('link',{name:'Ouvrir WhatsApp pour vérifier'});await link.waitFor();const href=await link.getAttribute('href');assert.ok(href.startsWith('https://wa.me/33763734372?text='));assert.ok(decodeURIComponent(href).includes('Photos à joindre manuellement dans WhatsApp :'));
+ assert.match(await page.locator('.form-status').innerText(),/Aucun message n’a été envoyé et aucune photo n’a été transmise/);
  if(process.env.AXE_SCRIPT){await page.addScriptTag({path:process.env.AXE_SCRIPT});const violations=await page.evaluate(async()=>{const a=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return a.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}))});results.accessibility.push({width:390,path:'/devis review '+needs.join('+'),violations});}
  await page.getByRole('button',{name:'Modifier les coordonnées'}).click();assert.equal(await page.locator('#name').inputValue(),'Audit local');assert.equal(await page.getByRole('link',{name:'Ouvrir WhatsApp pour vérifier'}).count(),0);
  results.flows.push({needs,screens,validation:'needs, contact, consent, invalid photo recovery',handoff:'WhatsApp prepared only; photo attachment manual; edits invalidate link'});

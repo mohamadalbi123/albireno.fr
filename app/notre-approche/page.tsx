@@ -16,7 +16,7 @@ export default function Approach() {
       <section className="container section detail-grid">
         <div>
           <Eyebrow>Une approche concrète</Eyebrow>
-          <h2>Penser aux gestes, autant qu’aux meubles.</h2>
+          <h2>Penser aux gestes autant qu’aux meubles.</h2>
           <p className="lead">
             Préparer un repas, ranger les courses, ouvrir un tiroir sans gêner
             le passage : une cuisine réussie facilite le quotidien.

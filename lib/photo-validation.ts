@@ -63,7 +63,7 @@ export async function preparePhotos(
       });
     } catch {
       throw new Error(
-        "Une photo est illisible, trop grande en dimensions, animée ou ne correspond pas à son format. Choisissez une autre image.",
+        "Une photo est illisible, présente des dimensions trop importantes, est animée ou ne correspond pas au format annoncé. Choisissez une autre image.",
       );
     }
   }

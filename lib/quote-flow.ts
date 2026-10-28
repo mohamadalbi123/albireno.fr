@@ -85,7 +85,7 @@ export const questions: Question[] = [
   {
     id: "modules",
     need: "installation",
-    title: "Combien de meubles et quel plan de travail ?",
+    title: "Combien de meubles souhaitez-vous installer et quel plan de travail prévoyez-vous ?",
     type: "text",
     optional: true,
     placeholder:
@@ -121,7 +121,7 @@ export const questions: Question[] = [
   {
     id: "problems",
     need: "optimisation",
-    title: "Qu’est-ce qui complique votre cuisine ?",
+    title: "Qu’est-ce qui complique l’utilisation de votre cuisine ?",
     type: "multiple",
     options: [
       "Peu de place",
@@ -218,7 +218,7 @@ export function questionError(q: Question, value: unknown): string | undefined {
       value.trim().length > 600 ||
       (!q.optional && value.trim().length < 10)
     )
-      return "Indiquez entre 10 et 600 caractères (600 maximum pour un champ facultatif).";
+      return "Réponse obligatoire : 10 à 600 caractères. Réponse facultative : 600 caractères maximum.";
   } else if (q.type === "single") {
     if (typeof value !== "string" || !q.options?.includes(value))
       return "Choisissez une réponse pour continuer.";

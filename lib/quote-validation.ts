@@ -86,7 +86,7 @@ export function validateQuote(input: unknown): {
     data.name.length > 100 ||
     /[\r\n\x00-\x1F]/.test(data.name)
   )
-    errors.name = "Indiquez votre nom et prénom (2 à 100 caractères).";
+    errors.name = "Indiquez votre nom et votre prénom (2 à 100 caractères).";
   const digits = data.phone.replace(/[^\d]/g, "");
   if (
     !/^[+\d\s().-]+$/.test(data.phone) ||
@@ -115,7 +115,7 @@ export function validateQuote(input: unknown): {
     errors.comments = "Limitez vos précisions à 3 000 caractères.";
   if (!["Oui", "Non", "À discuter"].includes(data.sourcing))
     errors.sourcing =
-      "Précisez si vous souhaitez une aide au choix des meubles et matériaux.";
+      "Précisez si vous souhaitez de l’aide pour choisir les meubles et les matériaux.";
   if (!data.consent)
     errors.consent =
       "Veuillez accepter le traitement de votre demande après lecture de la politique de confidentialité.";
@@ -135,5 +135,5 @@ export function quoteMessage(data: QuoteData) {
     )
     .join(
       "\n\n",
-    )}\n\nCalendrier : ${data.timeframe}\nBudget indicatif : ${data.budget || "Non précisé"}\nAide au choix / sourcing : ${data.sourcing}\nPrécisions : ${data.comments || "Aucune"}`;
+    )}\n\nCalendrier : ${data.timeframe}\nBudget indicatif : ${data.budget || "Non précisé"}\nAide au choix des meubles et des matériaux : ${data.sourcing}\nPrécisions : ${data.comments || "Aucune"}`;
 }
