@@ -41,7 +41,7 @@ if (!services.some((s) => s.confirmed))
   errors.push("Confirmer au moins une prestation dans lib/services.ts.");
 if (errors.length) {
   console.error(
-    "Le lancement public reste bloqué :\n" +
+    "Le lancement commercial reste bloqué :\n" +
       errors.map((e) => "• " + e).join("\n"),
   );
   process.exitCode = 1;

@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { business } from "@/lib/business";
-import { isIndexable, siteUrl } from "@/lib/site";
+import { commercialLaunchApproved, isIndexable, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl || "http://localhost:3000"),
   title: {
@@ -28,7 +28,7 @@ export default function RootLayout({
         <a className="skip-link" href="#contenu">
           Aller au contenu
         </a>
-        {isIndexable && siteUrl && (
+        {isIndexable && commercialLaunchApproved && siteUrl && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org", "@type": "Organization",
             "@id": `${siteUrl}/#organization`, name: business.name, url: siteUrl,

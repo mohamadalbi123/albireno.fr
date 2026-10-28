@@ -17,6 +17,8 @@ export const business = {
   publicationDirector: "Mohamad Albi",
   socialAccounts: [] as { name: string; url: string }[],
   brandApproved: true,
+  // Owner explicitly approved Google indexing on 28 October 2026.
+  indexingApproved: true,
   legalApproved: false,
   privacyApproved: false,
   servicesApproved: false,

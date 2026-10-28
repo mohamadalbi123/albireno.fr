@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { business } from "./business";
+import { canIndexSite } from "./indexing-policy";
 function canonicalOrigin() {
   const raw = process.env.SITE_URL || "https://www.albireno.fr";
   if (!raw) return undefined;
@@ -17,17 +18,19 @@ function canonicalOrigin() {
   }
 }
 export const siteUrl = canonicalOrigin();
-export const isIndexable =
+export const commercialLaunchApproved =
   business.brandApproved &&
   business.legalApproved &&
   business.privacyApproved &&
   business.servicesApproved &&
-  business.launchApproved &&
-  process.env.SITE_INDEXABLE === "true" &&
-  process.env.VERCEL_ENV !== "preview" &&
-  !!siteUrl &&
-  !new URL(siteUrl).hostname.endsWith("vercel.app") &&
-  !new URL(siteUrl).hostname.endsWith("chambre17.com");
+  business.launchApproved;
+export const isIndexable = canIndexSite({
+  ownerApproved: business.indexingApproved,
+  enabled: process.env.SITE_INDEXABLE === "true",
+  environment: process.env.VERCEL_ENV,
+  siteUrl,
+  registeredDomain: business.registeredDomain,
+});
 export const isPreview = !isIndexable;
 export const contactEmail = process.env.BUSINESS_EMAIL || business.email;
 export const contactPhone = process.env.BUSINESS_PHONE || business.phone;

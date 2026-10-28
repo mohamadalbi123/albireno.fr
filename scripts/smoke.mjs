@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 const origin = process.env.TEST_BASE_URL || "http://127.0.0.1:3000";
+const expectIndexable = process.env.EXPECT_INDEXABLE === "true";
+const indexablePaths = new Set(["/", "/realisations", "/realisations/cuisine-optimisee", "/notre-approche", "/contact", "/devis"]);
 const paths = [
   "/",
   "/installation-cuisine-la-rochelle",
@@ -22,8 +24,16 @@ const descriptions = new Set();
 for (const path of paths) {
   const r = await fetch(origin + path);
   assert.equal(r.status, 200, path);
-  assert.match(r.headers.get("x-robots-tag") || "", /noindex/, path);
+  if (!expectIndexable || new URL(origin).hostname !== "www.albireno.fr")
+    assert.match(r.headers.get("x-robots-tag") || "", /noindex/, path);
+  else if (indexablePaths.has(path))
+    assert.doesNotMatch(r.headers.get("x-robots-tag") || "", /noindex/, path);
   const html = await r.text();
+  const robots = html.match(/name="robots" content="([^"]+)"/)?.[1] || "";
+  if (expectIndexable && indexablePaths.has(path)) {
+    assert.match(robots, /(?:^|,\s*)index(?:,|$)/, path);
+    assert.doesNotMatch(robots, /noindex/, path);
+  } else assert.match(robots, /noindex/, path);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, path + " one H1");
   assert.match(html, /<html[^>]*lang="fr"/);
   assert.match(html, /name="description"/);
@@ -53,9 +63,8 @@ const robots = await (await fetch(origin + "/robots.txt")).text();
 assert.match(robots, /Allow: \/\n/);
 assert.match(robots, /Disallow: \/api\//);
 assert.doesNotMatch(robots, /Disallow: \/\n/);
-assert.ok(
-  !(await (await fetch(origin + "/sitemap.xml")).text()).includes("<loc>"),
-);
+const sitemap = await (await fetch(origin + "/sitemap.xml")).text();
+assert.equal((sitemap.match(/<loc>/g) || []).length, expectIndexable ? indexablePaths.size : 0);
 const assets = JSON.parse(await readFile(new URL("../public/images/asset-manifest.json", import.meta.url), "utf8"));
 for (const asset of assets) assert.equal((await fetch(origin + asset.src)).status, 200, asset.src);
 const avif = await fetch(origin + "/_next/image?url=%2Fimages%2Fprojects%2Fkitchen%2Fcuisine-01.webp&w=640&q=75", { headers: { Accept: "image/avif" } });
@@ -111,5 +120,5 @@ assert.equal(
   "unconfigured delivery must not claim success",
 );
 console.log(
-  `PASS: ${paths.length} pages, ${links.size} internal targets, ${assets.length} assets, AVIF negotiation, preview SEO, 404, social image, and API validation/fail-closed checks.`,
+  `PASS: ${paths.length} pages, ${links.size} internal targets, ${assets.length} assets, AVIF negotiation, ${expectIndexable ? "approved indexing" : "preview noindex"}, 404, social image, and API validation/fail-closed checks.`,
 );
