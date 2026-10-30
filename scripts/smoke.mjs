@@ -12,6 +12,7 @@ const paths = [
   "/conception-cuisine-3d",
   "/realisations",
   "/realisations/cuisine-optimisee",
+  "/realisations/cuisine-rochefort",
   "/notre-approche",
   "/devis",
   "/contact",

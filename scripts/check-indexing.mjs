@@ -23,7 +23,7 @@ function fetchSite(url, options = {}) {
   });
 }
 const visible = ["/", "/realisations", "/realisations/cuisine-optimisee", "/notre-approche", "/contact", "/devis"];
-const drafts = ["/installation-cuisine-la-rochelle", "/renovation-cuisine-la-rochelle", "/optimisation-petite-cuisine", "/reparation-cuisine-la-rochelle", "/conception-cuisine-3d", "/mentions-legales", "/politique-confidentialite"];
+const drafts = ["/realisations/cuisine-rochefort", "/installation-cuisine-la-rochelle", "/renovation-cuisine-la-rochelle", "/optimisation-petite-cuisine", "/reparation-cuisine-la-rochelle", "/conception-cuisine-3d", "/mentions-legales", "/politique-confidentialite"];
 for (const path of [...visible, ...drafts]) {
   const response = await fetchSite(origin + path, { headers });
   assert.equal(response.status, 200, path);

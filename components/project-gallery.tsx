@@ -32,7 +32,7 @@ export function ProjectGallery({ images, label }: { images: Media[]; label: stri
       }}>
         <div className="dialog-toolbar">
           <p id="gallery-title">{label} · {selected + 1} / {images.length}</p>
-          <button type="button" autoFocus onClick={() => dialog.current?.close()} aria-label="Fermer la photographie">Fermer ×</button>
+          <button type="button" autoFocus onClick={() => dialog.current?.close()} aria-label="Fermer le visuel">Fermer ×</button>
         </div>
         <Image src={images[selected].src} alt={images[selected].alt} width={images[selected].width} height={images[selected].height} sizes="(max-width: 700px) 90vw, 70vw" />
         <div className="dialog-toolbar">

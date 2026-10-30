@@ -8,6 +8,7 @@ import { pageMetadata } from "@/lib/site";
 import { editorialImages, inspirationDetails } from "@/lib/inspiration";
 import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
+import { HowItWorks } from "@/components/how-it-works";
 export const metadata = pageMetadata(
   "Installateur de cuisine à La Rochelle — installation et rénovation",
   "ALBI RENO : installation, rénovation, réparation et optimisation de cuisines à La Rochelle. Conception 3D et solutions adaptées aux petits espaces.",
@@ -76,6 +77,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <HowItWorks />
       <section className="section container solutions-section">
         <div className="section-top">
           <div>
@@ -173,8 +175,8 @@ export default function Home() {
               Découvrir la conception 3D
             </Button>
             <p className="planning-caption">
-              Un service optionnel pour les projets qui le nécessitent. Une
-              simple réparation n’a pas besoin d’une étude 3D.
+              Une première conception 3D préliminaire est offerte. Une simple
+              réparation n’a pas besoin d’une étude 3D.
             </p>
           </div>
         </div>
@@ -220,40 +222,6 @@ export default function Home() {
         </div>
       </section>
       <PricingOverview />
-      <section className="section process-section">
-        <div className="container">
-          <Eyebrow>Du premier échange aux derniers ajustements</Eyebrow>
-          <h2>Avancer avec des idées claires.</h2>
-          <div className="process-grid">
-            {[
-              {
-                title: "Vous nous racontez.",
-                text: "Choisissez vos besoins, partagez les contraintes de votre cuisine et vos envies. Un seul projet peut réunir plusieurs interventions.",
-              },
-              {
-                title: "Nous étudions les options.",
-                text: "Dimensions, état des meubles, accès, budget : nous précisons le périmètre et examinons les solutions adaptées.",
-              },
-              {
-                title: "Vous décidez.",
-                text: "Une proposition détaillée, un périmètre convenu et une organisation définie avant l’intervention.",
-              },
-            ].map((p, i) => (
-              <div key={p.title}>
-                <span className="process-number">0{i + 1}</span>
-                <h3>{p.title}</h3>
-                <p>{p.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="values-row">
-            <span>Des choix expliqués</span>
-            <span>Le souci du détail</span>
-            <span>Le respect de votre espace</span>
-            <span>Une communication organisée</span>
-          </div>
-        </div>
-      </section>
       <ContactCTA />
     </>
   );

@@ -24,6 +24,19 @@ export function Icon({
       <path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.7A9 9 0 1 1 21 11.5Z" />
     ),
     check: <path d="m5 12 4 4L19 6" />,
+    cube: (
+      <>
+        <path d="m12 3 9 5v8l-9 5-9-5V8l9-5Z" />
+        <path d="m3 8 9 5 9-5M12 13v8M7.5 5.5l9 5" />
+      </>
+    ),
+    cart: (
+      <>
+        <path d="M3 4h2l2 12h11l3-9H6" />
+        <circle cx="9" cy="20" r="1" />
+        <circle cx="18" cy="20" r="1" />
+      </>
+    ),
     wall: (
       <>
         <path d="M4 3h16v18H4zM12 3v18M4 9h8m0 6h8" />

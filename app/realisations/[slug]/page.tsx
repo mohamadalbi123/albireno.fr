@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = publishedProjects.find((p) => p.slug === slug);
   return p
-    ? pageMetadata(p.title, p.description, `/realisations/${p.slug}`)
+    ? pageMetadata(p.title, p.description, `/realisations/${p.slug}`, p.indexable === false)
     : {};
 }
 export default async function Project({
@@ -35,7 +35,7 @@ export default async function Project({
       />
       <section className="container section">
         <ProjectGallery images={p.images} label={projectKindLabels[p.kind]} />
-        <p className="case-study-context">Deux angles d’un même espace terminé. Ce projet personnel présente une démarche d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant-après.</p>
+        {p.context && <p className="case-study-context">{p.context}</p>}
         <div className="project-tags">
           {p.services.map((s) => (
             <span key={s}>{s}</span>

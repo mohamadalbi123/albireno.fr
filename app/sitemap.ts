@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/devis",
     ...services.filter((s) => s.confirmed).map((s) => `/${s.slug}`),
-    ...publishedProjects.map((p) => `/realisations/${p.slug}`),
+    ...publishedProjects.filter((p) => p.indexable !== false).map((p) => `/realisations/${p.slug}`),
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     changeFrequency: "monthly",

@@ -42,7 +42,9 @@ export function PricingOverview() {
                   <li key={p.id}>
                     <span>{p.label}</span>
                     <strong>
-                      {rate
+                      {p.id === "design" && rate?.amount === 0
+                        ? "Offerte"
+                        : rate
                         ? `${rate.amount}${rate.maximum ? `–${rate.maximum}` : ""} € / ${rate.unit}`
                         : "À définir"}
                     </strong>

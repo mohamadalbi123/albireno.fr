@@ -5,7 +5,7 @@ const require=createRequire(process.env.PLAYWRIGHT_PACKAGE || import.meta.url);
 const {chromium}=require('playwright');
 const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH ? {executablePath:process.env.CHROME_PATH} : {})});
 const origin=process.env.TEST_BASE_URL || 'http://127.0.0.1:3000';
-const paths=['/','/installation-cuisine-la-rochelle','/renovation-cuisine-la-rochelle','/optimisation-petite-cuisine','/reparation-cuisine-la-rochelle','/conception-cuisine-3d','/realisations','/realisations/cuisine-optimisee','/notre-approche','/devis','/contact','/mentions-legales','/politique-confidentialite'];
+const paths=['/','/installation-cuisine-la-rochelle','/renovation-cuisine-la-rochelle','/optimisation-petite-cuisine','/reparation-cuisine-la-rochelle','/conception-cuisine-3d','/realisations','/realisations/cuisine-optimisee','/realisations/cuisine-rochefort','/notre-approche','/devis','/contact','/mentions-legales','/politique-confidentialite'];
 fs.mkdirSync('docs/audit',{recursive:true});
 const results={pages:[],flows:[],consoleErrors:[],accessibility:[]};
 const page=await browser.newPage();

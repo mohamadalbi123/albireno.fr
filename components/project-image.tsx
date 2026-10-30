@@ -12,7 +12,7 @@ export function ProjectImage({
   sizes?: string;
 }) {
   return (
-    <div className={`project-image ${className}`}>
+    <div className={`project-image ${className}`} data-role={image.role}>
       <Image
         src={image.src}
         alt={image.alt}

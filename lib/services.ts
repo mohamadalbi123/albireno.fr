@@ -132,7 +132,7 @@ export const services: Service[] = [
     seoTitle: "Conception de cuisines en 3D à La Rochelle",
     short: "Voir les possibilités avant de choisir.",
     intro:
-      "La conception avec HomeStyler aide à comparer des implantations et à comprendre les volumes. À partir des dimensions et de vos besoins, une proposition permet de réfléchir à la circulation, aux rangements, aux matières et à la place de l’électroménager. Ce service est optionnel, adapté aux projets qui en ont besoin.",
+      "La conception 3D aide à comparer des implantations et à comprendre les volumes, avec des outils de planification comme HomeStyler ou ceux de Leroy Merlin. À partir des dimensions et de vos besoins, une proposition permet de réfléchir à la circulation, aux rangements, aux matières et à la place de l’électroménager. La première conception 3D préliminaire est offerte ; l’installation est chiffrée séparément sur devis. Cette étape est facultative et s’adapte aux besoins du projet.",
     image: "/images/conception-3d/plan-vue-dessus.webp",
     preparation:
       "Dimensions, photos, plan existant si disponible, style souhaité, budget indicatif et priorités d’usage.",

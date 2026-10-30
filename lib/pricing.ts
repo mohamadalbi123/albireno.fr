@@ -64,9 +64,10 @@ export const pricing: PricingItem[] = [
   },
   {
     id: "design",
-    label: "Conception de cuisine en 3D",
+    label: "Conception 3D préliminaire",
     unit: "projet",
-    approved: false,
+    amount: 0,
+    approved: true,
   },
 ];
 export const approvedPricing = pricing.filter(
