@@ -41,7 +41,7 @@ export default async function ServicePage({
           <h2>{s.title}</h2>
           <p>{s.examples[0]}. Le choix dépend des dimensions, de l’existant et du périmètre à confirmer.</p>
           <Button href={`/devis?service=${s.slug}`}>Parler de mon projet</Button>
-          <Link className="text-link" href="/realisations/cuisine-optimisee">Explorer le projet personnel ↗</Link>
+          <Link className="text-link" href="/realisations/cuisine-optimisee">Explorer le projet de cuisine ↗</Link>
         </div>
       </section>
       <section className="container section detail-grid">
@@ -57,7 +57,7 @@ export default async function ServicePage({
           <p>{s.note}</p>
           {s.slug === "installation-cuisine-la-rochelle" && (
             <Link className="text-link" href="/realisations/cuisine-optimisee">
-              Voir la cuisine personnelle optimisée ↗
+              Voir le projet de cuisine optimisée ↗
             </Link>
           )}
           <h3 className="service-examples-title">

@@ -17,4 +17,4 @@
 - [ ] Set legal/privacy/services/launch flags only when reviewed. Run check:launch and final tests.
 - [ ] Obtain explicit approval before GitHub push and production deployment.
 
-Central contact details: +33 7 63 73 43 72; mohalbi123@icloud.com; WhatsApp 33763734372.
+Central contact details: +33 7 63 73 43 72; albireno@icloud.com; WhatsApp 33763734372.

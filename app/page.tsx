@@ -10,8 +10,8 @@ import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
 import { HowItWorks } from "@/components/how-it-works";
 export const metadata = pageMetadata(
-  "Installateur de cuisine à La Rochelle — installation et rénovation",
-  "ALBI RENO : installation, rénovation, réparation et optimisation de cuisines à La Rochelle. Conception 3D et solutions adaptées aux petits espaces.",
+  "Installation et rénovation de cuisines à La Rochelle",
+  "AlbiReno prépare son activité de conception, d’installation et de rénovation de cuisines à La Rochelle et ses environs. Échangeons sur votre futur projet.",
   "/",
 );
 export default function Home() {
@@ -141,16 +141,14 @@ export default function Home() {
       <section className="planning-section">
         <div className="container planning">
           <div className="planning-process">
-            <span className="plan-label">VOTRE PROJET, ÉTAPE PAR ÉTAPE</span>
+            <span className="plan-label">LES POINTS À ÉTUDIER EN 3D</span>
             <ol>
               {[
-                "Visiter et mesurer l’espace",
-                "Comprendre vos besoins et votre budget",
-                "Imaginer l’implantation",
-                "Visualiser en 3D avec HomeStyler",
-                "Revoir la proposition ensemble",
-                "Préparer un devis détaillé",
-                "Planifier le projet validé",
+                "Les dimensions et les contraintes existantes",
+                "Les zones de cuisson, de lavage et de préparation",
+                "La circulation et l’ouverture des portes",
+                "Les rangements et leur accessibilité",
+                "Les volumes, les matériaux et les finitions",
               ].map((step, i) => (
                 <li key={step}>
                   <span>0{i + 1}</span>
@@ -199,12 +197,12 @@ export default function Home() {
           <Link
             href="/realisations/cuisine-optimisee"
             className="project-feature-image"
-            aria-label="Découvrir la cuisine personnelle optimisée"
+            aria-label="Découvrir le projet de cuisine — conception et aménagement"
           >
             <ProjectImage image={kitchen.images[1]} />
           </Link>
           <div className="project-feature-copy">
-            <span className="tag">Projet personnel</span>
+            <span className="tag">Conception & aménagement</span>
             <p className="project-category">
               CONCEPTION · OPTIMISATION · INSTALLATION
             </p>

@@ -24,7 +24,7 @@ export default function Approach() {
           <p>
             ALBI RENO est le projet porté par Mohamad Albi autour d’une
             conviction : comprendre les contraintes d’un espace permet
-            d’envisager de meilleures solutions. Le projet personnel présenté
+            d’envisager de meilleures solutions. Le projet de cuisine présenté
             dans le portfolio en donne un exemple concret.
           </p>
           <p>

@@ -2624,16 +2624,15 @@ main p.eyebrow { font-size: var(--type-label); }
 }
 .legal-copy a { overflow-wrap: anywhere; }
 
-/* Frame the supplied 3D views; the lightbox retains their complete canvas. */
+/* Keep the updated, closer 3D views fully visible in each frame. */
 .project-image[data-role="design"],
 .portfolio-grid article .project-image[data-role="design"] {
   aspect-ratio: 4/3;
   background: white;
 }
 .project-image[data-role="design"] img {
-  object-position: 40% 65%;
-  transform: scale(1.45);
-  transform-origin: 50% 65%;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Four-step supplier-direct journey, using the existing editorial type scale. */

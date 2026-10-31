@@ -5,7 +5,7 @@ import { ProjectImage } from "@/components/project-image";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Réalisations et projets de cuisine",
-  "Découvrez une cuisine personnelle réalisée et un projet en cours à Rochefort, présenté en vues 3D.",
+  "Découvrez un projet de conception et d’aménagement de cuisine, ainsi qu’un projet en cours à Rochefort présenté en vues 3D.",
   "/realisations",
 );
 export default function Projects() {
@@ -14,7 +14,7 @@ export default function Projects() {
       <PageIntro
         eyebrow="Le portfolio"
         title="Des cuisines pensées pour la vie."
-        text="Une cuisine personnelle réalisée et un projet en cours à Rochefort : des démarches différentes, présentées avec leur contexte et leurs choix d’aménagement."
+        text="Un projet de conception et d’aménagement, illustré par des photographies de l’espace terminé, et un projet en cours à Rochefort, présenté en vues 3D : chaque projet précise la nature de ses images."
       />
       <section className="container section portfolio-grid">
         {publishedProjects.map((p) => (

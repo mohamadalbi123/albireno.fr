@@ -23,7 +23,7 @@ export default function Legal() {
           la même micro-entreprise que Chambre 17, avec le même SIRET.
         </p>
         <p>
-          SIRET : {business.siret}. Établissement enregistré : 17140 Lagord,
+          SIREN : {business.siren}. SIRET : {business.siret}. Établissement enregistré : 17140 Lagord,
           France. L’adresse professionnelle complète reste à préciser.
         </p>
         <p>
@@ -43,6 +43,9 @@ export default function Legal() {
         <p>
           Hébergement du site : Vercel Inc., 440 N Barranca Ave #4133, Covina, CA
           91723, États-Unis. <a href="https://vercel.com">vercel.com</a>.
+          Contact juridique publié par l’hébergeur (agent DMCA) :{" "}
+          <a href="tel:+15592887060">+1 559 288 7060</a>, selon sa{" "}
+          <a href="https://vercel.com/legal/dmca-policy">politique DMCA</a>.
         </p>
         <h2>Demandes et prestations</h2>
         <p>
@@ -55,7 +58,7 @@ export default function Legal() {
         <h2>Photographies et réalisations</h2>
         <p>
           Les photographies de cuisine fournies par le responsable du projet
-          présentent un projet personnel. Les visuels d’inspiration sont
+          présentent un projet de conception et d’aménagement, illustré par des vues de l’espace terminé. Les vues 3D du projet en cours à Rochefort ne sont pas des photographies de travaux réalisés. Les visuels d’inspiration sont
           identifiés comme tels et ne représentent pas de réalisations pour des clients.
         </p>
       </article>

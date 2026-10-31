@@ -28,7 +28,7 @@ export type Project = {
   details: { title: string; text: string }[];
 };
 export const projectKindLabels: Record<ProjectKind, string> = {
-  personal: "Projet personnel",
+  personal: "Conception & aménagement",
   "own-business": "Projet pour notre activité",
   client: "Projet client",
   concept: "Concept d’aménagement",
@@ -38,13 +38,13 @@ export const projectKindLabels: Record<ProjectKind, string> = {
 export const projects: Project[] = [
   {
     slug: "cuisine-optimisee",
-    title: "Une cuisine compacte, optimisée et fonctionnelle",
+    title: "Projet de cuisine — Conception & aménagement",
     kind: "personal",
     category: "Cuisine et rangement",
     published: true,
-    context: "Deux angles d’un même espace terminé. Ce projet personnel présente une démarche d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant-après.",
+    context: "Deux angles d’un même espace terminé. Ce projet présente une démarche de conception et d’aménagement ; il ne constitue pas une référence de chantier client ni un comparatif avant-après.",
     description:
-      "Une cuisine personnelle pensée autour des gestes du quotidien. Des façades grises, un plan de travail clair et des rangements répartis sur trois côtés composent un espace compact et fonctionnel.",
+      "Étude de l’espace, conception 3D et optimisation de l’agencement pour une cuisine fonctionnelle et adaptée aux besoins du projet.",
     services: [
       "Conception avec HomeStyler",
       "Conception de l’implantation",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     images: [
       {
         src: "/images/projects/kitchen/cuisine-01.webp",
-        alt: "Cuisine personnelle : façades grises, plan de travail clair et retour en péninsule",
+        alt: "Cuisine aménagée : façades grises, plan de travail clair et retour en péninsule",
         role: "finished",
         width: 1200,
         height: 1600,
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       },
       {
         title: "Du plan à l’installation",
-        text: "Après une conception avec HomeStyler et une réflexion sur l’implantation, le montage et l’agencement donnent forme à cette cuisine personnelle. Les deux photographies présentent le même espace terminé, sous deux angles.",
+        text: "Après une conception avec HomeStyler et une réflexion sur l’implantation, le montage et l’agencement donnent forme à cette cuisine. Les deux photographies présentent le même espace terminé, sous deux angles.",
       },
     ],
   },
@@ -100,18 +100,18 @@ export const projects: Project[] = [
     services: ["Étude de l’implantation", "Visualisation 3D", "Choix d’aménagement"],
     images: [
       {
-        src: "/images/projects/rochefort/cuisine-rochefort-01.webp",
-        alt: "Vue 3D de face du projet de cuisine à Rochefort : mobilier blanc, surfaces à l’aspect bois clair et élément central avec évier",
+        src: "/images/projects/rochefort/cuisine-rochefort-v2-01.webp",
+        alt: "Vue 3D en perspective du projet de cuisine à Rochefort : mobilier blanc, surfaces à l’aspect bois clair et élément central avec évier",
         role: "design",
-        width: 3440,
-        height: 1439,
+        width: 1650,
+        height: 997,
       },
       {
-        src: "/images/projects/rochefort/cuisine-rochefort-02.webp",
-        alt: "Vue 3D en perspective du projet de cuisine à Rochefort : implantation du mobilier et rangements intégrés à l’élément central",
+        src: "/images/projects/rochefort/cuisine-rochefort-v2-02.webp",
+        alt: "Vue 3D de face du projet de cuisine à Rochefort : implantation du mobilier et rangements intégrés à l’élément central",
         role: "design",
-        width: 3440,
-        height: 1439,
+        width: 1429,
+        height: 1007,
       },
     ],
     details: [

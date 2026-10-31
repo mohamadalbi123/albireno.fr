@@ -32,7 +32,8 @@ export const isIndexable = canIndexSite({
   registeredDomain: business.registeredDomain,
 });
 export const isPreview = !isIndexable;
-export const contactEmail = process.env.BUSINESS_EMAIL || business.email;
+// Keep the form recipient aligned with the public contact details.
+export const contactEmail = business.email;
 export const contactPhone = process.env.BUSINESS_PHONE || business.phone;
 export const mailReady =
   business.emailDeliveryApproved &&
