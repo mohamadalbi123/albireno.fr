@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./icon";
-import { business, whatsappUrl } from "@/lib/business";
+import { business } from "@/lib/business";
 export function Button({
   children,
   href = "/devis",
@@ -100,15 +100,7 @@ export function ContactCTA() {
       </div>
       <div className="cta-actions">
         <Button>Parler de mon projet</Button>
-        <a
-          className="text-link light"
-          href={whatsappUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="chat" />
-          Discuter sur WhatsApp <Icon name="diagonal" />
-        </a>
+
       </div>
     </section>
   );

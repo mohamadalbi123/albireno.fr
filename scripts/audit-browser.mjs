@@ -8,13 +8,13 @@ const origin=process.env.TEST_BASE_URL || 'http://127.0.0.1:3006';
 const paths=['/','/installation-cuisine-la-rochelle','/conception-cuisine-3d','/realisations','/realisations/cuisine-optimisee','/realisations/cuisine-rochefort','/notre-approche','/devis','/contact','/mentions-legales','/politique-confidentialite'];
 fs.mkdirSync('docs/audit/repositioning',{recursive:true});
 const results={pages:[],flows:[],consoleErrors:[],accessibility:[]};
-const page=await browser.newPage({reducedMotion:'reduce'});page.on('pageerror',e=>results.consoleErrors.push(e.message));
+const page=await browser.newPage({reducedMotion:'reduce'});let handoff='';await page.route('https://wa.me/**',async route=>{handoff=route.request().url();await route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Intercepted WhatsApp handoff test</title><p>No request sent.</p>'});});page.on('pageerror',e=>results.consoleErrors.push(e.message));
 for(const width of [1440,1024,768,430,320]){
  await page.setViewportSize({width,height:1000});
  for(const path of paths){
   const r=await page.goto(origin+path,{waitUntil:'networkidle'});await page.locator('h1').waitFor();
   const data=await page.evaluate(()=>({title:document.title,description:document.querySelector('meta[name="description"]')?.content,h1:document.querySelectorAll('h1').length,overflow:document.documentElement.scrollWidth>innerWidth+1,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src)}));
-  assert.equal(r.status(),200,path);assert.equal(data.h1,1,path);assert.ok(data.description,path);assert.equal(data.overflow,false,`${width} ${path}`);assert.deepEqual(data.broken,[],path);results.pages.push({width,path,...data});
+  assert.equal(r.status(),200,path);for(const actions of await page.locator('.cta-section .cta-actions').all())assert.equal(await actions.locator('a').count(),1,'one CTA per contact block');assert.equal(data.h1,1,path);assert.ok(data.description,path);assert.equal(data.overflow,false,`${width} ${path}`);assert.deepEqual(data.broken,[],path);results.pages.push({width,path,...data});
   if(path==='/'){
    assert.equal(await page.locator('#services .service-card').count(),2);
    assert.equal(await page.locator('.journey-steps>li').count(),4);
@@ -30,14 +30,14 @@ await page.setViewportSize({width:430,height:900});await page.goto(origin,{waitU
 for(const service of ['conception','installation','complet']){
  await page.goto(origin+'/devis?service='+service,{waitUntil:'networkidle'});
  assert.ok(await page.locator(`input[name=projectType][value="${service}"]`).isChecked());
- await page.getByRole('button',{name:'Préparer ma demande WhatsApp',exact:true}).click();assert.ok(await page.locator('#postcode-error').isVisible());
+ await page.getByRole('button',{name:'Continuer sur WhatsApp',exact:true}).click();assert.ok(await page.locator('#postcode-error').isVisible());
  await page.locator('#postcode').fill(service==='installation'?'75008':'17000');await page.locator('#name').fill('Test de parcours');
- await page.getByRole('button',{name:'Préparer ma demande WhatsApp',exact:true}).click();assert.ok(await page.locator('#contact-error').isVisible());
+ await page.getByRole('button',{name:'Continuer sur WhatsApp',exact:true}).click();assert.ok(await page.locator('#contact-error').isVisible());
  if(service==='installation')await page.locator('#phone').fill('0600000000');else await page.locator('#email').fill('test@example.com');
- await page.locator('#consent').check();await page.getByRole('button',{name:'Préparer ma demande WhatsApp',exact:true}).click();
- const link=page.getByRole('link',{name:'Ouvrir WhatsApp pour vérifier'});try{await link.waitFor();}catch(error){await page.screenshot({path:'docs/audit/repositioning/failed-inquiry.png',fullPage:true});console.log('Inquiry errors:',await page.locator('.field-error').allTextContents());throw error;}const href=await link.getAttribute('href'),url=new URL(href);assert.equal(url.pathname,'/33763734372');assert.match(url.searchParams.get('text'),/Test de parcours/);assert.match(await page.locator('.form-status').innerText(),/Aucun message n’a été envoyé/);
- await page.locator('#comments').fill('Plan fournisseur déjà disponible.');assert.equal(await link.count(),0,'editing must invalidate prepared text');
- results.flows.push({service,contacts:service==='installation'?'phone-only, outside La Rochelle':'email-only',handoff:'WhatsApp prepared only; no message sent'});
+ await page.locator('#comments').fill('Plan fournisseur déjà disponible.');
+ handoff='';await page.locator('#consent').check();await page.getByRole('button',{name:'Continuer sur WhatsApp',exact:true}).click();
+ await page.waitForURL('https://wa.me/**');const url=new URL(handoff);assert.equal(url.pathname,'/33763734372');assert.match(url.searchParams.get('text'),/Test de parcours/);assert.match(url.searchParams.get('text'),/Plan fournisseur déjà disponible/);
+ results.flows.push({service,contacts:service==='installation'?'phone-only, outside La Rochelle':'email-only',handoff:'single validated click; WhatsApp navigation intercepted; no message sent'});
 }
 await page.goto(origin+'/realisations/cuisine-rochefort',{waitUntil:'networkidle'});await page.getByRole('button',{name:/Agrandir/}).first().click();assert.ok(await page.locator('dialog').isVisible());await page.getByRole('button',{name:'Suivante'}).click();assert.match(await page.locator('#gallery-title').innerText(),/2 \/ 2/);await page.keyboard.press('Escape');assert.ok(!await page.locator('dialog').isVisible());results.flows.push('Rochefort gallery next/Escape preserved');
 assert.deepEqual(results.consoleErrors,[]);fs.writeFileSync('docs/audit/repositioning/browser-results.json',JSON.stringify(results,null,2));console.log(JSON.stringify({layouts:results.pages.length,flows:results.flows,consoleErrors:results.consoleErrors},null,2));await browser.close();

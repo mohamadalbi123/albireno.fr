@@ -19,10 +19,7 @@ export default function Privacy() {
         <h2>Préparation d’une demande</h2>
         <p>
           Lorsque l’envoi automatique est désactivé, les informations saisies
-          restent dans la page. Le bouton de préparation crée un lien WhatsApp
-          contenant votre texte. Ce texte est transmis à WhatsApp lorsque vous
-          ouvrez le lien ; l’envoi du message au destinataire reste à votre
-          initiative.
+          restent dans la page. Après validation des champs, le bouton « Continuer sur WhatsApp » ouvre WhatsApp avec votre texte prérempli. Ce texte est transmis à WhatsApp à cette étape ; vous vérifiez ensuite le message et décidez de l’envoyer au destinataire dans l’application.
         </p>
         <h2>Contact direct</h2>
         <p>
