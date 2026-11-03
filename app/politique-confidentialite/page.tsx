@@ -28,18 +28,12 @@ export default function Privacy() {
         <p>
           Les liens de contact par téléphone et par e-mail ouvrent l’application choisie sur
           votre appareil. Les échanges sont ensuite traités par les services que
-          vous utilisez. Les photos sélectionnées restent en mémoire dans la
-          page lorsque l’envoi automatique est désactivé. Elles ne sont pas
-          jointes au lien WhatsApp et doivent être ajoutées manuellement dans
-          cette application.
+          vous utilisez. Aucun fichier n’est téléversé dans le formulaire. Si vous choisissez de partager des photos ou un plan, vous les ajoutez directement dans votre application de messagerie.
         </p>
         <h2>Envoi automatique futur</h2>
         <p>
           L’activation de l’envoi par e-mail nécessite de configurer et de vérifier
-          les prestataires d’envoi et de protection anti-spam. Lorsque cet envoi
-          est activé, les photos sont vérifiées et réencodées sans métadonnées,
-          puis transmises en pièces jointes. Aucune galerie publique ni base de
-          fichiers n’est créée. La conservation dans la messagerie et chez le
+          les prestataires d’envoi et de protection anti-spam. Le formulaire ne propose actuellement aucun téléversement de fichier. Aucune galerie publique ni base de fichiers n’est créée. La conservation dans la messagerie et chez le
           prestataire devra être définie. Les finalités, bases légales,
           destinataires, durées de conservation, transferts éventuels et
           modalités d’exercice des droits seront précisés avant cette activation

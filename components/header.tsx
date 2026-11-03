@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "./icon";
 const links = [
-  { href: "/#services", label: "Nos expertises" },
+  { href: "/", label: "Accueil" },
+  { href: "/conception-cuisine-3d", label: "Conception" },
+  { href: "/installation-cuisine-la-rochelle", label: "Installation" },
   { href: "/realisations", label: "Réalisations" },
-  { href: "/notre-approche", label: "Notre approche" },
+  { href: "/contact", label: "Contact" },
 ];
 export function Brand({ light = false }: { light?: boolean }) {
   return (

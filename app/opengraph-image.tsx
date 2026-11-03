@@ -1,6 +1,6 @@
 import { business } from "@/lib/business";
 import { ImageResponse } from "next/og";
-export const alt = "Installation et rénovation de cuisines à La Rochelle";
+export const alt = "Conception et installation de cuisines à La Rochelle";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -26,13 +26,13 @@ export default function Image() {
           style={{
             display: "flex",
             flexDirection: "column",
-            fontSize: 77,
+            fontSize: 65,
             fontWeight: 700,
             lineHeight: 1.12,
           }}
         >
-          <div>Votre cuisine,</div>
-          <div style={{ color: "#526976" }}>pensée pour votre espace.</div>
+          <div>Conception et installation</div>
+          <div style={{ color: "#526976" }}>de cuisines à La Rochelle.</div>
         </div>
         <div
           style={{

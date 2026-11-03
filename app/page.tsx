@@ -1,4 +1,4 @@
-import { business, whatsappUrl } from "@/lib/business";
+import { business } from "@/lib/business";
 import Link from "next/link";
 import { Button, Eyebrow, ContactCTA } from "@/components/ui";
 import { ServiceCards } from "@/components/service-cards";
@@ -10,8 +10,8 @@ import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
 import { HowItWorks } from "@/components/how-it-works";
 export const metadata = pageMetadata(
-  "Installation et rénovation de cuisines à La Rochelle",
-  "AlbiReno prépare son activité de conception, d’installation et de rénovation de cuisines à La Rochelle et ses environs. Échangeons sur votre futur projet.",
+  "Conception et installation de cuisines à La Rochelle",
+  "AlbiReno prépare son activité de conception 3D et d’installation de cuisines à La Rochelle. Projet IKEA, Leroy Merlin ou autre fournisseur.",
   "/",
 );
 export default function Home() {
@@ -26,17 +26,17 @@ export default function Home() {
               <em>{business.descriptor}</em>
             </div>
             <Eyebrow>La Rochelle et ses alentours</Eyebrow>
-            <h1>Installation et rénovation de cuisines <em>à La Rochelle</em></h1>
+            <h1>Conception et installation de cuisines <em>à La Rochelle</em></h1>
           </div>
           <div className="hero-intro">
-            <p className="hero-subtitle">Votre cuisine, pensée pour votre espace.</p>
-            <p className="hero-description">Activité cuisine en préparation. Une cuisine à installer, à rénover ou à mieux organiser ? Partons de vos usages pour étudier un aménagement fonctionnel et adapté à votre espace.</p>
+            <p className="hero-subtitle">Imaginez votre cuisine. Nous la concevons et l’installons.</p>
+            <p className="hero-description">AlbiReno vous accompagne dans la conception et l’installation de votre cuisine à La Rochelle et ses alentours. De l’aménagement de votre espace à la pose de vos meubles, nous vous aidons à concrétiser un projet adapté à vos besoins, à vos envies et à votre budget.</p>
             <div className="hero-actions">
-              <Button>Parler de mon projet</Button>
-              <a className="text-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+              <Button href="/devis?service=conception">Concevoir ma cuisine</Button>
+              <Button href="/devis?service=installation" variant="outline">Faire installer ma cuisine</Button>
               <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
             </div>
-            <div className="hero-note"><span className="small-rule" />Des solutions intelligentes, même pour les petites cuisines.</div>
+            <div className="hero-note"><span className="small-rule" />{business.preparationNotice}</div>
           </div>
         </div>
         <figure className="hero-photo editorial-hero-photo">
@@ -48,7 +48,7 @@ export default function Home() {
           </figcaption>
         </figure>
         <div className="hero-bottom">
-          <span>INSTALLATION · RÉNOVATION · AMÉNAGEMENT</span>
+          <span>CONCEPTION · INSTALLATION</span>
           <a href="#services">Trouver le point de départ de mon projet ↓</a>
         </div>
       </section>
@@ -64,15 +64,14 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Une installation complète ou un ajustement ciblé : commençons par
-              ce qui compte pour vous.
+              Deux accompagnements, à choisir séparément ou ensemble : une conception adaptée à votre espace et une installation définie selon votre projet.
             </p>
           </div>
           <ServiceCards />
           <div className="unsure">
-            <p>Vous pouvez réunir plusieurs besoins dans une même demande.</p>
-            <Link className="text-link" href="/devis?service=autre">
-              Je ne sais pas par où commencer <span>↗</span>
+            <p>Un plan déjà finalisé ? L’installation peut être demandée directement.</p>
+            <Link className="text-link" href="/devis?service=complet">
+              Concevoir et installer ma cuisine <span>↗</span>
             </Link>
           </div>
         </div>
@@ -106,7 +105,7 @@ export default function Home() {
               <InspirationFigure image={inspirationDetails.pullout} />
               <InspirationFigure image={inspirationDetails.drawers} />
             </div>
-            <Button href="/optimisation-petite-cuisine" variant="outline">
+            <Button href="/conception-cuisine-3d" variant="outline">
               Explorer les possibilités
             </Button>
           </div>
@@ -149,6 +148,7 @@ export default function Home() {
                 "La circulation et l’ouverture des portes",
                 "Les rangements et leur accessibilité",
                 "Les volumes, les matériaux et les finitions",
+                "Les choix compatibles avec votre budget",
               ].map((step, i) => (
                 <li key={step}>
                   <span>0{i + 1}</span>
@@ -160,21 +160,16 @@ export default function Home() {
           <div>
             <Eyebrow light>La 3D, quand elle vous aide à choisir</Eyebrow>
             <h2>
-              Votre future cuisine,
-              <br />
-              <em>avant les travaux.</em>
+              Visualisez votre future cuisine <em>avant son installation.</em>
             </h2>
             <p>
-              Un meuble déplacé, un passage plus fluide, un rangement
-              supplémentaire. HomeStyler permet d’explorer une implantation et
-              de mieux comprendre ce qu’elle change au quotidien.
+              Grâce à la conception 3D, explorez différentes implantations, optimisez vos rangements et imaginez une cuisine adaptée à votre espace.
             </p>
             <Button href="/conception-cuisine-3d" variant="cream">
               Découvrir la conception 3D
             </Button>
             <p className="planning-caption">
-              Une première conception 3D préliminaire est offerte. Une simple
-              réparation n’a pas besoin d’une étude 3D.
+              La conception est un accompagnement réalisé par ALBI RENO, avec des outils de planification adaptés au projet. Ce site ne propose pas de configurateur en libre-service.
             </p>
           </div>
         </div>
@@ -202,9 +197,9 @@ export default function Home() {
             <ProjectImage image={kitchen.images[1]} />
           </Link>
           <div className="project-feature-copy">
-            <span className="tag">Conception & aménagement</span>
+            <span className="tag">Conception & aménagement · Hors chantier client</span>
             <p className="project-category">
-              CONCEPTION · OPTIMISATION · INSTALLATION
+              CONCEPTION · AMÉNAGEMENT · INSTALLATION
             </p>
             <h3>{kitchen.title}</h3>
             <p>{kitchen.description}</p>

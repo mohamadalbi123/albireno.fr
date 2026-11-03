@@ -6,9 +6,6 @@ const indexablePaths = new Set(["/", "/realisations", "/realisations/cuisine-opt
 const paths = [
   "/",
   "/installation-cuisine-la-rochelle",
-  "/renovation-cuisine-la-rochelle",
-  "/optimisation-petite-cuisine",
-  "/reparation-cuisine-la-rochelle",
   "/conception-cuisine-3d",
   "/realisations",
   "/realisations/cuisine-optimisee",
@@ -84,19 +81,12 @@ for (const old of [
   "/montage-meubles-la-rochelle",
 ])
   assert.equal((await fetch(origin + old)).status, 404);
-const payload = {
-  name: "Client test",
-  phone: "0600000000",
-  email: "test@example.com",
-  city: "La Rochelle",
-  needs: ["reparation"],
-  answers: { repairs: ["Portes à régler"] },
-  timeframe: "Dans 1 à 3 mois",
-  budget: "",
-  comments: "",
-  sourcing: "À discuter",
-  consent: true,
-};
+const payload = {name:"Client test",phone:"0600000000",email:"",postcode:"17000",projectType:"installation",comments:"",consent:true};
+for (const [from,to] of Object.entries({"/renovation-cuisine-la-rochelle":"/installation-cuisine-la-rochelle","/reparation-cuisine-la-rochelle":"/installation-cuisine-la-rochelle","/optimisation-petite-cuisine":"/conception-cuisine-3d"})) {
+ const r=await fetch(origin+from,{redirect:"manual"});assert.equal(r.status,308);assert.ok(r.headers.get("location").endsWith(to));
+}
+assert.equal((await fetch(origin+"/simulateur-pose-cuisine")).status,404,"local estimator must not be published");
+const verification=await fetch(origin+"/google4b9b87ef974dde9f.html");assert.equal(verification.status,200);assert.equal(await verification.text(),"google-site-verification: google4b9b87ef974dde9f.html");
 const post = (data, headers = {}) =>
   fetch(origin + "/api/devis", {
     method: "POST",

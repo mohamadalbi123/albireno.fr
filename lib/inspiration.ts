@@ -32,9 +32,6 @@ export const editorialImages = {
 export function serviceEditorialImage(id: string): ProjectImage {
   const images: Record<string, ProjectImage> = {
     installation: editorialImages.installation,
-    renovation: editorialImages.hero,
-    optimisation: editorialImages.storage,
-    reparation: editorialImages.craft,
     conception: editorialImages.design,
   };
   return images[id] || editorialImages.hero;
@@ -60,8 +57,5 @@ export const inspirationDetails = {
 };
 export const serviceDetailImages: Record<string, InspirationDetail[]> = {
   installation: [inspirationDetails.installation, inspirationDetails.drawers, inspirationDetails.sink],
-  renovation: [inspirationDetails.finished, inspirationDetails.modern, inspirationDetails.comparison],
-  optimisation: [inspirationDetails.storage, inspirationDetails.pullout],
-  reparation: [inspirationDetails.hinge, inspirationDetails.sinkDetail],
   conception: [inspirationDetails.design, inspirationDetails.island],
 };

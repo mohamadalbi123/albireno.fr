@@ -23,7 +23,7 @@ function fetchSite(url, options = {}) {
   });
 }
 const visible = ["/", "/realisations", "/realisations/cuisine-optimisee", "/notre-approche", "/contact", "/devis"];
-const drafts = ["/realisations/cuisine-rochefort", "/installation-cuisine-la-rochelle", "/renovation-cuisine-la-rochelle", "/optimisation-petite-cuisine", "/reparation-cuisine-la-rochelle", "/conception-cuisine-3d", "/mentions-legales", "/politique-confidentialite"];
+const drafts = ["/realisations/cuisine-rochefort", "/installation-cuisine-la-rochelle", "/conception-cuisine-3d", "/mentions-legales", "/politique-confidentialite"];
 for (const path of [...visible, ...drafts]) {
   const response = await fetchSite(origin + path, { headers });
   assert.equal(response.status, 200, path);
@@ -49,7 +49,7 @@ if (local) {
   for (const host of ["127.0.0.1:3001", "preview.vercel.app", "example.com"])
     assert.match((await fetchSite(origin, { headers: { Host: host } })).headers.get("x-robots-tag") || "", /noindex/, host);
 }
-const payload = { name: "Indexing check", phone: "0600000000", email: "test@example.com", city: "La Rochelle", needs: ["reparation"], answers: { repairs: ["Portes à régler"] }, timeframe: "Dans 1 à 3 mois", budget: "", comments: "", sourcing: "À discuter", consent: true };
+const payload = {name:"Indexing check",phone:"0600000000",email:"",postcode:"17000",projectType:"installation",comments:"",consent:true};
 const mail = await fetchSite(origin + "/api/devis", { method: "POST", headers: { ...headers, Origin: local ? canonical : origin, "Content-Type": "application/json" }, body: JSON.stringify(payload) });
 assert.equal(mail.status, 503, "automatic email must remain off");
 console.log(JSON.stringify({ origin, indexablePages: visible.length, noindexPages: drafts.length, sitemapEntries: urls.length, preparationStatus: "unchanged", businessSchema: "off", automaticEmail: "off", alternateHosts: local ? "noindex verified" : "covered by local production check" }));

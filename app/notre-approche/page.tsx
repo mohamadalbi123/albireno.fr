@@ -1,8 +1,8 @@
 import { PageIntro, ContactCTA, Eyebrow } from "@/components/ui";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "Notre approche — des solutions pour votre cuisine",
-  "ALBI RENO : comprendre vos usages, résoudre les difficultés d’aménagement et concevoir une cuisine fonctionnelle à La Rochelle.",
+  "Notre approche — conception et installation de cuisines",
+  "ALBI RENO : conception et installation de cuisines à La Rochelle, à partir de vos usages, de votre espace et de votre budget.",
   "/notre-approche",
 );
 export default function Approach() {

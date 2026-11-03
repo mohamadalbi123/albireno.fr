@@ -3,7 +3,7 @@ import { business, whatsappUrl } from "@/lib/business";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact — parlons de votre cuisine",
-  "Contactez-nous par téléphone, e-mail ou WhatsApp pour échanger sur votre projet de cuisine à La Rochelle.",
+  "Contactez-nous par téléphone, e-mail ou WhatsApp pour échanger sur la conception ou l’installation de votre cuisine à La Rochelle.",
   "/contact",
 );
 export default function Contact() {
@@ -33,7 +33,7 @@ export default function Contact() {
       </section>
       <section className="container contact-end">
         <h2>Donnons forme à vos premières idées.</h2>
-        <Button href="/devis">Préparer ma demande</Button>
+        <Button href="/devis">Parler de mon projet</Button>
       </section>
     </>
   );

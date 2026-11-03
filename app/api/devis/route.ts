@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { createHash } from "node:crypto";
-import { validateQuote, quoteMessage } from "@/lib/quote-validation";
+import { validateQuote } from "@/lib/quote-validation";
 import { preparePhotos } from "@/lib/photo-validation";
+import { quoteEmailPayload, isDeliveryReceipt } from "@/lib/quote-delivery";
 import { MAX_QUOTE_BODY_BYTES } from "@/lib/photo-rules";
-import { mailReady, contactEmail } from "@/lib/site";
+import { mailReady } from "@/lib/site";
 export const runtime = "nodejs";
 const reply = (body: object, status: number) =>
   NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
@@ -121,16 +122,7 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
         "Idempotency-Key": `quote-${createHash("sha256").update(data.token).digest("hex")}`,
       },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL,
-        to: [contactEmail],
-        reply_to: data.email,
-        attachments,
-        subject: `Demande de devis — ${data.city}`,
-        text:
-          quoteMessage(data) +
-          "\n\nLa personne a accepté le traitement de cette demande via le formulaire.",
-      }),
+      body: JSON.stringify(quoteEmailPayload(data, process.env.CONTACT_FROM_EMAIL!, attachments)),
       signal: AbortSignal.timeout(10000),
     });
     if (!sent.ok)
@@ -142,7 +134,7 @@ export async function POST(request: Request) {
         502,
       );
     const receipt = await sent.json();
-    if (!receipt.id)
+    if (!isDeliveryReceipt(receipt))
       return reply(
         {
           message:
@@ -150,7 +142,7 @@ export async function POST(request: Request) {
         },
         502,
       );
-    return reply({ message: "Votre demande a bien été transmise." }, 200);
+    return reply({ sent: true, message: "Votre demande a été acceptée par notre service d’envoi." }, 200);
   } catch {
     return reply(
       {

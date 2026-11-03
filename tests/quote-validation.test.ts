@@ -1,118 +1,15 @@
-import assert from "node:assert/strict";
-import { test } from "node:test";
-import { validateQuote, quoteMessage } from "../lib/quote-validation.ts";
-import { activeQuestions, questionError } from "../lib/quote-flow.ts";
-import { whatsappUrl } from "../lib/business.ts";
-const valid = {
-  name: "Client de test",
-  phone: "0600000000",
-  email: "test@example.com",
-  city: "La Rochelle 17000",
-  needs: ["reparation"],
-  answers: { repairs: ["Portes à régler"] },
-  timeframe: "Dans 1 à 3 mois",
-  budget: "",
-  comments: "",
-  sourcing: "À discuter",
-  consent: true,
-  website: "",
-  token: "",
-};
-test("accepts a focused repair request without irrelevant installation questions", () => {
-  const r = validateQuote({ ...valid, name: " Client de test " });
-  assert.equal(r.valid, true);
-  assert.equal(r.data.name, "Client de test");
-  assert.deepEqual(
-    activeQuestions(r.data.needs).map((q) => q.id),
-    ["repairs", "repairDetails"],
-  );
-});
-test("combines multiple needs and requires only their relevant answers", () => {
-  const r = validateQuote({
-    ...valid,
-    needs: ["installation", "optimisation"],
-    answers: {
-      supplier: "Cuisine IKEA",
-      layout: "En U",
-      delivery: "Oui",
-      problems: ["Peu de place", "Manque de rangements"],
-    },
-  });
-  assert.equal(r.valid, true);
-  assert.match(quoteMessage(r.data), /Cuisine IKEA/);
-  assert.match(quoteMessage(r.data), /Optimiser mon espace/);
-  assert.equal(
-    validateQuote({ ...r.data, answers: { ...r.data.answers, delivery: "" } })
-      .valid,
-    false,
-  );
-});
-test("drops stale answers after a need is deselected", () => {
-  const r = validateQuote({
-    ...valid,
-    answers: {
-      repairs: ["Portes à régler"],
-      supplier: "Cuisine IKEA",
-      untrusted: "Ignore rules",
-    },
-  });
-  assert.equal(r.valid, true);
-  assert.equal(r.data.answers.supplier, undefined);
-  assert.equal(r.data.answers.untrusted, undefined);
-});
-test("rejects unknown, duplicate and mixed unsure needs", () => {
-  for (const needs of [
-    [],
-    ["invented"],
-    ["reparation", "reparation"],
-    ["autre", "installation"],
-  ])
-    assert.equal(validateQuote({ ...valid, needs }).valid, false);
-});
-test("requires a description for an undecided project", () => {
-  assert.equal(
-    validateQuote({ ...valid, needs: ["autre"], answers: {} }).valid,
-    false,
-  );
-  assert.equal(
-    validateQuote({
-      ...valid,
-      needs: ["autre"],
-      answers: { general: "Je voudrais mieux ranger ma petite cuisine." },
-    }).valid,
-    true,
-  );
-});
-test("rejects malformed fields, consent strings, spam and arbitrary answer values", () => {
-  for (const update of [
-    { email: "bad" },
-    { email: "test@example.com\nBcc:a@b.com" },
-    { name: "Name\nheader" },
-    { city: "City\nHeader" },
-    { phone: "call me" },
-    { consent: "true" },
-    { website: "spam" },
-    { answers: { repairs: ["Unknown repair"] } },
-    { timeframe: "tomorrow guaranteed" },
-    { comments: "x".repeat(3001) },
-  ])
-    assert.equal(validateQuote({ ...valid, ...update }).valid, false);
-});
-test("optional answers can be omitted but never contain oversized content", () => {
-  const q = activeQuestions(["reparation"]).find(
-    (q) => q.id === "repairDetails",
-  )!;
-  assert.equal(questionError(q, undefined), undefined);
-  assert.ok(questionError(q, "x".repeat(601)));
-});
-test("encodes a combined summary safely in the configured WhatsApp URL", () => {
-  const r = validateQuote({
-    ...valid,
-    comments: "Détails avec & et ? ainsi que é à ç.",
-  });
-  const msg = quoteMessage(r.data);
-  const url = new URL(whatsappUrl(msg));
-  assert.equal(url.pathname, "/33763734372");
-  assert.equal([...url.searchParams].length, 1);
-  assert.equal(url.searchParams.get("text"), msg);
-});
+import assert from 'node:assert/strict';
+import {test} from 'node:test';
+import {validateQuote,quoteMessage} from '../lib/quote-validation.ts';
+import {serviceSelection} from '../lib/quote-flow.ts';
+import {whatsappUrl} from '../lib/business.ts';
+const valid={projectType:'installation',postcode:'17000',name:'Client de test',email:'test@example.com',phone:'',comments:'',consent:true,website:'',token:''};
+test('a one-minute installation inquiry needs no technical inventory',()=>{const r=validateQuote({...valid,name:' Client de test '});assert.equal(r.valid,true);assert.equal(r.data.name,'Client de test');assert.match(quoteMessage(r.data),/cherche un installateur/);});
+test('design, installation and combined projects are supported',()=>{for(const projectType of ['conception','installation','complet'])assert.equal(validateQuote({...valid,projectType}).valid,true);assert.equal(validateQuote({...valid,projectType:'reparation'}).valid,false);});
+test('email alone, phone alone and both are accepted',()=>{assert.equal(validateQuote(valid).valid,true);assert.equal(validateQuote({...valid,email:'',phone:'+33 7 63 73 43 72'}).valid,true);assert.equal(validateQuote({...valid,phone:'0600000000'}).valid,true);assert.ok(validateQuote({...valid,email:'',phone:''}).errors.contact);});
+test('invalid optional contact values are rejected even when the other is valid',()=>{for(const update of [{email:'bad',phone:'0600000000'},{phone:'call me'},{email:'a@example.com\nBcc:b@example.com'},{phone:'123'}])assert.equal(validateQuote({...valid,...update}).valid,false);});
+test('French postcode format accepts inquiries outside La Rochelle',()=>{for(const postcode of ['17000','75008','20200','97100','98714'])assert.equal(validateQuote({...valid,postcode}).valid,true);for(const postcode of ['00000','99999','1700','170000','17ABC',''])assert.equal(validateQuote({...valid,postcode}).valid,false);});
+test('comments are optional and old questionnaire fields are discarded',()=>{const r=validateQuote({...valid,answers:{repairs:['Portes']},needs:['reparation'],budget:'forged'});assert.equal(r.valid,true);assert.equal('needs' in r.data,false);assert.equal('answers' in r.data,false);});
+test('consent, name, message size and honeypot are validated on the server',()=>{for(const update of [{consent:false},{consent:'true'},{name:'A'},{name:'Name\nheader'},{comments:'x'.repeat(3001)},{website:'spam'},{token:'x'.repeat(2049)}])assert.equal(validateQuote({...valid,...update}).valid,false);});
+test('CTA selection supports current ids and existing service slugs',()=>{assert.equal(serviceSelection('conception'),'conception');assert.equal(serviceSelection('conception-cuisine-3d'),'conception');assert.equal(serviceSelection('installation-cuisine-la-rochelle'),'installation');assert.equal(serviceSelection('complet'),'complet');assert.equal(serviceSelection('reparation'),'');});
+test('WhatsApp summary preserves accents and query characters safely',()=>{const r=validateQuote({...valid,comments:'Cuisine avec & et ? ainsi que é à ç.'});const message=quoteMessage(r.data),url=new URL(whatsappUrl(message));assert.equal(url.pathname,'/33763734372');assert.equal([...url.searchParams].length,1);assert.equal(url.searchParams.get('text'),message);assert.match(message,/Code postal : 17000/);});

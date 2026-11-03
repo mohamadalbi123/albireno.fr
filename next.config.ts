@@ -1,4 +1,5 @@
 import { isIndexable, siteUrl } from "./lib/site";
+import { retiredServiceRedirects } from "./lib/services";
 import type { NextConfig } from "next";
 const allowIndex = isIndexable;
 let canonicalHost = "";
@@ -11,6 +12,9 @@ try {
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"] },
+  async redirects() {
+    return Object.entries(retiredServiceRedirects).map(([source, destination]) => ({source, destination, permanent: true}));
+  },
   async headers() {
     return [
       {

@@ -69,7 +69,7 @@ export default async function ServicePage({
             ))}
           </ul>
           <Link className="text-link" href="/devis">
-            Réunir plusieurs besoins dans une demande ↗
+            Conception et installation, ensemble ou séparément ↗
           </Link>
         </div>
         <aside className="preparation">
@@ -88,7 +88,7 @@ export default async function ServicePage({
         </div>
       </section>
       <section className="container related-services">
-        <Eyebrow>Un projet peut réunir plusieurs besoins</Eyebrow>
+        <Eyebrow>Deux accompagnements complémentaires</Eyebrow>
         <h2>Pour aller plus loin</h2>
         <ul>{services.filter((item) => item.id !== s.id).map((item) => <li key={item.id}><Link href={`/${item.slug}`}>{item.title} ↗</Link></li>)}</ul>
       </section>
