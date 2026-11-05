@@ -33,7 +33,7 @@ export default function Contact() {
       </section>
       <section className="container contact-end">
         <h2>Donnons forme à vos premières idées.</h2>
-        <Button href="/devis">Parler de mon projet</Button>
+        <Button href="/devis?service=installation">Demander un devis</Button>
       </section>
     </>
   );

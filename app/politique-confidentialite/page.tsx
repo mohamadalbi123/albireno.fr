@@ -49,7 +49,7 @@ export default function Privacy() {
         <h2>Mesure d’audience</h2>
         <p>
           Aucun outil publicitaire ou de mesure d’audience n’est installé dans
-          cette version. Les polices et photographies sont servies par le site.
+          cette version. Des événements techniques sont préparés dans la page pour distinguer un clic de contact, l’ouverture de WhatsApp et une demande acceptée par le service d’envoi, si celui-ci est activé ultérieurement. Ils ne contiennent ni nom, ni coordonnées, ni texte du projet ; ils ne sont ni enregistrés ni envoyés à un service de mesure. Toute activation d’un outil externe nécessitera une mise à jour de ces informations et du dispositif de consentement approprié. Les polices et photographies sont servies par le site.
         </p>
         <h2>Contact</h2>
         <p>

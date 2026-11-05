@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/manrope";
 import "./globals.css";
+import { ContactMeasurement } from "@/components/contact-measurement";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { business } from "@/lib/business";
@@ -35,6 +36,7 @@ export default function RootLayout({
             telephone: business.phone, email: business.email,
           }).replace(/</g, "\\u003c") }} />
         )}
+        <ContactMeasurement />
         <Header />
         <main id="contenu">{children}</main>
         <Footer />

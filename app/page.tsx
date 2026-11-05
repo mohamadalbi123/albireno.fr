@@ -10,8 +10,8 @@ import { InspirationFigure } from "@/components/inspiration-figure";
 import { PricingOverview } from "@/components/pricing-overview";
 import { HowItWorks } from "@/components/how-it-works";
 export const metadata = pageMetadata(
-  "Conception et installation de cuisines à La Rochelle",
-  "AlbiReno prépare son activité de conception 3D et d’installation de cuisines à La Rochelle. Projet IKEA, Leroy Merlin ou autre fournisseur.",
+  "Installation et pose de cuisine à La Rochelle — Conception 3D",
+  "Conception 3D, installation et pose de cuisine à La Rochelle : préparez votre projet IKEA, Leroy Merlin ou autre fournisseur. Activité en préparation.",
   "/",
 );
 export default function Home() {
@@ -26,16 +26,17 @@ export default function Home() {
               <em>{business.descriptor}</em>
             </div>
             <Eyebrow>La Rochelle et ses alentours</Eyebrow>
-            <h1>Conception et installation de cuisines <em>à La Rochelle</em></h1>
+            <h1>Votre cuisine, de la conception 3D <em>à l’installation.</em></h1>
           </div>
           <div className="hero-intro">
-            <p className="hero-subtitle">Imaginez votre cuisine. Nous la concevons et l’installons.</p>
-            <p className="hero-description">AlbiReno vous accompagne dans la conception et l’installation de votre cuisine à La Rochelle et ses alentours. De l’aménagement de votre espace à la pose de vos meubles, nous vous aidons à concrétiser un projet adapté à vos besoins, à vos envies et à votre budget.</p>
+            <p className="hero-subtitle">Votre projet à La Rochelle et ses alentours.</p>
+            <p className="hero-description">Nous concevons votre cuisine selon vos dimensions et vos envies. Vous choisissez et commandez vos meubles chez IKEA, Leroy Merlin ou le fournisseur de votre choix. Nous nous occupons ensuite de leur installation à La Rochelle et ses alentours.</p>
             <div className="hero-actions">
-              <Button href="/devis?service=conception">Concevoir ma cuisine</Button>
-              <Button href="/devis?service=installation" variant="outline">Faire installer ma cuisine</Button>
+              <Button href="/devis?service=installation">Demander un devis</Button>
+              <Button href="/devis?service=conception" variant="outline">Concevoir ma cuisine</Button>
               <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
             </div>
+            <p className="quiet-note">Vous achetez et organisez la livraison directement avec votre fournisseur. AlbiReno ne fournit ni ne livre les meubles.</p>
             <div className="hero-note"><span className="small-rule" />{business.preparationNotice}</div>
           </div>
         </div>
@@ -77,6 +78,46 @@ export default function Home() {
         </div>
       </section>
       <HowItWorks />
+      <section className="section container selected-project">
+        <div className="section-top">
+          <div>
+            <Eyebrow>Photographies d’une cuisine aménagée</Eyebrow>
+            <h2>
+              Petite surface.
+              <br />
+              Grand soin du détail.
+            </h2>
+          </div>
+          <Link href="/realisations" className="text-link">
+            Découvrir les réalisations <span>↗</span>
+          </Link>
+        </div>
+        <div className="project-feature">
+          <Link
+            href="/realisations/cuisine-optimisee"
+            className="project-feature-image"
+            aria-label="Découvrir le projet de cuisine — conception et aménagement"
+          >
+            <ProjectImage image={kitchen.images[1]} />
+          </Link>
+          <div className="project-feature-copy">
+            <span className="tag">Photographies réelles · Hors chantier client</span>
+            <p className="project-category">
+              CONCEPTION · AMÉNAGEMENT · INSTALLATION
+            </p>
+            <h3>{kitchen.title}</h3>
+            <p>{kitchen.description}</p>
+            <ul className="project-points">
+              <li>Une implantation réfléchie avec HomeStyler</li>
+              <li>Un plan de travail prolongé en péninsule</li>
+              <li>Des rangements intégrés sur trois côtés</li>
+            </ul>
+            <Button href="/realisations/cuisine-optimisee" variant="outline">
+              Voir les solutions en détail
+            </Button>
+          </div>
+        </div>
+      </section>
       <section className="section container solutions-section">
         <div className="section-top">
           <div>
@@ -163,54 +204,14 @@ export default function Home() {
               Visualisez votre future cuisine <em>avant son installation.</em>
             </h2>
             <p>
-              Grâce à la conception 3D, explorez différentes implantations, optimisez vos rangements et imaginez une cuisine adaptée à votre espace.
+              Préparez votre projet à distance à partir de vos dimensions et de vos photos. Nous pouvons étudier une première conception 3D avant que vous finalisiez votre commande chez le fournisseur, pour faciliter vos choix et limiter les rendez-vous inutiles en magasin.
             </p>
             <Button href="/conception-cuisine-3d" variant="cream">
               Découvrir la conception 3D
             </Button>
             <p className="planning-caption">
-              La conception est un accompagnement réalisé par ALBI RENO, avec des outils de planification adaptés au projet. Ce site ne propose pas de configurateur en libre-service.
+              La conception est un accompagnement réalisé par ALBI RENO, avec des outils de planification adaptés au projet. Les modalités et le périmètre de cet accompagnement seront précisés avant tout engagement. Les dimensions et la faisabilité devront être vérifiées avant l’installation.
             </p>
-          </div>
-        </div>
-      </section>
-      <section className="section container selected-project">
-        <div className="section-top">
-          <div>
-            <Eyebrow>Un projet réel, en images</Eyebrow>
-            <h2>
-              Petite surface.
-              <br />
-              Grand soin du détail.
-            </h2>
-          </div>
-          <Link href="/realisations" className="text-link">
-            Découvrir les réalisations <span>↗</span>
-          </Link>
-        </div>
-        <div className="project-feature">
-          <Link
-            href="/realisations/cuisine-optimisee"
-            className="project-feature-image"
-            aria-label="Découvrir le projet de cuisine — conception et aménagement"
-          >
-            <ProjectImage image={kitchen.images[1]} />
-          </Link>
-          <div className="project-feature-copy">
-            <span className="tag">Conception & aménagement · Hors chantier client</span>
-            <p className="project-category">
-              CONCEPTION · AMÉNAGEMENT · INSTALLATION
-            </p>
-            <h3>{kitchen.title}</h3>
-            <p>{kitchen.description}</p>
-            <ul className="project-points">
-              <li>Une implantation réfléchie avec HomeStyler</li>
-              <li>Un plan de travail prolongé en péninsule</li>
-              <li>Des rangements intégrés sur trois côtés</li>
-            </ul>
-            <Button href="/realisations/cuisine-optimisee" variant="outline">
-              Voir les solutions en détail
-            </Button>
           </div>
         </div>
       </section>

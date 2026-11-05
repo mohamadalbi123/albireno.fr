@@ -42,12 +42,12 @@ export default function Approach() {
           <h3>Rendre les choix lisibles</h3>
           <p>
             Expliquer les options et leurs limites. Utiliser une visualisation
-            3D lorsqu’elle facilite la décision.
+            3D lorsqu’elle facilite la décision. À partir de vos dimensions et de vos photos, cette préparation peut se faire à distance, avant la finalisation de votre commande auprès du fournisseur.
           </p>
           <h3>Préciser le cadre</h3>
           <p>
             Un périmètre et un devis détaillés avant l’intervention, des
-            échanges organisés et une attention portée aux finitions.
+            échanges organisés et une attention portée aux finitions. Vous achetez vos meubles et organisez leur livraison directement avec votre fournisseur ; AlbiReno ne les fournit ni ne les livre.
           </p>
         </div>
       </section>

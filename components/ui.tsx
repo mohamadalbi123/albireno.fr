@@ -99,7 +99,7 @@ export function ContactCTA() {
         <p>{business.preparationNotice} Vous pouvez partager vos idées pour un futur projet.</p>
       </div>
       <div className="cta-actions">
-        <Button>Parler de mon projet</Button>
+        <Button href="/devis?service=installation">Demander un devis</Button>
 
       </div>
     </section>

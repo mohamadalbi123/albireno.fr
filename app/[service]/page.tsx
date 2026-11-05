@@ -40,7 +40,7 @@ export default async function ServicePage({
           <Eyebrow>Une idée à explorer</Eyebrow>
           <h2>{s.title}</h2>
           <p>{s.examples[0]}. Le choix dépend des dimensions, de l’existant et du périmètre à confirmer.</p>
-          <Button href={`/devis?service=${s.slug}`}>Parler de mon projet</Button>
+          <Button href={`/devis?service=${s.slug}`}>{s.cta}</Button>
           <Link className="text-link" href="/realisations/cuisine-optimisee">Explorer le projet de cuisine ↗</Link>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default async function ServicePage({
           <Eyebrow>Pour commencer</Eyebrow>
           <h3>Préparer notre échange</h3>
           <p>{s.preparation}</p>
-          <Button href={`/devis?service=${s.slug}`}>Parler de mon projet</Button>
+          <Button href={`/devis?service=${s.slug}`}>{s.cta}</Button>
         </aside>
       </section>
       <section className="container inspiration-section" aria-label="Exemples illustratifs">

@@ -4,7 +4,7 @@ import {validateQuote,quoteMessage} from '../lib/quote-validation.ts';
 import {serviceSelection} from '../lib/quote-flow.ts';
 import {whatsappUrl} from '../lib/business.ts';
 const valid={projectType:'installation',postcode:'17000',name:'Client de test',email:'test@example.com',phone:'',comments:'',consent:true,website:'',token:''};
-test('a one-minute installation inquiry needs no technical inventory',()=>{const r=validateQuote({...valid,name:' Client de test '});assert.equal(r.valid,true);assert.equal(r.data.name,'Client de test');assert.match(quoteMessage(r.data),/cherche un installateur/);});
+test('a one-minute installation inquiry needs no technical inventory',()=>{const r=validateQuote({...valid,name:' Client de test '});assert.equal(r.valid,true);assert.equal(r.data.name,'Client de test');assert.match(quoteMessage(r.data),/faire installer ma cuisine/);});
 test('design, installation and combined projects are supported',()=>{for(const projectType of ['conception','installation','complet'])assert.equal(validateQuote({...valid,projectType}).valid,true);assert.equal(validateQuote({...valid,projectType:'reparation'}).valid,false);});
 test('email alone, phone alone and both are accepted',()=>{assert.equal(validateQuote(valid).valid,true);assert.equal(validateQuote({...valid,email:'',phone:'+33 7 63 73 43 72'}).valid,true);assert.equal(validateQuote({...valid,phone:'0600000000'}).valid,true);assert.ok(validateQuote({...valid,email:'',phone:''}).errors.contact);});
 test('invalid optional contact values are rejected even when the other is valid',()=>{for(const update of [{email:'bad',phone:'0600000000'},{phone:'call me'},{email:'a@example.com\nBcc:b@example.com'},{phone:'123'}])assert.equal(validateQuote({...valid,...update}).valid,false);});

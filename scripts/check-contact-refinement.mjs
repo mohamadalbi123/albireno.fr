@@ -1,0 +1,50 @@
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const require=createRequire(process.env.PLAYWRIGHT_PACKAGE||import.meta.url);
+const {chromium}=require('playwright');
+const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+const origin=process.env.TEST_BASE_URL||'http://127.0.0.1:3011';
+const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+await context.addInitScript(()=>{
+ window.__contactEvents=[];
+ window.addEventListener('albireno:conversion',e=>window.__contactEvents.push(e.detail));
+ // Keep test calls and email links inside the page; don't open any native application.
+ document.addEventListener('click',e=>{if(e.target.closest?.('a[href^="tel:"],a[href^="mailto:"]'))e.preventDefault();});
+});
+const page=await context.newPage();const errors=[],external=[];page.on('pageerror',e=>errors.push(e.message));
+context.on('request',r=>{if(!r.url().startsWith(origin)&&!r.url().startsWith('https://wa.me/'))external.push(r.url());});
+await context.route('https://wa.me/**',r=>r.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Intercepted, no transmission</title>'}));
+await page.goto(origin,{waitUntil:'networkidle'});
+assert.match(await page.locator('h1').innerText(),/Votre cuisine, de la conception 3D/);
+assert.ok(await page.locator('.selected-project').evaluate(el=>el.compareDocumentPosition(document.querySelector('.solutions-section'))&Node.DOCUMENT_POSITION_FOLLOWING));
+assert.match(await page.locator('.selected-project .tag').innerText(),/Photographies réelles.*Hors chantier client/);
+assert.match(await page.locator('.hero-note').innerText(),/Aucune prestation payante/);
+await page.locator('.hero-actions a[href="/devis?service=installation"]').click();
+assert.ok(await page.locator('input[value="installation"]').isChecked());
+await page.getByRole('button',{name:'Continuer sur WhatsApp'}).click();
+assert.deepEqual(await page.evaluate(()=>window.__contactEvents),[],'invalid enquiry must not count');
+await page.locator('#postcode').fill('17000');await page.locator('#name').fill('Contact QA');await page.locator('#phone').fill('0600000000');await page.locator('#comments').fill('Test privé, ne pas transmettre.');await page.locator('#planStatus').selectOption('both');await page.locator('#consent').check();
+const eventPromise=page.waitForEvent('request',r=>r.url().startsWith('https://wa.me/'));
+// Capture handoff event before the navigation replaces this document.
+await page.evaluate(()=>window.addEventListener('albireno:conversion',e=>{window.name=JSON.stringify(e.detail);}));
+await page.getByRole('button',{name:'Continuer sur WhatsApp'}).click();
+const handoff=await eventPromise;await page.waitForURL('https://wa.me/**');
+assert.match(new URL(handoff.url()).searchParams.get('text'),/J’ai un plan et des photos/);
+const event=await page.evaluate(()=>JSON.parse(window.name));
+assert.deepEqual(event,{event:'inquiry_handoff',method:'whatsapp',project_type:'installation',page_path:'/devis'});
+assert.doesNotMatch(JSON.stringify(event),/Contact QA|0600000000|privé|17000/);
+await page.goto(origin+'/contact',{waitUntil:'networkidle'});
+await page.locator('.contact-cards a[href^="tel:"]').click();
+assert.deepEqual(await page.evaluate(()=>window.__contactEvents),[{event:'contact_click',method:'phone',page_path:'/contact'}]);
+await page.locator('.contact-cards a[href^="mailto:"]').click();
+assert.equal((await page.evaluate(()=>window.__contactEvents)).at(-1).method,'email');
+// Suppress popup navigation after measuring the direct WhatsApp click.
+await page.evaluate(()=>document.addEventListener('click',e=>{if(e.target.closest?.('a[href^="https://wa.me/"]'))e.preventDefault();}));
+await page.locator('.contact-cards a[href^="https://wa.me/"]').click();
+assert.equal((await page.evaluate(()=>window.__contactEvents)).at(-1).method,'whatsapp');
+await page.goto(origin+'/mentions-legales',{waitUntil:'networkidle'});await page.locator('a[href="tel:+15592887060"]').click();
+assert.deepEqual(await page.evaluate(()=>window.__contactEvents),[],'host provider phone is not a lead');
+assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+const report={flows:['installation CTA preselects enquiry','invalid form emits no conversion','plan/photo status reaches WhatsApp summary','handoff distinct from confirmed submission','phone/email/WhatsApp clicks measured once','no personal data in events','host-provider phone excluded'],errors,externalRequests:external};
+fs.mkdirSync('docs/audit/refinement',{recursive:true});fs.writeFileSync('docs/audit/refinement/contact-results.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();

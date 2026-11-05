@@ -72,8 +72,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/devis" className="button header-quote">
-          Parler de mon projet <Icon name="arrow" width={17} />
+        <Link href="/devis?service=installation" className="button header-quote">
+          Demander un devis <Icon name="arrow" width={17} />
         </Link>
         <button
           ref={menuRef}
@@ -93,7 +93,7 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
-          {[...links, { href: "/devis", label: "Parler de mon projet" }].map(
+          {[...links, { href: "/devis?service=installation", label: "Demander un devis" }].map(
             (l) => (
               <Link
                 key={l.href}
