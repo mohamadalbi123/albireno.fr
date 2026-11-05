@@ -1,0 +1,14 @@
+{
+  "basePath": "/testing",
+  "htmlSha256": "ebadeee9af7820b1998bc006dbbc70c96281880da697c9fe53e61b80de8edeea",
+  "assetEntries": 42,
+  "storageKey": "albireno-planner-testing-v1-projects",
+  "indexable": false,
+  "submissionBackend": false,
+  "automaticPlanReading": false,
+  "entryModes": [
+    "quantities",
+    "length",
+    "document-reference"
+  ]
+}
