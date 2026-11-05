@@ -13,5 +13,5 @@ const assets=join(root,'public/testing/_next');
 await rm(assets,{recursive:true,force:true});await mkdir(assets,{recursive:true});await cp(join(exportDir,'_next'),assets,{recursive:true});
 await mkdir(join(root,'testing-planner'),{recursive:true});await writeFile(join(root,'testing-planner/index.html'),html);await writeFile(join(root,'testing-planner/planner.html'),designer);
 const files=await readdir(assets,{recursive:true});
-await writeFile(join(root,'testing-planner/manifest.json'),JSON.stringify({basePath:'/testing',htmlSha256:createHash('sha256').update(html).digest('hex'),assetEntries:files.length,storageKey:'albireno-planner-testing-v1-projects',indexable:false,submissionBackend:false,automaticPlanReading:false,entryModes:['quantities','length','document-reference']},null,2)+'\n');
+await writeFile(join(root,'testing-planner/manifest.json'),JSON.stringify({basePath:'/testing',htmlSha256:createHash('sha256').update(html).digest('hex'),assetEntries:files.length,storageKey:'albireno-planner-testing-v1-projects',indexable:false,submissionBackend:false,rateStatus:'unconfigured',pricingMode:'owner-unit-rates',automaticPlanReading:false,entryModes:['quantities','length','document-reference']},null,2)+'\n');
 console.log(`Imported isolated noindex planner at /testing (${files.length} asset entries).`);

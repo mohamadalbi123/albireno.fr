@@ -4,7 +4,7 @@ Owner authorized publishing a standalone testing copy at `/testing` on 5 Novembe
 
 ## Starting point
 
-The entry page is the simple installation estimator, with quantity, total-cabinet-length and plan/photo-reference options. The drawing workspace is optional at `/testing/planner`. Automatic plan/image extraction is not connected; the upload control explicitly says this and keeps the document in browser memory. Rates remain fictional pending owner calibration. The length label explains that five 60 cm base cabinets occupy 3 m, excluding upper/tall units and room dimensions.
+The entry page is the simple installation estimator, with quantity, total-cabinet-length and plan/photo-reference options. The drawing workspace is optional at `/testing/planner`. Automatic plan/image extraction is not connected; the upload control explicitly says this and keeps the document in browser memory. All customer prices are blank at the owner’s request. Future amounts use owner-supplied per-item rates; no daily rate, demo amount, minimum or percentage range is assumed. The length label explains that five 60 cm base cabinets occupy 3 m, excluding upper/tall units and room dimensions.
 
 ## Isolation and behavior
 
@@ -13,8 +13,12 @@ The entry page is the simple installation estimator, with quantity, total-cabine
 - Bundled client assets live under `public/testing/_next/`. No planner dependencies are added to the main website package.
 - The response and asset prefix have `X-Robots-Tag: noindex, nofollow, noarchive`; standalone HTML also has a robots noindex/nofollow meta tag. It is omitted from navigation and sitemap. Crawling is allowed so crawlers can see noindex; this is not access control.
 - The testing app uses its own browser key, `albireno-planner-testing-v1-projects`. Localhost saves are not automatically transferred to the online origin. No contact data is saved in project storage.
-- No API, server submission, account, analytics provider, ad tag or real pricing is connected. Quote preparation is a client-memory-only preview. Fictional prices, technical exclusions and prototype notices remain.
+- No API, server submission, account, analytics provider, ad tag or real pricing is connected. Quote preparation is a client-memory-only preview. Unset price notices, technical exclusions and prototype notices remain.
 - The source localhost planner and public website design remain separate. The online copy is a versioned static snapshot, not a live connection to localhost.
+
+## Price configuration
+
+The standalone source holds `lib/installation-rates.ts`, with every rate set to `null`. Cabinets and appliances use explicit unit prices; worktop and credence use their stated quantity units. Any missing selected rate keeps the total unavailable. An explicit zero may mean an included operation, but blank is never treated as zero. No demonstration amount appears in the customer estimator, optional designer, summary or quote preview.
 
 ## Updating the snapshot
 

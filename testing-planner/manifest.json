@@ -1,10 +1,12 @@
 {
   "basePath": "/testing",
-  "htmlSha256": "ebadeee9af7820b1998bc006dbbc70c96281880da697c9fe53e61b80de8edeea",
+  "htmlSha256": "776343b9cbb85edd97d90d23f4fd2ab23971c154b5f1ceadaf226f8520c150d3",
   "assetEntries": 42,
   "storageKey": "albireno-planner-testing-v1-projects",
   "indexable": false,
   "submissionBackend": false,
+  "rateStatus": "unconfigured",
+  "pricingMode": "owner-unit-rates",
   "automaticPlanReading": false,
   "entryModes": [
     "quantities",
