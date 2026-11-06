@@ -1,6 +1,7 @@
+import {parseEstimate,estimateMessage,type EstimateInput} from './kitchen-estimate.ts';
 import { business } from './business.ts';
 import { projectOptions, planOptions, type PlanStatus, type ProjectType } from './quote-flow.ts';
-export type QuoteData={projectType:ProjectType|'';postcode:string;name:string;email:string;phone:string;comments:string;consent:boolean;website:string;token:string;planStatus?:PlanStatus|''};
+export type QuoteData={projectType:ProjectType|'';postcode:string;name:string;email:string;phone:string;comments:string;consent:boolean;website:string;token:string;planStatus?:PlanStatus|'';installationEstimate?:EstimateInput};
 export type FieldErrors=Record<string,string>;
 export function validateQuote(input:unknown):{data:QuoteData;errors:FieldErrors;valid:boolean}{
  const raw=input&&typeof input==='object'?input as Record<string,unknown>:{};
@@ -8,6 +9,7 @@ export function validateQuote(input:unknown):{data:QuoteData;errors:FieldErrors;
  const type=text('projectType');
  const data:QuoteData={planStatus:planOptions.some(p=>p.id===text('planStatus'))?text('planStatus') as PlanStatus:'',projectType:projectOptions.some(p=>p.id===type)?type as ProjectType:'',postcode:text('postcode'),name:text('name'),email:text('email'),phone:text('phone'),comments:text('comments'),consent:raw.consent===true,website:text('website'),token:text('token')};
  const errors:FieldErrors={};
+ if(raw.installationEstimate!==undefined){try{data.installationEstimate=parseEstimate(raw.installationEstimate);}catch{errors.installationEstimate='Le récapitulatif de l’estimation est invalide. Revenez au calculateur ou retirez-le.';}}
  if(text('planStatus')&&!data.planStatus)errors.planStatus='Choisissez une option proposée ou laissez ce champ vide.';
  if(!data.projectType)errors.projectType='Choisissez la conception, l’installation ou les deux.';
  if(!/^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/.test(data.postcode))errors.postcode='Indiquez un code postal français à 5 chiffres (ex. 17000).';
@@ -22,4 +24,4 @@ export function validateQuote(input:unknown):{data:QuoteData;errors:FieldErrors;
  if(data.token.length>2048)errors.token='Vérification anti-spam invalide.';
  return {data,errors,valid:Object.keys(errors).length===0};
 }
-export function quoteMessage(data:QuoteData){return `Bonjour ${business.name}, je souhaite vous parler de mon projet de cuisine.\n\nProjet : ${projectOptions.find(p=>p.id===data.projectType)?.label}\nCode postal : ${data.postcode}\nNom : ${data.name}\nE-mail : ${data.email||'Non renseigné'}\nTéléphone : ${data.phone||'Non renseigné'}\nPlan ou photos : ${planOptions.find(p=>p.id===data.planStatus)?.label||'À préciser'}\n\nMon projet : ${data.comments||'À préciser lors de notre échange'}`;}
+export function quoteMessage(data:QuoteData){return `Bonjour ${business.name}, je souhaite vous parler de mon projet de cuisine.\n\nProjet : ${projectOptions.find(p=>p.id===data.projectType)?.label}\nCode postal : ${data.postcode}\nNom : ${data.name}\nE-mail : ${data.email||'Non renseigné'}\nTéléphone : ${data.phone||'Non renseigné'}\nPlan ou photos : ${planOptions.find(p=>p.id===data.planStatus)?.label||'À préciser'}\n\nMon projet : ${data.comments||'À préciser lors de notre échange'}${data.installationEstimate?'\n\n'+estimateMessage(data.installationEstimate):''}`;}

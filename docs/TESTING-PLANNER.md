@@ -1,36 +1,41 @@
-# Unlisted kitchen planner
+# Unlisted kitchen estimator
 
-Owner authorized publishing a standalone testing copy at `/testing` on 5 November 2026. This is an unlisted, public-link sandbox, not authenticated or private. It is not the public estimator integration at `/simulateur-pose-cuisine`, which remains disabled and returns 404.
+The existing `/testing` route hosts the installation calculator; `/testing/planner` remains the optional drawing tool. No new calculator page or public navigation entry was created. These are unlisted public links, not authenticated/private pages. The owner approved publishing the revised estimator to `/testing` on 6 November 2026.
 
-## Starting point
+## Pricing update — 5 November 2026
 
-The entry page is the simple installation estimator, with quantity, total-cabinet-length and plan/photo-reference options. The drawing workspace is optional at `/testing/planner`. Automatic plan/image extraction is not connected; the upload control explicitly says this and keeps the document in browser memory. All customer prices are blank at the owner’s request. Future amounts use owner-supplied per-item rates; no daily rate, demo amount, minimum or percentage range is assumed. The length label explains that five 60 cm base cabinets occupy 3 m, excluding upper/tall units and room dimensions.
+`lib/kitchen-estimate.ts` is the authoritative owner-supplied tariff catalog and calculation/validation module. A matching copy is held in the sibling standalone planner for local development. The export script always copies the canonical website module into the snapshot, so the calculator and quotation validator use the same rates.
 
-## Isolation and behavior
+- 11 exclusive cabinet types, 22 worktop/finish/appliance/accessory/removal prices.
+- One ID and one type per physical cabinet. Changing a type replaces its price; no drawer or angle supplements. Add/remove physical cabinet rows individually.
+- Quantities are bounded, finite and nonnegative; counts are integers, measurements accept two decimal places. Decimal comma supported. Invalid drafts block the total and quotation action.
+- Minimum €150 only fills the gap for priced installation work. Empty estimates have no bill. Free design alone costs €0. Specialist-only requests remain “Sur devis”. Mixed requests explicitly exclude separately quoted work.
+- Initial free 3D proposal plus one reasonable revision for qualifying projects; eligibility/scope confirmed at first exchange, no invented eligibility threshold.
+- Fiscality is unconfirmed: no HT/TTC claim. Kitchen preparation notices remain. No insurance, qualification or availability claims introduced.
+- Plan/photo reference remains in browser memory, with no automatic reading or automatic attachment transmission.
+- Optional designer remains unpriced; legacy internal demonstration pricing is not used by this calculator.
 
-- `app/testing/route.ts` and its optional designer subroute emit the standalone HTML at build time, bypassing the main site's layout, CSS, navigation, footer and contact measurement component.
-- Internal links use full document navigation between the two static HTML routes. No public-site layout is shared.
-- Bundled client assets live under `public/testing/_next/`. No planner dependencies are added to the main website package.
-- The response and asset prefix have `X-Robots-Tag: noindex, nofollow, noarchive`; standalone HTML also has a robots noindex/nofollow meta tag. It is omitted from navigation and sitemap. Crawling is allowed so crawlers can see noindex; this is not access control.
-- The testing app uses its own browser key, `albireno-planner-testing-v1-projects`. Localhost saves are not automatically transferred to the online origin. No contact data is saved in project storage.
-- No API, server submission, account, analytics provider, ad tag or real pricing is connected. Quote preparation is a client-memory-only preview. Unset price notices, technical exclusions and prototype notices remain.
-- The source localhost planner and public website design remain separate. The online copy is a versioned static snapshot, not a live connection to localhost.
+## Existing quotation flow
 
-## Price configuration
+“Recevoir mon devis personnalisé” opens the existing `/devis` form with the structured quantities/options in a URL fragment. No contact data or files are in that fragment, which is removed from the address after parsing. The form validates and recomputes prices and displays an itemized attachment. Invalid transfers block submission until removed. Customer comments remain separate. Removing the attachment leaves the ordinary inquiry form available.
 
-The standalone source holds `lib/installation-rates.ts`, with every rate set to `null`. Cabinets and appliances use explicit unit prices; worktop and credence use their stated quantity units. Any missing selected rate keeps the total unavailable. An explicit zero may mean an included operation, but blank is never treated as zero. No demonstration amount appears in the customer estimator, optional designer, summary or quote preview.
+WhatsApp is the currently available handoff: the visitor supplies contact details and consent, then opens the complete text to verify/send themselves. Automatic email remains disabled; its existing payload formatter also includes the validated estimate when enabled in the future. No external integration, credentials, advertising or public indexing configuration changed. A reload after the fragment is removed requires returning to the calculator to reattach the estimate; no persistent customer storage was added.
 
-## Updating the snapshot
+The standalone development app uses `NEXT_PUBLIC_QUOTE_URL` in its ignored local environment to point to `http://127.0.0.1:3012/devis`. The website snapshot uses `/devis`, on the same website origin.
 
-Build an isolated copy of the standalone planner with Next.js `output: 'export'`, `basePath: '/testing'` and the testing browser storage key. Keep its noindex metadata. The current snapshot was built with `next build --webpack`; its dependencies were reused from the local planner without changing that project.
+## Isolation
 
-Then import its export into this repository:
+The two testing route handlers bypass the main layout. Assets are under `public/testing/_next/`. HTML and HTTP headers remain noindex/nofollow, noarchive and no-referrer. No public nav/sitemap entry is added. Original drawing storage remains separate from the testing key `albireno-planner-testing-v1-projects`.
+
+## Rebuild locally
 
 ```sh
-node scripts/sync-testing-planner.mjs /path/to/static/export
+node scripts/build-testing-planner.mjs '/path/to/AlbiReno Kitchen Planner'
 npm test
-npm run build
 npm run typecheck
+npm run build
 ```
 
-The sync command requires the exported HTML to contain noindex and the `/testing/_next/static/` asset prefix. `testing-planner/manifest.json` records the snapshot HTML hash and storage/indexing contract. Deploy with the existing GitHub main → Vercel production workflow after checking the complete testing flow and existing public website.
+The build script stages source under `/private/tmp/albireno-testing-export`, exports with webpack and imports the snapshot. It does not deploy. Do not copy the standalone `.env.local` to the snapshot. The manifest records tariff version 2 and unconfirmed tax status.
+
+Browser verification: `scripts/check-testing-planner.mjs` with `TEST_BASE_URL`, `PLAYWRIGHT_PACKAGE` and `CHROME_PATH`. WhatsApp navigation is intercepted; no real messages are sent. Screenshots/results are written to ignored `docs/audit/estimator-final/`.
