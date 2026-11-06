@@ -10,7 +10,7 @@ await mkdir(staging,{recursive:true});
 for(const name of ['package.json','package-lock.json','tsconfig.json','postcss.config.mjs']){try{await cp(join(source,name),join(staging,name));}catch(error){if(name!=='postcss.config.mjs')throw error;}}
 try{await access(join(staging,'node_modules'));}catch{await symlink(join(source,'node_modules'),join(staging,'node_modules'));}
 // One canonical tariff module is used by the UI and the quotation validator.
-await cp(join(root,'lib/kitchen-estimate.ts'),join(staging,'lib/kitchen-estimate.ts'));
+for(const name of ['kitchen-estimate.ts','estimator-catalog.ts'])await cp(join(root,'lib',name),join(staging,'lib',name));
 for(const [name,transform] of [
  ['components/installation-estimator.tsx',s=>s.replace("import Link from 'next/link';",'').replace('<Link href="/planner">','<a href="/testing/planner">').replaceAll('</Link>','</a>')],
  ['components/planner.tsx',s=>s.replace("import Link from 'next/link';",'').replaceAll('<Link className="brand" href="/">','<a className="brand" href="/testing">').replaceAll('</Link>','</a>')],

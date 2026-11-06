@@ -39,3 +39,14 @@ npm run build
 The build script stages source under `/private/tmp/albireno-testing-export`, exports with webpack and imports the snapshot. It does not deploy. Do not copy the standalone `.env.local` to the snapshot. The manifest records tariff version 2 and unconfirmed tax status.
 
 Browser verification: `scripts/check-testing-planner.mjs` with `TEST_BASE_URL`, `PLAYWRIGHT_PACKAGE` and `CHROME_PATH`. WhatsApp navigation is intercepted; no real messages are sent. Screenshots/results are written to ignored `docs/audit/estimator-final/`.
+
+
+## Visual catalogue redesign
+
+The next local snapshot replaces all three input methods with one five-category illustrated catalogue. No plan upload, length-based cabinet inference, method tabs or drawing-tool link remains in the estimator. The separate optional drawing route is retained because it is independently referenced; its design and logic are not changed.
+
+The presentation metadata in `lib/estimator-catalog.ts` reads every label, price and unit from the unchanged canonical `lib/kitchen-estimate.ts`. All 33 approved items remain, with no new rates. Unit cards use bounded +/− controls; metre and square-metre cards accept decimal measurements. Selection and invalid drafts persist across category changes. The summary offers item removal/reset and two existing-form handoffs (quotation or free 3D design).
+
+Illustrations are original inline SVG, with no image downloads or heavy rendering dependency. New CSS is scoped under `.visual-estimator`; mobile uses two cards per row and an expandable fixed summary, while desktop uses a sticky itemized summary. Preparation notices, unknown tax status, €150 minimum and quote-only exclusions remain.
+
+The owner approved publishing this redesign at the existing `/testing` URL. The route remains unlisted and noindex.
