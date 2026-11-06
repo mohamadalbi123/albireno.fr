@@ -1,6 +1,6 @@
-# Unlisted kitchen estimator
+# Kitchen estimator — noindex testing route
 
-The existing `/testing` route hosts the installation calculator; `/testing/planner` remains the optional drawing tool. No new calculator page or public navigation entry was created. These are unlisted public links, not authenticated/private pages. The owner approved publishing the revised estimator to `/testing` on 6 November 2026.
+The existing `/testing` route hosts the installation calculator; `/testing/planner` remains the optional drawing tool. No new calculator page was created. The owner subsequently approved a homepage hero link to `/testing`; the calculator is publicly discoverable through that link, remains noindex, and is not authenticated/private. The owner approved publishing the revised estimator to `/testing` on 6 November 2026.
 
 ## Pricing update — 5 November 2026
 
@@ -25,7 +25,7 @@ The standalone development app uses `NEXT_PUBLIC_QUOTE_URL` in its ignored local
 
 ## Isolation
 
-The two testing route handlers bypass the main layout. Assets are under `public/testing/_next/`. HTML and HTTP headers remain noindex/nofollow, noarchive and no-referrer. No public nav/sitemap entry is added. Original drawing storage remains separate from the testing key `albireno-planner-testing-v1-projects`.
+The two testing route handlers bypass the main layout. Assets are under `public/testing/_next/`. HTML and HTTP headers remain noindex/nofollow, noarchive and no-referrer. The homepage hero links to the calculator; no sitemap entry is added. Original drawing storage remains separate from the testing key `albireno-planner-testing-v1-projects`.
 
 ## Rebuild locally
 
@@ -49,4 +49,9 @@ The presentation metadata in `lib/estimator-catalog.ts` reads every label, price
 
 Illustrations are original inline SVG, with no image downloads or heavy rendering dependency. New CSS is scoped under `.visual-estimator`; mobile uses two cards per row and an expandable fixed summary, while desktop uses a sticky itemized summary. Preparation notices, unknown tax status, €150 minimum and quote-only exclusions remain.
 
-The owner approved publishing this redesign at the existing `/testing` URL. The route remains unlisted and noindex.
+The owner approved publishing this redesign at the existing `/testing` URL. The route remains noindex.
+
+
+## Measurement controls and homepage access
+
+All measured items now have −/+ controls in 0.1 m or 0.1 m² steps, retaining direct decimal entry and the existing input bounds. The homepage hero includes “Estimer le prix de pose”, linking to the existing `/testing` catalogue. Pricing, noindex and preparation restrictions remain unchanged. Desktop/mobile, all four measurement cards, quotation handoff and website smoke checks passed before release.

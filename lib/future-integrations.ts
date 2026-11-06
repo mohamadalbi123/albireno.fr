@@ -1,7 +1,7 @@
-/** Reserved integration contract only: public integration stays disabled; the standalone prototype has a separate unlisted test URL. */
+/** Reserved integration contract only: public integration stays disabled; the separate noindex catalogue is linked from the homepage hero. */
 export const kitchenEstimatorIntegration = {
   path: '/simulateur-pose-cuisine',
   publicEnabled: false,
-  status: 'unlisted-testing-only',
+  status: 'public-testing-catalog',
   testingPath: '/testing',
 } as const;

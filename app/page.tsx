@@ -33,7 +33,8 @@ export default function Home() {
             <p className="hero-description">Nous concevons votre cuisine selon vos dimensions et vos envies. Vous choisissez et commandez vos meubles chez IKEA, Leroy Merlin ou le fournisseur de votre choix. Nous nous occupons ensuite de leur installation à La Rochelle et ses alentours.</p>
             <div className="hero-actions">
               <Button href="/devis?service=installation">Demander un devis</Button>
-              <Button href="/devis?service=conception" variant="outline">Concevoir ma cuisine</Button>
+              <Button href="/testing" variant="outline">Estimer le prix de pose</Button>
+              <Link className="text-link" href="/devis?service=conception">Concevoir ma cuisine <span>↗</span></Link>
               <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
             </div>
             <p className="quiet-note">Vous achetez et organisez la livraison directement avec votre fournisseur. AlbiReno ne fournit ni ne livre les meubles.</p>
