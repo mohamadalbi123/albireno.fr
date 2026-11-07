@@ -10,3 +10,13 @@ export function withCabinetCount(input:EstimateInput,type:CabinetType,count:numb
  if(!Number.isInteger(count)||count<0||count+others.length>100)throw new Error('Nombre de meubles invalide.');
  return {...input,cabinets:[...others,...current.slice(0,count),...Array.from({length:Math.max(0,count-current.length)},()=>({id:makeId(),type}))]};
 }
+/** Counts always change by one from current state; measurements use their separate decimal input. */
+export function adjustCatalogCount(input:EstimateInput,product:CatalogProduct,delta:1|-1):EstimateInput{
+ if(product.unit!=='u')throw new Error('Utilisez le champ de mesure.');
+ if(product.kind==='cabinet'){
+  const count=input.cabinets.filter(c=>c.type===product.id).length,max=100-input.cabinets.length+count;
+  return withCabinetCount(input,product.id as CabinetType,Math.max(0,Math.min(max,count+delta)));
+ }
+ const id=product.id as ItemType;
+ return {...input,items:{...input.items,[id]:Math.max(0,Math.min(100,input.items[id]+delta))}};
+}

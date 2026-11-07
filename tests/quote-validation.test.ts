@@ -13,3 +13,9 @@ test('comments are optional and old questionnaire fields are discarded',()=>{con
 test('consent, name, message size and honeypot are validated on the server',()=>{for(const update of [{consent:false},{consent:'true'},{name:'A'},{name:'Name\nheader'},{comments:'x'.repeat(3001)},{website:'spam'},{token:'x'.repeat(2049)}])assert.equal(validateQuote({...valid,...update}).valid,false);});
 test('CTA selection supports current ids and existing service slugs',()=>{assert.equal(serviceSelection('conception'),'conception');assert.equal(serviceSelection('conception-cuisine-3d'),'conception');assert.equal(serviceSelection('installation-cuisine-la-rochelle'),'installation');assert.equal(serviceSelection('complet'),'complet');assert.equal(serviceSelection('reparation'),'');});
 test('WhatsApp summary preserves accents and query characters safely',()=>{const r=validateQuote({...valid,comments:'Cuisine avec & et ? ainsi que é à ç.'});const message=quoteMessage(r.data),url=new URL(whatsappUrl(message));assert.equal(url.pathname,'/33763734372');assert.equal([...url.searchParams].length,1);assert.equal(url.searchParams.get('text'),message);assert.match(message,/Code postal : 17000/);});
+
+test('simple contact needs no project category or postcode and carries the validated estimate',()=>{
+ const result=validateQuote({kind:'contact',name:'Client simple',phone:'0600000000',comments:'Une cuisine à installer',consent:true});
+ assert.equal(result.valid,true);assert.equal(result.data.kind,'contact');assert.equal(result.data.projectType,'');assert.equal(result.data.postcode,'');assert.match(quoteMessage(result.data),/Demande de contact/);assert.doesNotMatch(quoteMessage(result.data),/Code postal|Plan ou photos/);
+ assert.equal(validateQuote({kind:'contact',name:'Client simple',consent:true}).valid,false);
+});

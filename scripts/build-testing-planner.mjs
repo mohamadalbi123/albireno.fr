@@ -20,6 +20,6 @@ for(const [name,transform] of [
  ['lib/storage.ts',s=>s.replaceAll('albireno-planner-v1-projects','albireno-planner-testing-v1-projects')],
 ]){const p=join(staging,name);await writeFile(p,transform(await readFile(p,'utf8')));}
 await writeFile(join(staging,'next.config.ts'),`import type { NextConfig } from 'next';\nconst config:NextConfig={output:'export',basePath:${JSON.stringify(estimatorPath)},poweredByHeader:false,devIndicators:false,turbopack:{root:process.cwd()}};\nexport default config;\n`);
-const built=spawnSync('npm',['run','build','--','--webpack'],{cwd:staging,stdio:'inherit',env:{...process.env,NEXT_PUBLIC_QUOTE_URL:'/devis',NEXT_PUBLIC_HOME_URL:'/',NEXT_PUBLIC_ESTIMATOR_PATH:estimatorPath}});
+const built=spawnSync('npm',['run','build','--','--webpack'],{cwd:staging,stdio:'inherit',env:{...process.env,NEXT_PUBLIC_QUOTE_URL:'/contact',NEXT_PUBLIC_HOME_URL:'/',NEXT_PUBLIC_ESTIMATOR_PATH:estimatorPath}});
 if(built.status!==0)process.exit(built.status||1);
 const synced=spawnSync(process.execPath,[join(root,'scripts/sync-testing-planner.mjs'),join(staging,'out')],{cwd:root,stdio:'inherit'});process.exit(synced.status||0);

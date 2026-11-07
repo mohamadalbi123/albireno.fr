@@ -16,7 +16,7 @@ export function Footer() {
             <h3>Explorer</h3>
             <Link href="/notre-approche">Notre approche</Link>
             <Link href="/realisations">Réalisations</Link>
-            <Link href="/devis">Votre projet</Link>
+            <Link href="/simulateur-pose-cuisine">Estimer ma pose</Link>
             <Link href="/contact">Contact</Link>
           </div>
           <div>

@@ -23,7 +23,7 @@ export function Brand({ light = false }: { light?: boolean }) {
       href="/"
       aria-label={`${business.name} — accueil`}
     >
-      <img className="brand-artwork" src={light?'/brand/albireno-logo.webp':'/brand/albireno-wordmark.webp'} alt="Logo AlbiReno" width={light?180:185} height={light?180:67}/>
+      <span className="brand-wordmark" dir="ltr" translate="no">Albi<span>Reno</span></span>
     </Link>,locale
   );
 }
@@ -65,8 +65,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/devis?service=installation" className="button header-quote">
-          Demander un devis <Icon name="arrow" width={17} />
+        <Link href="/contact" className="button header-quote">
+          Nous contacter <Icon name="arrow" width={17} />
         </Link>
         <LanguageSwitcher locale={locale}/>
         <button
@@ -88,7 +88,7 @@ export function Header() {
           aria-label="Navigation mobile"
         >
           <a href={`tel:${business.phone.replace(/[^+\d]/g,"")}`}>Appeler AlbiReno <Icon name="arrow"/></a>
-          {[...links, { href: "/devis?service=installation", label: "Demander un devis" }].map(
+          {[...links, { href: "/simulateur-pose-cuisine", label: "Estimer ma pose" }].map(
             (l) => (
               <Link
                 key={l.href}

@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/realisations",
     "/notre-approche",
     "/contact",
-    "/devis",
     ...services.filter((s) => s.confirmed).map((s) => `/${s.slug}`),
     ...publishedProjects.filter((p) => p.indexable !== false).map((p) => `/realisations/${p.slug}`),
   ].flatMap((path) => (["fr","en","ar"] as const).map(locale=>({

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 const origin = process.env.TEST_BASE_URL || "http://127.0.0.1:3000";
 const expectIndexable = process.env.EXPECT_INDEXABLE === "true";
-const indexablePaths = new Set(["/", "/realisations", "/realisations/cuisine-optimisee", "/notre-approche", "/contact", "/devis"]);
+const indexablePaths = new Set(["/", "/realisations", "/realisations/cuisine-optimisee", "/notre-approche", "/contact"]);
 const paths = [
   "/",
   "/installation-cuisine-la-rochelle",
@@ -11,7 +11,6 @@ const paths = [
   "/realisations/cuisine-optimisee",
   "/realisations/cuisine-rochefort",
   "/notre-approche",
-  "/devis",
   "/contact",
   "/mentions-legales",
   "/politique-confidentialite",
@@ -87,6 +86,7 @@ for (const [from,to] of Object.entries({"/renovation-cuisine-la-rochelle":"/inst
 }
 assert.equal((await fetch(origin+"/simulateur-pose-cuisine")).status,200,"production estimator route");
 for(const prefix of ["","/en","/ar"])for(const suffix of ["","/planner"]){const r=await fetch(origin+prefix+"/testing"+suffix,{redirect:"manual"});assert.equal(r.status,308);assert.equal(r.headers.get("location"),prefix+"/simulateur-pose-cuisine");}
+for(const prefix of ["","/en","/ar"]){const r=await fetch(origin+prefix+"/devis",{redirect:"manual"});assert.equal(r.status,308);assert.equal(r.headers.get("location"),prefix+"/contact");}
 const verification=await fetch(origin+"/google4b9b87ef974dde9f.html");assert.equal(verification.status,200);assert.equal(await verification.text(),"google-site-verification: google4b9b87ef974dde9f.html");
 const post = (data, headers = {}) =>
   fetch(origin + "/api/devis", {

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"] },
   async redirects() {
-    return [...['','/en','/ar'].map(prefix=>({source:`${prefix}/testing/:path*`,destination:prefix+estimatorPath,permanent:true})),...Object.entries(retiredServiceRedirects).map(([source, destination]) => ({source, destination, permanent: true}))];
+    return [...['','/en','/ar'].map(prefix=>({source:prefix+'/devis',destination:prefix+'/contact',permanent:true})),...['','/en','/ar'].map(prefix=>({source:`${prefix}/testing/:path*`,destination:prefix+estimatorPath,permanent:true})),...Object.entries(retiredServiceRedirects).map(([source, destination]) => ({source, destination, permanent: true}))];
   },
   async headers() {
     return [

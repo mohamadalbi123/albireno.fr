@@ -3,7 +3,7 @@ import { Icon } from "./icon";
 import { business } from "@/lib/business";
 export function Button({
   children,
-  href = "/devis",
+  href = "/contact",
   variant = "",
   external = false,
 }: {
@@ -99,7 +99,7 @@ export function ContactCTA() {
         <p>{business.preparationNotice} Vous pouvez partager vos idées pour un futur projet.</p>
       </div>
       <div className="cta-actions">
-        <Button href="/devis?service=installation">Demander un devis</Button>
+        <Button href="/contact">Nous contacter</Button>
 
       </div>
     </section>

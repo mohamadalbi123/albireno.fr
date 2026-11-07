@@ -15,7 +15,7 @@ import {serverTranslation} from './server-translation';
 import {t,localePath,type Locale} from './i18n';
 import {siteUrl} from './site';
 const pages={ '/':[Home,homeMeta],'/contact':[Contact,contactMeta],'/realisations':[Portfolio,portfolioMeta],'/notre-approche':[Approach,approachMeta],'/devis':[Quote,quoteMeta],'/mentions-legales':[Legal,legalMeta],'/politique-confidentialite':[Privacy,privacyMeta]} as const;
-export const publicFrenchPaths=['/','/realisations','/notre-approche','/contact','/devis',...publishedProjects.filter(p=>p.indexable!==false).map(p=>`/realisations/${p.slug}`),...services.filter(s=>s.confirmed).map(s=>`/${s.slug}`)];
+export const publicFrenchPaths=['/','/realisations','/notre-approche','/contact',...publishedProjects.filter(p=>p.indexable!==false).map(p=>`/realisations/${p.slug}`),...services.filter(s=>s.confirmed).map(s=>`/${s.slug}`)];
 export function languageAlternates(path:string){return Object.fromEntries([['fr',path],['en',localePath(path,'en')],['ar',localePath(path,'ar')],['x-default',path]].map(([lang,url])=>[lang,`${siteUrl}${url}`]));}
 async function resolvePage(path:string,searchParams:Promise<{service?:string}>){
  if(path in pages){const [Page,metadata]=pages[path as keyof typeof pages];return {node:await Page({searchParams}),metadata};}

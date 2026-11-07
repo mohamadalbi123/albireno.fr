@@ -1,5 +1,7 @@
-import { PageIntro, Button } from "@/components/ui";
+import { PageIntro } from "@/components/ui";
 import { business, whatsappUrl } from "@/lib/business";
+import { QuoteForm } from "@/components/quote-form";
+import {mailReady} from "@/lib/site";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Contact — parlons de votre cuisine",
@@ -20,9 +22,9 @@ export default function Contact() {
           <h2>{business.phone}</h2>
           <p>Prendre le temps d’un premier échange. ↗</p>
         </a>
-        <a href={`mailto:${business.email}`}>
-          <span>02 / PAR E-MAIL</span>
-          <h2>{business.email}</h2>
+        <a href="#formulaire-contact">
+          <span>02 / FORMULAIRE DE CONTACT</span>
+          <h2>Formulaire de contact</h2>
           <p>Présenter votre projet en quelques mots. ↗</p>
         </a>
         <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
@@ -31,9 +33,9 @@ export default function Contact() {
           <p>Partager vos idées et vos photos. ↗</p>
         </a>
       </section>
-      <section className="container contact-end">
-        <h2>Donnons forme à vos premières idées.</h2>
-        <Button href="/devis?service=installation">Demander un devis</Button>
+      <section className="container section wizard-container" id="formulaire-contact" aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title">Formulaire de contact</h2>
+        <QuoteForm mailEnabled={mailReady} simpleContact />
       </section>
     </>
   );

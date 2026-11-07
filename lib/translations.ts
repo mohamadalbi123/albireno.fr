@@ -2075,5 +2075,49 @@ export const translations:Record<string,readonly [string,string]>={
   "Les quantités et mesures du calculateur sont conservées dans la session de votre onglet pour retrouver votre estimation après un retour ou un rechargement. Aucune coordonnée, photo ou donnée du formulaire n’y est enregistrée. Vous pouvez réinitialiser l’estimation à tout moment.": [
     "Calculator quantities and measurements are kept in your tab’s session so you can recover your estimate after going back or reloading. No contact details, photos or form data are stored there. You can reset your estimate at any time.",
     "تُحفظ كميات الحاسبة ومقاساتها في جلسة علامة التبويب لاستعادة تقديرك بعد الرجوع أو إعادة التحميل. لا تُحفظ فيها بيانات الاتصال أو الصور أو بيانات النموذج. يمكنك إعادة ضبط التقدير في أي وقت."
+  ],
+  "Estimer ma pose": [
+    "Estimate installation",
+    "تقدير تكلفة التركيب"
+  ],
+  "Nous contacter": [
+    "Contact us",
+    "تواصل معنا"
+  ],
+  "Envoyer sur WhatsApp": [
+    "Send via WhatsApp",
+    "إرسال عبر واتساب"
+  ],
+  "Formulaire de contact": [
+    "Contact form",
+    "نموذج التواصل"
+  ],
+  "Votre nom, un moyen de contact et quelques mots sur votre projet suffisent.": [
+    "Just your name, a way to contact you and a few words about your project.",
+    "يكفي اسمك ووسيلة للتواصل معك وبضع كلمات عن مشروعك."
+  ],
+  "Demande de contact": [
+    "Contact enquiry",
+    "طلب تواصل"
+  ],
+  "Conception 3D et pose de cuisine": [
+    "3D kitchen design and installation",
+    "تصميم المطابخ ثلاثي الأبعاد وتركيبها"
+  ],
+  "Boutons : 1": [
+    "Buttons: 1",
+    "خطوة الأزرار: 1"
+  ],
+  "· décimales possibles": [
+    "· decimal entry available",
+    "· يمكن إدخال الكسور العشرية"
+  ],
+  "Illustration générée par IA : prise de mesures d’une cuisine avec une conception 3D sur ordinateur": [
+    "AI-generated illustration: measuring a kitchen with a 3D design on a computer",
+    "صورة توضيحية مولّدة بالذكاء الاصطناعي: أخذ مقاسات مطبخ مع تصميم ثلاثي الأبعاد على الحاسوب"
+  ],
+  "02 / FORMULAIRE DE CONTACT": [
+    "02 / CONTACT FORM",
+    "02 / نموذج التواصل"
   ]
 };
