@@ -34,7 +34,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "La Rochelle et ses alentours": [
     "La Rochelle and the surrounding area",
-    "لا روشيل والمناطق المحيطة بها"
+    "لاروشيل والمناطق المحيطة بها"
   ],
   "Votre cuisine, de la conception 3D": [
     "Your kitchen, from 3D design",
@@ -46,11 +46,11 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Votre projet à La Rochelle et ses alentours.": [
     "Your project in La Rochelle and the surrounding area.",
-    "مشروعك في لا روشيل والمناطق المحيطة بها."
+    "مشروعك في لاروشيل والمناطق المحيطة بها."
   ],
   "Nous concevons votre cuisine selon vos dimensions et vos envies. Vous choisissez et commandez vos meubles chez IKEA, Leroy Merlin ou le fournisseur de votre choix. Nous nous occupons ensuite de leur installation à La Rochelle et ses alentours.": [
     "We design your kitchen around your measurements and preferences. You choose and order your cabinets from IKEA, Leroy Merlin or your preferred supplier. We then take care of installation in La Rochelle and the surrounding area.",
-    "نصمم مطبخك وفقًا لمقاسات مساحتك ورغباتك. تختار الخزائن وتطلبها من IKEA أو Leroy Merlin أو المورّد الذي تفضله. ثم نتولى تركيبها في لا روشيل والمناطق المحيطة بها."
+    "نصمم مطبخك وفقًا لمقاسات مساحتك ورغباتك. تختار الخزائن وتطلبها من IKEA أو Leroy Merlin أو المورّد الذي تفضله. ثم نتولى تركيبها في لاروشيل والمناطق المحيطة بها."
   ],
   "Estimer le prix de pose": [
     "Estimate the installation cost",
@@ -94,7 +94,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Un besoin, une première idée": [
     "A need, a first idea",
-    "حاجة وفكرة أولى"
+    "خدمات تناسب فكرتك"
   ],
   "Quel est votre": [
     "What is your",
@@ -402,7 +402,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Les volumes, les matériaux et les finitions": [
     "Volumes, materials and finishes",
-    "الأحجام والمواد والتشطيبات"
+    "توزيع المساحات والمواد والتشطيبات"
   ],
   "Les choix compatibles avec votre budget": [
     "Choices that fit your budget",
@@ -478,11 +478,11 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "AlbiReno — Conception et installation de cuisines à La Rochelle et ses alentours": [
     "AlbiReno — Kitchen design and installation in La Rochelle and the surrounding area",
-    "AlbiReno — تصميم المطابخ وتركيبها في لا روشيل والمناطق المحيطة بها"
+    "AlbiReno — تصميم المطابخ وتركيبها في لاروشيل والمناطق المحيطة بها"
   ],
   "La Rochelle · Charente-Maritime": [
     "La Rochelle · Charente-Maritime",
-    "لا روشيل · شارانت ماريتيم"
+    "لاروشيل · شارانت ماريتيم"
   ],
   "Explorer": [
     "Explore",
@@ -498,7 +498,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Nos expertises": [
     "Our expertise",
-    "خبراتنا"
+    "مجالات عملنا"
   ],
   "Faisons connaissance": [
     "Let’s get acquainted",
@@ -522,7 +522,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Conception 3D, installation et pose de cuisine à La Rochelle : préparez votre projet IKEA, Leroy Merlin ou autre fournisseur. Activité en préparation.": [
     "3D kitchen design and installation in La Rochelle: prepare your IKEA, Leroy Merlin or other supplier project. Activity in preparation.",
-    "تصميم المطابخ ثلاثي الأبعاد وتركيبها في لا روشيل: حضّر مشروع مطبخك من IKEA أو Leroy Merlin أو أي مورّد آخر. النشاط قيد الإعداد."
+    "تصميم المطابخ ثلاثي الأبعاد وتركيبها في لاروشيل: حضّر مشروع مطبخك من IKEA أو Leroy Merlin أو أي مورّد آخر. النشاط قيد الإعداد."
   ],
   "ALBI RENO — accueil": [
     "ALBI RENO — home",
@@ -570,7 +570,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Installation et pose de cuisine à La Rochelle — Conception 3D": [
     "Kitchen installation in La Rochelle — 3D design",
-    "تركيب المطابخ في لا روشيل — تصميم ثلاثي الأبعاد"
+    "تركيب المطابخ في لاروشيل — تصميم ثلاثي الأبعاد"
   ],
   "Le coût d’installation dépend du nombre et du type de meubles, des dimensions, du plan de travail, des équipements et des contraintes techniques de votre logement.": [
     "Installation cost depends on cabinet numbers and types, dimensions, worktops, appliances and the technical constraints of your home.",
@@ -578,7 +578,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Conception de cuisines en 3D à La Rochelle": [
     "3D kitchen design in La Rochelle",
-    "تصميم المطابخ ثلاثي الأبعاد في لا روشيل"
+    "تصميم المطابخ ثلاثي الأبعاد في لاروشيل"
   ],
   "Une cuisine pensée pour votre espace et votre quotidien. Activité cuisine en préparation. Aucune prestation payante ni réservation d’intervention n’est proposée à ce stade.": [
     "A kitchen designed for your space and everyday life. Our kitchen activity is being prepared. No paid services or installation bookings are offered at this stage.",
@@ -674,7 +674,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Étude de votre espace, conception de cuisine en 3D et choix d’implantation à La Rochelle. Un accompagnement distinct de l’installation, pour votre futur projet.": [
     "Space assessment, 3D kitchen design and layout choices in La Rochelle. A service separate from installation, for your future project.",
-    "دراسة المساحة وتصميم المطبخ ثلاثي الأبعاد واختيار التوزيع في لا روشيل. خدمة مستقلة عن التركيب لمشروعك المستقبلي."
+    "دراسة المساحة وتصميم المطبخ ثلاثي الأبعاد واختيار التوزيع في لاروشيل. خدمة مستقلة عن التركيب لمشروعك المستقبلي."
   ],
   "Le service en images": [
     "The service in pictures",
@@ -694,7 +694,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Installation et pose de cuisines à La Rochelle": [
     "Kitchen fitting and installation in La Rochelle",
-    "تجميع المطابخ وتركيبها في لا روشيل"
+    "تجميع المطابخ وتركيبها في لاروشيل"
   ],
   "Une pose soignée, adaptée à votre projet. Activité cuisine en préparation. Aucune prestation payante ni réservation d’intervention n’est proposée à ce stade.": [
     "Careful installation tailored to your project. Our kitchen activity is being prepared. No paid services or installation bookings are offered at this stage.",
@@ -734,7 +734,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Installation et pose de cuisine à La Rochelle : meubles IKEA, Leroy Merlin ou autre fournisseur, montage et ajustements sur devis. Activité en préparation.": [
     "Kitchen fitting and installation in La Rochelle: IKEA, Leroy Merlin or other supplier cabinets, assembly and adjustments by quotation. Activity in preparation.",
-    "تجميع المطابخ وتركيبها في لا روشيل: خزائن IKEA أو Leroy Merlin أو أي مورّد آخر، والتجميع والتعديلات وفق عرض سعر. النشاط قيد الإعداد."
+    "تجميع المطابخ وتركيبها في لاروشيل: خزائن IKEA أو Leroy Merlin أو أي مورّد آخر، والتجميع والتعديلات وفق عرض سعر. النشاط قيد الإعداد."
   ],
   "Illustration du montage d’un meuble de cuisine avec un niveau": [
     "Illustration of kitchen cabinet assembly using a spirit level",
@@ -978,7 +978,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "ALBI RENO : conception et installation de cuisines à La Rochelle, à partir de vos usages, de votre espace et de votre budget.": [
     "ALBI RENO: kitchen design and installation in La Rochelle, based on your needs, space and budget.",
-    "ALBI RENO: تصميم المطابخ وتركيبها في لا روشيل، انطلاقًا من استخداماتك ومساحتك وميزانيتك."
+    "ALBI RENO: تصميم المطابخ وتركيبها في لاروشيل، انطلاقًا من استخداماتك ومساحتك وميزانيتك."
   ],
   "Notre approche — conception et installation de cuisines": [
     "Our approach — kitchen design and installation",
@@ -1026,7 +1026,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Contactez-nous par téléphone, e-mail ou WhatsApp pour échanger sur la conception ou l’installation de votre cuisine à La Rochelle.": [
     "Contact us by phone, email or WhatsApp to discuss kitchen design or installation in La Rochelle.",
-    "تواصل معنا عبر الهاتف أو البريد الإلكتروني أو واتساب لمناقشة تصميم مطبخك أو تركيبه في لا روشيل."
+    "تواصل معنا عبر الهاتف أو البريد الإلكتروني أو واتساب لمناقشة تصميم مطبخك أو تركيبه في لاروشيل."
   ],
   "Contact — parlons de votre cuisine": [
     "Contact — let’s talk about your kitchen",
@@ -1154,7 +1154,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Préparez votre demande de pose ou d’installation de cuisine à La Rochelle, avec ou sans conception 3D. Premier échange pour un futur projet ; activité en préparation.": [
     "Prepare your kitchen installation enquiry in La Rochelle, with or without 3D design. An initial conversation about a future project; activity in preparation.",
-    "حضّر طلب تركيب مطبخك في لا روشيل، مع تصميم ثلاثي الأبعاد أو بدونه. تواصل أول بشأن مشروع مستقبلي؛ النشاط قيد الإعداد."
+    "حضّر طلب تركيب مطبخك في لاروشيل، مع تصميم ثلاثي الأبعاد أو بدونه. تواصل أول بشأن مشروع مستقبلي؛ النشاط قيد الإعداد."
   ],
   "Décrivez votre cuisine, votre fournisseur, les dimensions approximatives et ce que vous souhaitez réaliser…": [
     "Describe your kitchen, supplier, approximate dimensions and what you would like to do…",
@@ -1162,7 +1162,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Demande de devis cuisine à La Rochelle": [
     "Kitchen quotation request in La Rochelle",
-    "طلب عرض سعر لمطبخ في لا روشيل"
+    "طلب عرض سعر لمطبخ في لاروشيل"
   ],
   "Informations légales": [
     "Legal information",
@@ -1177,12 +1177,12 @@ export const translations:Record<string,readonly [string,string]>={
     "ناشر الموقع"
   ],
   "Entrepreneur individuel — micro-entreprise": [
-    "Sole trader — micro-enterprise",
-    "مقاول فردي — منشأة صغيرة وفق النظام الفرنسي"
+    "Sole trader — French micro-entrepreneur regime",
+    "صاحب منشأة فردية — نظام micro-entreprise الفرنسي"
   ],
   ". ALBI RENO est le nom utilisé pour ce projet d’activité cuisine en préparation, porté par la même micro-entreprise que Chambre 17, avec le même SIRET.": [
     ". ALBI RENO is the name used for this kitchen-activity project in preparation, operated by the same micro-enterprise as Chambre 17, with the same SIRET.",
-    ". ALBI RENO هو الاسم المستخدم لمشروع نشاط المطابخ الجاري إعداده، والذي تديره المنشأة الصغيرة نفسها التي تدير Chambre 17، برقم SIRET نفسه."
+    ". ALBI RENO هو الاسم المستخدم لمشروع نشاط المطابخ قيد الإعداد، وتتولاه المنشأة الفردية نفسها التي تدير Chambre 17، وفق نظام micro-entreprise وبرقم SIRET نفسه."
   ],
   "SIREN :": [
     "SIREN:",
@@ -1191,10 +1191,6 @@ export const translations:Record<string,readonly [string,string]>={
   ". SIRET :": [
     ". SIRET:",
     ". رقم SIRET:"
-  ],
-  ". Établissement enregistré : 17140 Lagord, France. L’adresse professionnelle complète reste à préciser.": [
-    ". Registered establishment: 17140 Lagord, France. The full professional address remains to be provided.",
-    ". موقع المنشأة المسجّل: 17140 Lagord، فرنسا. لا يزال العنوان المهني الكامل بحاجة إلى تحديد."
   ],
   "Responsable de publication :": [
     "Publication manager:",
@@ -1558,7 +1554,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Fileur / panneau d’ajustement": [
     "Filler / adjustment panel",
-    "حشوة / لوح ضبط"
+    "لوح ملء فراغات / لوح ضبط"
   ],
   "Plinthe de cuisine": [
     "Kitchen plinth",
@@ -1606,7 +1602,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Raccordement lave-vaisselle sur attente existante": [
     "Dishwasher connection to existing provision",
-    "توصيل غسالة الصحون بنقطة توصيل قائمة"
+    "توصيل غسالة الصحون بالتوصيلات المجهزة مسبقًا"
   ],
   "Dépose meuble bas / haut": [
     "Remove base / wall cabinet",
@@ -1690,7 +1686,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "élément": [
     "item",
-    "عنصر"
+    "وحدة"
   ],
   "Surface (m²)": [
     "Area (m²)",
@@ -1862,11 +1858,11 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "Estimation du prix de pose de cuisine à La Rochelle": [
     "Kitchen installation cost estimate in La Rochelle",
-    "تقدير تكلفة تركيب المطابخ في لا روشيل"
+    "تقدير تكلفة تركيب المطابخ في لاروشيل"
   ],
   "Estimez la main-d’œuvre pour installer votre cuisine à La Rochelle. Montants indicatifs, activité en préparation.": [
     "Estimate the labour cost of installing your kitchen in La Rochelle. Indicative amounts; activity in preparation.",
-    "احسب أجرة تركيب مطبخك في لا روشيل. مبالغ استرشادية؛ النشاط قيد الإعداد."
+    "احسب أجرة تركيب مطبخك في لاروشيل. مبالغ استرشادية؛ النشاط قيد الإعداد."
   ],
   "AlbiReno — Accueil": [
     "AlbiReno — Home",
@@ -1922,7 +1918,7 @@ export const translations:Record<string,readonly [string,string]>={
   ],
   "ALBI RENO — Cuisines à La Rochelle": [
     "ALBI RENO — Kitchens in La Rochelle",
-    "ALBI RENO — مطابخ في لا روشيل"
+    "ALBI RENO — مطابخ في لاروشيل"
   ],
   "Avant intervention": [
     "Before work",
@@ -2119,5 +2115,125 @@ export const translations:Record<string,readonly [string,string]>={
   "02 / FORMULAIRE DE CONTACT": [
     "02 / CONTACT FORM",
     "02 / نموذج التواصل"
+  ],
+  "Illustration IA": [
+    "AI illustration",
+    "صورة توضيحية بالذكاء الاصطناعي"
+  ],
+  "Ces trois images sont des illustrations créées par IA, pas des chantiers AlbiReno.": [
+    "These three images are AI illustrations, not AlbiReno installations.",
+    "هذه الصور الثلاث توضيحية ومولّدة بالذكاء الاصطناعي، وليست لأعمال تركيب نفذتها AlbiReno."
+  ],
+  "Visuels de services : illustrations IA, pas des réalisations.": [
+    "Service images: AI illustrations, not completed projects.",
+    "صور الخدمات توضيحية ومولّدة بالذكاء الاصطناعي، ولا تعرض مشاريع منفّذة."
+  ],
+  "Illustration IA · visuel de service.": [
+    "AI illustration · service image.",
+    "صورة توضيحية بالذكاء الاصطناعي للخدمة."
+  ],
+  "Envoyer une demande": [
+    "Send an enquiry",
+    "إرسال طلب"
+  ],
+  "L’envoi par e-mail n’est pas encore configuré. Le formulaire ne redirige pas vers WhatsApp. En attendant son activation, vous pouvez nous écrire directement à": [
+    "Email sending is not configured yet. This form does not redirect to WhatsApp. Until it is enabled, you can email us directly at",
+    "لم تُفعّل خدمة الإرسال بالبريد الإلكتروني بعد. لا يحوّلك هذا النموذج إلى واتساب. إلى حين تفعيل الخدمة، يمكنك مراسلتنا مباشرةً على"
+  ],
+  "Les données et les photos sélectionnées seront transmises au site pour traiter ma demande.": [
+    "My information and selected photos will be sent to the website to process my enquiry.",
+    "ستُرسل بياناتي والصور التي اخترتها إلى الموقع لمعالجة طلبي."
+  ],
+  "Les photos sont facultatives. Elles seront jointes à l’envoi uniquement lorsque le service e-mail sera activé. Aucun fichier n’est publié sur le site.": [
+    "Photos are optional. They will be attached only when email sending is enabled. No files are published on the website.",
+    "الصور اختيارية، ولن تُرفق بالرسالة إلا بعد تفعيل خدمة البريد الإلكتروني. لا تُنشر أي ملفات على الموقع."
+  ],
+  "L’envoi n’a pas pu être confirmé. Vos informations sont conservées dans le formulaire. Réessayez ou contactez-nous directement.": [
+    "Sending could not be confirmed. Your information remains in the form. Try again or contact us directly.",
+    "تعذر تأكيد الإرسال. ما زالت بياناتك في النموذج. حاول مرة أخرى أو تواصل معنا مباشرةً."
+  ],
+  "L’envoi par e-mail n’est pas encore disponible. Contactez-nous sur WhatsApp.": [
+    "Email sending is not available yet. Please use our separate WhatsApp contact option.",
+    "خدمة الإرسال بالبريد الإلكتروني غير متاحة بعد. يمكنك التواصل معنا عبر خيار واتساب المنفصل."
+  ],
+  "Origine de la demande non autorisée.": [
+    "This request cannot be accepted from this website.",
+    "لا يمكن قبول الطلب من هذا الموقع."
+  ],
+  "Format de demande invalide.": [
+    "The enquiry format is invalid.",
+    "صيغة الطلب غير صالحة."
+  ],
+  "Demande vide.": [
+    "The enquiry is empty.",
+    "الطلب فارغ."
+  ],
+  "La demande est trop volumineuse.": [
+    "The enquiry is too large.",
+    "حجم الطلب أكبر من الحد المسموح."
+  ],
+  "La demande est illisible.": [
+    "The enquiry could not be read.",
+    "تعذرت قراءة الطلب."
+  ],
+  "Vérifiez les champs du formulaire.": [
+    "Please check the form fields.",
+    "يرجى مراجعة حقول النموذج."
+  ],
+  "La vérification anti-spam a expiré ou échoué. Veuillez la recommencer.": [
+    "The anti-spam check expired or failed. Please try it again.",
+    "انتهت صلاحية التحقق الأمني أو تعذر إكماله. يرجى المحاولة مجددًا."
+  ],
+  "Photographies invalides.": [
+    "The photos are invalid.",
+    "الصور غير صالحة."
+  ],
+  "L’envoi n’a pas pu être confirmé. Contactez-nous sur WhatsApp.": [
+    "Sending could not be confirmed. You can contact us separately on WhatsApp.",
+    "تعذر تأكيد الإرسال. يمكنك التواصل معنا بشكل منفصل عبر واتساب."
+  ],
+  "L’envoi n’a pas pu être confirmé. Contactez-nous sur WhatsApp avant de renouveler votre demande.": [
+    "Sending could not be confirmed. Please contact us on WhatsApp before submitting again.",
+    "تعذر تأكيد الإرسال. يرجى التواصل معنا عبر واتساب قبل إعادة إرسال الطلب."
+  ],
+  "Le formulaire transmet vos coordonnées, votre message et les éventuelles photos au serveur du site pour validation. Il ne redirige pas vers WhatsApp. Tant que le service e-mail n’est pas configuré et activé, le serveur refuse l’envoi et affiche une erreur ; aucune confirmation d’envoi n’est donnée. Les données saisies restent dans la page pour vous permettre de réessayer.": [
+    "The form sends your contact details, message and any photos to the website server for validation. It does not redirect to WhatsApp. Until email sending is configured and enabled, the server refuses delivery and displays an error rather than a confirmation. Your entries remain on the page so you can try again.",
+    "يرسل النموذج بيانات الاتصال ورسالتك وأي صور مرفقة إلى خادم الموقع للتحقق منها، ولا يحوّلك إلى واتساب. ما دامت خدمة البريد الإلكتروني غير مهيأة ومفعّلة، يرفض الخادم الإرسال ويعرض رسالة خطأ دون تأكيد الإرسال. تبقى البيانات في الصفحة لتتمكن من المحاولة مجددًا."
+  ],
+  "Adresse professionnelle :": [
+    "Professional address:",
+    "العنوان المهني:"
+  ],
+  "Le calcul est effectué dans votre navigateur. Si vous choisissez d’ajouter votre estimation à une demande, les quantités et options sont transmises au formulaire dans un fragment du lien, sans coordonnées ni fichier. Ce fragment est retiré de l’adresse après lecture et le récapitulatif reste dans la page. Il est inclus dans votre demande via le formulaire. L’action distincte de partage WhatsApp prépare un brouillon que vous vérifiez et envoyez vous-même.": [
+    "The calculation takes place in your browser. If you attach an estimate to an enquiry, quantities and options are passed to the form in a URL fragment, without contact details or files. The fragment is removed after reading and the summary remains on the page. It is included in your form enquiry. The separate WhatsApp action prepares a draft for you to review and send yourself.",
+    "تُجرى الحسابات في متصفحك. عند إرفاق التقدير بطلب، تُنقل الكميات والخيارات إلى النموذج في جزء من الرابط، دون بيانات اتصال أو ملفات. يُحذف هذا الجزء بعد قراءته ويبقى الملخص في الصفحة، ثم يُدرج في طلبك عبر النموذج. أما خيار واتساب المنفصل فيُعدّ مسودة تراجعها وترسلها بنفسك."
+  ],
+  "Les liens de contact par téléphone et par e-mail ouvrent l’application choisie sur votre appareil. Les échanges sont ensuite traités par les services que vous utilisez. Ces options sont indépendantes du formulaire. Si vous choisissez WhatsApp, le texte du lien est transmis à ce service à son ouverture ; vous décidez ensuite de l’envoyer.": [
+    "Phone and email links open your chosen app. Those services then handle the conversation. These options are separate from the form. If you choose WhatsApp, the link text is sent to that service when it opens; you then decide whether to send the message.",
+    "تفتح روابط الهاتف والبريد الإلكتروني التطبيق الذي تختاره، وتتولى الخدمات المستخدمة معالجة المحادثة بعد ذلك. هذه الخيارات مستقلة عن النموذج. إذا اخترت واتساب، يُنقل نص الرابط إلى الخدمة عند فتحها، ثم تقرر ما إذا كنت سترسل الرسالة."
+  ],
+  "L’activation de l’envoi par e-mail nécessite de configurer et de vérifier les prestataires d’envoi et de protection anti-spam. Les photos facultatives sont préparées dans la mémoire de la page, puis transmises uniquement lorsque vous soumettez le formulaire. En cas d’envoi activé, les images sont validées et réencodées avant d’être jointes au message. Aucune galerie publique ni base de fichiers n’est créée. La conservation dans la messagerie et chez le prestataire devra être définie. Les finalités, bases légales, destinataires, durées de conservation, transferts éventuels et modalités d’exercice des droits seront précisés avant cette activation publique.": [
+    "Enabling email sending requires configuring and verifying the email and anti-spam providers. Optional photos are prepared in page memory and transmitted only when you submit the form. When sending is enabled, images are validated and re-encoded before attachment. No public gallery or file database is created. Retention in the mailbox and by providers still needs to be defined. Purposes, legal bases, recipients, retention periods, any transfers and rights procedures will be detailed before public activation.",
+    "يتطلب تفعيل الإرسال بالبريد الإلكتروني إعداد مزودي خدمة البريد والحماية من الرسائل المزعجة والتحقق منهما. تُجهّز الصور الاختيارية في ذاكرة الصفحة ولا تُنقل إلا عند إرسال النموذج. عند تفعيل الخدمة، تُفحص الصور وتُعاد معالجتها قبل إرفاقها. لا يُنشأ معرض عام أو قاعدة بيانات للملفات. ما زالت مدة الاحتفاظ بالرسائل لدى صندوق البريد ومزودي الخدمة بحاجة إلى تحديد. ستُوضح أغراض المعالجة وأسسها القانونية والجهات المستلمة ومدد الاحتفاظ وأي عمليات نقل وإجراءات ممارسة الحقوق قبل التفعيل العام."
+  ],
+  "Photographie invalide.": [
+    "Invalid photo.",
+    "الصورة غير صالحة."
+  ],
+  "Données de photographie invalides.": [
+    "Invalid photo data.",
+    "بيانات الصورة غير صالحة."
+  ],
+  "Photographie illisible.": [
+    "The photo could not be read.",
+    "تعذرت قراءة الصورة."
+  ],
+  "Une photo est illisible, présente des dimensions trop importantes, est animée ou ne correspond pas au format annoncé. Choisissez une autre image.": [
+    "A photo is unreadable, too large in dimensions, animated or does not match its declared format. Please choose another image.",
+    "تعذرت قراءة إحدى الصور، أو أن أبعادها كبيرة جدًا، أو أنها متحركة، أو لا تطابق الصيغة المحددة. يرجى اختيار صورة أخرى."
+  ],
+  "et j’accepte l’utilisation de ces informations pour préparer mon échange avec ALBI RENO. Les données et les photos sélectionnées seront transmises au site pour traiter ma demande.": [
+    "and I agree to the use of this information to prepare my conversation with ALBI RENO. My information and selected photos will be sent to the website to process my enquiry.",
+    "وأوافق على استخدام هذه المعلومات للتحضير للتواصل مع ALBI RENO. ستُرسل بياناتي والصور التي اخترتها إلى الموقع لمعالجة طلبي."
   ]
 };

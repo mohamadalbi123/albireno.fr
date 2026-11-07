@@ -2741,3 +2741,8 @@ main p.eyebrow { font-size: var(--type-label); }
 
 /* Clean wordmark uses the existing AlbiReno name and black/gold branding. */
 .brand-wordmark{font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:31px;font-weight:750;letter-spacing:-1.3px;line-height:1.1;white-space:nowrap;color:#171715;display:inline-block}.brand-wordmark>span{color:#af710f}.brand-light .brand-wordmark{color:#fff}.brand-light .brand-wordmark>span{color:#e6b45c}.site-header .header-inner{min-height:90px}.wizard-container>h2{margin-bottom:26px;font-size:32px}@media(max-width:700px){.brand-wordmark{font-size:29px}.site-header .header-inner{min-height:78px}}
+
+/* Final balance: align text at the top rather than leaving a gap above the shorter column. */
+.kitchen-hero{padding-top:36px;row-gap:30px}.kitchen-hero .hero-copy{align-items:start;align-self:start;padding:0}.hero-headline>.eyebrow{margin:0 0 24px}.hero-intro{padding:0}.hero-intro .hero-description{margin-top:0}.media-disclosure,.hero-photo figcaption small.media-disclosure{font-family:inherit;font-size:12px;font-weight:400;line-height:1.7;letter-spacing:0;color:var(--muted);margin-block:12px 0}.journey-disclosure{margin-top:16px}.service-grid+.media-disclosure{margin-top:16px}
+@media(max-width:1000px){.kitchen-hero .hero-copy{gap:28px}}
+@media(max-width:700px){.kitchen-hero{padding-top:24px;row-gap:26px}.kitchen-hero .hero-headline{grid-row:1}.kitchen-hero .hero-intro{grid-row:2}.kitchen-hero .hero-photo{grid-row:3}.kitchen-hero .hero-bottom{grid-row:4}.hero-headline>.eyebrow{margin-bottom:20px}.hero-intro .hero-description{margin-bottom:22px}.media-disclosure{font-size:12px}}

@@ -23,8 +23,10 @@ export default function Legal() {
           la même micro-entreprise que Chambre 17, avec le même SIRET.
         </p>
         <p>
-          SIREN : {business.siren}. SIRET : {business.siret}. Établissement enregistré : 17140 Lagord,
-          France. L’adresse professionnelle complète reste à préciser.
+          SIREN : {business.siren}. SIRET : {business.siret}.
+        </p>
+        <p>
+          Adresse professionnelle : <bdi dir="ltr">{business.professionalAddress}</bdi>
         </p>
         <p>
           Responsable de publication : {business.publicationDirector}. Contact :{" "}

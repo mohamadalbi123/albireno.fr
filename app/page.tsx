@@ -21,15 +21,10 @@ export default function Home() {
       <section className="hero kitchen-hero container">
         <div className="hero-copy">
           <div className="hero-headline">
-            <div className="hero-brand">
-              <strong>{business.name}</strong>
-              <em>{business.descriptor}</em>
-            </div>
             <Eyebrow>La Rochelle et ses alentours</Eyebrow>
             <h1>Votre cuisine, de la conception <em>à l’installation.</em></h1>
           </div>
           <div className="hero-intro">
-            <p className="hero-subtitle">Votre projet à La Rochelle et ses alentours.</p>
             <p className="hero-description">Nous prenons les mesures, concevons votre cuisine en 3D et préparons son installation à La Rochelle et ses alentours. Vous choisissez et commandez votre cuisine chez le fournisseur de votre choix.</p>
             <div className="hero-actions">
               <Button href={estimatorPath}>Estimer ma pose</Button>
@@ -45,7 +40,7 @@ export default function Home() {
           <figcaption>
             <span>UNE INSPIRATION POUR VOTRE CUISINE</span>
             <p>Imaginez un espace à votre mesure.</p>
-            <small>Inspiration générée par IA · pas une réalisation ALBI RENO</small>
+            <small className="media-disclosure">Illustration IA</small>
           </figcaption>
         </figure>
         <div className="hero-bottom">

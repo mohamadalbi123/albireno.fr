@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {canSendContact} from '../lib/mail-readiness.ts';
+const ready={enabled:'true',from:'Website <contact@example.com>',resendKey:'test-fixture',turnstileSecret:'test-fixture',siteKey:'public-test-fixture',hosts:'www.example.com'};
+test('contact delivery requires explicit enablement and every technical setting',()=>{assert.equal(canSendContact(ready),true);for(const key of Object.keys(ready)){assert.equal(canSendContact({...ready,[key]:''}),false,key);}assert.equal(canSendContact({...ready,enabled:'false'}),false);assert.equal(canSendContact({...ready,hosts:' , '}),false);});

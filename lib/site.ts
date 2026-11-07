@@ -1,3 +1,4 @@
+import {canSendContact} from "./mail-readiness";
 import {publicLanguagePaths,languageUrls} from "./language-routes";
 import type { Metadata } from "next";
 import { business } from "./business";
@@ -36,16 +37,9 @@ export const isPreview = !isIndexable;
 // Keep the form recipient aligned with the public contact details.
 export const contactEmail = business.email;
 export const contactPhone = process.env.BUSINESS_PHONE || business.phone;
-export const mailReady =
-  business.emailDeliveryApproved &&
-  business.legalApproved && business.privacyApproved && business.servicesApproved &&
-  process.env.CONTACT_FORM_ENABLED === "true" &&
-  !!contactEmail &&
-  !!process.env.CONTACT_FROM_EMAIL &&
-  !!process.env.RESEND_API_KEY &&
-  !!process.env.TURNSTILE_SECRET_KEY &&
-  !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY &&
-  !!process.env.TURNSTILE_HOSTNAMES;
+// Explicit contact-form enablement plus all required technical credentials.
+// Commercial launch/insurance flags do not authorise or block a non-binding enquiry.
+export const mailReady = canSendContact({enabled:process.env.CONTACT_FORM_ENABLED,from:process.env.CONTACT_FROM_EMAIL,resendKey:process.env.RESEND_API_KEY,turnstileSecret:process.env.TURNSTILE_SECRET_KEY,siteKey:process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,hosts:process.env.TURNSTILE_HOSTNAMES});
 export function pageMetadata(
   title: string,
   description: string,

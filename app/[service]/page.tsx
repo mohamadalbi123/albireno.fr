@@ -34,7 +34,7 @@ export default async function ServicePage({
       <section className="container service-visual" aria-label="Le service en images">
         <figure className="service-main-photo">
           <ProjectImage image={serviceEditorialImage(s.id)} priority sizes="(max-width: 700px) 100vw, (max-width: 1440px) 92vw, 1320px" />
-          <figcaption>Inspiration générée par IA · illustration du service, pas une réalisation ALBI RENO.{s.id === "conception" && " Ce visuel n’est pas un export HomeStyler."}</figcaption>
+          <figcaption className="media-disclosure">Illustration IA · visuel de service.{s.id === "conception" && " Ce visuel n’est pas un export HomeStyler."}</figcaption>
         </figure>
         <div className="service-visual-copy">
           <Eyebrow>Une idée à explorer</Eyebrow>

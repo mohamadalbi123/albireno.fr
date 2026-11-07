@@ -13,6 +13,8 @@ export const business = {
   whatsappDisplay: "+33 7 63 73 43 72",
   areas: ["La Rochelle", "Charente-Maritime"],
   legalName: "Mohamad Albi",
+  // Professional/domiciliation address explicitly confirmed for publication by the owner, 7 November 2026.
+  professionalAddress: "243B Avenue de Lagord, Bâtiment E, Résidence Puy Mou, Logement 2, rez-de-chaussée, 17140 Lagord, France",
   legalForm: "Entrepreneur individuel — micro-entreprise",
   siren: "131 127 979",
   siret: "131 127 979 00014",
