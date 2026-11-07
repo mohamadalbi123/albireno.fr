@@ -1,3 +1,4 @@
+import {publicLanguagePaths,languageUrls} from "./language-routes";
 import type { Metadata } from "next";
 import { business } from "./business";
 import { canIndexSite } from "./indexing-policy";
@@ -54,7 +55,7 @@ export function pageMetadata(
   return {
     title,
     description,
-    alternates: siteUrl ? { canonical: `${siteUrl}${path}` } : undefined,
+    alternates: siteUrl ? { canonical: `${siteUrl}${path}`, ...(!draft&&publicLanguagePaths.includes(path)?{languages:languageUrls(path,siteUrl)}:{}) } : undefined,
     robots: { index: isIndexable && !draft, follow: isIndexable && !draft },
     openGraph: {
       title: `${title} | ${business.name}`,

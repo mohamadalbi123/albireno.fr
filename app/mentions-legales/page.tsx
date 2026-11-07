@@ -33,9 +33,7 @@ export default function Legal() {
         </p>
         <h2>Activité</h2>
         <p>
-          Les activités d’installation de cuisines, de montage de meubles et de
-          rénovation ne sont pas encore ajoutées à l’immatriculation de
-          l’entreprise. L’exploitant prévoit de les ajouter ultérieurement.
+          Selon les informations communiquées par l’exploitant, l’ajout de l’activité cuisine est en attente de signature INPI et de validation administrative. Son immatriculation pour ces activités n’est pas confirmée.
           Aucune qualification professionnelle ni couverture d’assurance pour
           ces activités n’est revendiquée sur ce site.
         </p>

@@ -1,0 +1,6 @@
+import {calculateEstimate,estimateMessage,estimateDisclaimer} from './kitchen-estimate.ts';
+import {t,localeMoney,type Locale} from './i18n.ts';
+export function localizedEstimateMessage(raw:unknown,locale:Locale){
+ if(locale==='fr')return estimateMessage(raw);const e=calculateEstimate(raw);
+ return [t('ESTIMATION INDICATIVE DE MAIN-D’ŒUVRE',locale),...e.lines.map(l=>`${t(l.label,locale)} : ${l.quantity} ${l.unit} × ${localeMoney(l.rate,locale)} = ${localeMoney(l.total,locale)}`),...(e.minimum?[`${t('Complément au minimum d’intervention de 150 €',locale)} : ${localeMoney(e.minimum,locale)}`]:[]),`${t('Total indicatif',locale)}${e.quoteOnly.length?' '+t('· hors prestations sur devis',locale):''} : ${e.total===null?t('Sur devis',locale):localeMoney(e.total,locale)}`,...e.quoteOnly.map(label=>`${t(label,locale)} : ${t('Sur devis',locale)}`),...(e.input.design?[t('Conception 3D gratuite, sans engagement : une proposition initiale et une révision raisonnable pour les projets éligibles. Périmètre confirmé lors du premier échange ; installation chiffrée séparément.',locale)]:[]),t(estimateDisclaimer,locale),t('Fiscalité à confirmer sur le devis définitif.',locale),t('Activité cuisine en préparation. Aucune prestation payante ni réservation d’intervention à ce stade.',locale)].join('\n');
+}

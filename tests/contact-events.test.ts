@@ -25,3 +25,8 @@ test('measurement excludes extra form data and URL query parameters', () => {
   } finally { Reflect.deleteProperty(globalThis,'window'); }
   assert.doesNotThrow(()=>trackContact({event:'contact_click',method:'phone'}));
 });
+
+test('estimate actions are clicks rather than submitted enquiries and contain no inventory or contact data',()=>{
+ const seen:CustomEvent[]=[];Object.defineProperty(globalThis,'window',{configurable:true,value:{location:{pathname:'/simulateur-pose-cuisine'},dispatchEvent:(e:CustomEvent)=>seen.push(e)}});
+ try{trackContact({event:'estimate_action',action:'whatsapp_handoff'});assert.deepEqual(seen[0].detail,{event:'estimate_action',action:'whatsapp_handoff',page_path:'/simulateur-pose-cuisine'});}finally{Reflect.deleteProperty(globalThis,'window');}
+});

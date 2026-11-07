@@ -1,3 +1,4 @@
+import {estimatorPath} from "./lib/estimator-path.mjs";
 import { isIndexable, siteUrl } from "./lib/site";
 import { retiredServiceRedirects } from "./lib/services";
 import type { NextConfig } from "next";
@@ -13,7 +14,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"] },
   async redirects() {
-    return Object.entries(retiredServiceRedirects).map(([source, destination]) => ({source, destination, permanent: true}));
+    return [...['','/en','/ar'].map(prefix=>({source:`${prefix}/testing/:path*`,destination:prefix+estimatorPath,permanent:true})),...Object.entries(retiredServiceRedirects).map(([source, destination]) => ({source, destination, permanent: true}))];
   },
   async headers() {
     return [
@@ -43,8 +44,9 @@ const nextConfig: NextConfig = {
             },
           ]
         : []),
+      {source:"/:locale(en|ar)/simulateur-pose-cuisine/:path*",headers:[{key:"X-Robots-Tag",value:"noindex, nofollow, noarchive"},{key:"Referrer-Policy",value:"no-referrer"}]},
       {
-        source: "/testing/:path*",
+        source: "/simulateur-pose-cuisine/:path*",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
           { key: "Referrer-Policy", value: "no-referrer" },

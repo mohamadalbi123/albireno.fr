@@ -62,7 +62,7 @@ assert.match(robots, /Allow: \/\n/);
 assert.match(robots, /Disallow: \/api\//);
 assert.doesNotMatch(robots, /Disallow: \/\n/);
 const sitemap = await (await fetch(origin + "/sitemap.xml")).text();
-assert.equal((sitemap.match(/<loc>/g) || []).length, expectIndexable ? indexablePaths.size : 0);
+assert.equal((sitemap.match(/<loc>/g) || []).length, expectIndexable ? indexablePaths.size * 3 : 0);
 const assets = JSON.parse(await readFile(new URL("../public/images/asset-manifest.json", import.meta.url), "utf8"));
 for (const asset of assets) assert.equal((await fetch(origin + asset.src)).status, 200, asset.src);
 const avif = await fetch(origin + "/_next/image?url=%2Fimages%2Fprojects%2Fkitchen%2Fcuisine-01.webp&w=640&q=75", { headers: { Accept: "image/avif" } });
@@ -85,7 +85,8 @@ const payload = {name:"Client test",phone:"0600000000",email:"",postcode:"17000"
 for (const [from,to] of Object.entries({"/renovation-cuisine-la-rochelle":"/installation-cuisine-la-rochelle","/reparation-cuisine-la-rochelle":"/installation-cuisine-la-rochelle","/optimisation-petite-cuisine":"/conception-cuisine-3d"})) {
  const r=await fetch(origin+from,{redirect:"manual"});assert.equal(r.status,308);assert.ok(r.headers.get("location").endsWith(to));
 }
-assert.equal((await fetch(origin+"/simulateur-pose-cuisine")).status,404,"local estimator must not be published");
+assert.equal((await fetch(origin+"/simulateur-pose-cuisine")).status,200,"production estimator route");
+for(const prefix of ["","/en","/ar"])for(const suffix of ["","/planner"]){const r=await fetch(origin+prefix+"/testing"+suffix,{redirect:"manual"});assert.equal(r.status,308);assert.equal(r.headers.get("location"),prefix+"/simulateur-pose-cuisine");}
 const verification=await fetch(origin+"/google4b9b87ef974dde9f.html");assert.equal(verification.status,200);assert.equal(await verification.text(),"google-site-verification: google4b9b87ef974dde9f.html");
 const post = (data, headers = {}) =>
   fetch(origin + "/api/devis", {

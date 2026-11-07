@@ -1,6 +1,11 @@
+import {headers} from "next/headers";
+import {LanguageProvider} from "@/components/language-context";
+import {serverTranslation} from "@/lib/server-translation";
+import {t,type Locale} from "@/lib/i18n";
 import type { Metadata } from "next";
 import "@fontsource-variable/manrope";
 import "./globals.css";
+import "@/styles/languages.css";
 import { ContactMeasurement } from "@/components/contact-measurement";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -18,16 +23,17 @@ export const metadata: Metadata = {
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
     : undefined,
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale=((await headers()).get("x-albireno-language")||"fr") as Locale;
   return (
-    <html lang="fr">
-      <body>
+    <html lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
+      <body><LanguageProvider locale={locale}>
         <a className="skip-link" href="#contenu">
-          Aller au contenu
+          {t("Aller au contenu",locale)}
         </a>
         {isIndexable && commercialLaunchApproved && siteUrl && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -39,8 +45,8 @@ export default function RootLayout({
         <ContactMeasurement />
         <Header />
         <main id="contenu">{children}</main>
-        <Footer />
-      </body>
+        {serverTranslation(<Footer />,locale)}
+      </LanguageProvider></body>
     </html>
   );
 }

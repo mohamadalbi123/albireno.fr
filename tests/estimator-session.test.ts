@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {emptyEstimate} from '../lib/kitchen-estimate.ts';import {parseEstimatorSession} from '../lib/estimator-session.ts';
+test('session recovery accepts only canonical inventory and supported measurement drafts, never contact data or forged totals',()=>{const input=emptyEstimate();input.cabinets.push({id:'one',type:'baseSmall'});const parsed=parseEstimatorSession(JSON.stringify({input:{...input,total:1,email:'private@example.com'},drafts:{worktop:'1,5',email:'private@example.com'},name:'private'}));assert.deepEqual(parsed,{input,drafts:{worktop:'1,5'}});assert.throws(()=>parseEstimatorSession('x'.repeat(50001)));assert.throws(()=>parseEstimatorSession('{}'));});

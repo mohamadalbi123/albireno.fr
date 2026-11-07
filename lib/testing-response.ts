@@ -1,0 +1,2 @@
+import {readFile} from 'node:fs/promises';import {join} from 'node:path';import type {Locale} from './i18n';
+export async function estimatorResponse(locale:Locale){const html=await readFile(join(process.cwd(),'testing-planner',locale==='fr'?'index.html':`${locale}.html`),'utf8');return new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8','Content-Language':locale,'X-Robots-Tag':'noindex, nofollow, noarchive','Cache-Control':'no-cache','Referrer-Policy':'no-referrer'}});}

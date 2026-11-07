@@ -1,14 +1,17 @@
+import {t,type Locale} from './i18n.ts';
+import {localizedEstimateMessage} from './localized-estimate.ts';
 import {parseEstimate,estimateMessage,type EstimateInput} from './kitchen-estimate.ts';
 import { business } from './business.ts';
 import { projectOptions, planOptions, type PlanStatus, type ProjectType } from './quote-flow.ts';
-export type QuoteData={projectType:ProjectType|'';postcode:string;name:string;email:string;phone:string;comments:string;consent:boolean;website:string;token:string;planStatus?:PlanStatus|'';installationEstimate?:EstimateInput};
+export type QuoteData={projectType:ProjectType|'';postcode:string;name:string;email:string;phone:string;comments:string;consent:boolean;website:string;token:string;planStatus?:PlanStatus|'';installationEstimate?:EstimateInput;language?:Locale};
 export type FieldErrors=Record<string,string>;
 export function validateQuote(input:unknown):{data:QuoteData;errors:FieldErrors;valid:boolean}{
  const raw=input&&typeof input==='object'?input as Record<string,unknown>:{};
  const text=(key:string)=>typeof raw[key]==='string'?(raw[key] as string).trim():'';
  const type=text('projectType');
- const data:QuoteData={planStatus:planOptions.some(p=>p.id===text('planStatus'))?text('planStatus') as PlanStatus:'',projectType:projectOptions.some(p=>p.id===type)?type as ProjectType:'',postcode:text('postcode'),name:text('name'),email:text('email'),phone:text('phone'),comments:text('comments'),consent:raw.consent===true,website:text('website'),token:text('token')};
+ const data:QuoteData={...(raw.language!==undefined?{language:raw.language==='en'?'en':raw.language==='ar'?'ar':'fr'}:{}),planStatus:planOptions.some(p=>p.id===text('planStatus'))?text('planStatus') as PlanStatus:'',projectType:projectOptions.some(p=>p.id===type)?type as ProjectType:'',postcode:text('postcode'),name:text('name'),email:text('email'),phone:text('phone'),comments:text('comments'),consent:raw.consent===true,website:text('website'),token:text('token')};
  const errors:FieldErrors={};
+ if(raw.language!==undefined&&!['fr','en','ar'].includes(raw.language as string))errors.language='Langue invalide.';
  if(raw.installationEstimate!==undefined){try{data.installationEstimate=parseEstimate(raw.installationEstimate);}catch{errors.installationEstimate='Le récapitulatif de l’estimation est invalide. Revenez au calculateur ou retirez-le.';}}
  if(text('planStatus')&&!data.planStatus)errors.planStatus='Choisissez une option proposée ou laissez ce champ vide.';
  if(!data.projectType)errors.projectType='Choisissez la conception, l’installation ou les deux.';
@@ -24,4 +27,4 @@ export function validateQuote(input:unknown):{data:QuoteData;errors:FieldErrors;
  if(data.token.length>2048)errors.token='Vérification anti-spam invalide.';
  return {data,errors,valid:Object.keys(errors).length===0};
 }
-export function quoteMessage(data:QuoteData){return `Bonjour ${business.name}, je souhaite vous parler de mon projet de cuisine.\n\nProjet : ${projectOptions.find(p=>p.id===data.projectType)?.label}\nCode postal : ${data.postcode}\nNom : ${data.name}\nE-mail : ${data.email||'Non renseigné'}\nTéléphone : ${data.phone||'Non renseigné'}\nPlan ou photos : ${planOptions.find(p=>p.id===data.planStatus)?.label||'À préciser'}\n\nMon projet : ${data.comments||'À préciser lors de notre échange'}${data.installationEstimate?'\n\n'+estimateMessage(data.installationEstimate):''}`;}
+export function quoteMessage(data:QuoteData){const locale=data.language||'fr',tr=(s:string)=>t(s,locale);return `${tr('Bonjour ALBI RENO, je souhaite vous parler de mon projet de cuisine.')}\n\n${tr('Projet :')} ${tr(projectOptions.find(p=>p.id===data.projectType)?.label||'À préciser')}\n${tr('Code postal :')} ${data.postcode}\n${tr('Nom :')} ${data.name}\n${tr('E-mail :')} ${data.email||tr('Non renseigné')}\n${tr('Téléphone :')} ${data.phone||tr('Non renseigné')}\n${tr('Plan ou photos :')} ${tr(planOptions.find(p=>p.id===data.planStatus)?.label||'À préciser')}\n\n${tr('Mon projet :')} ${data.comments||tr('À préciser lors de notre échange')}${data.installationEstimate?'\n\n'+localizedEstimateMessage(data.installationEstimate,locale):''}`;}

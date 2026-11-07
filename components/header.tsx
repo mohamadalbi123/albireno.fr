@@ -1,4 +1,8 @@
 "use client";
+import {useLocale} from "./language-context";
+import {LanguageSwitcher} from "./language-switcher";
+import {translatedNodes} from "./translated-content";
+import {frenchPath} from "@/lib/i18n";
 import { business } from "@/lib/business";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,31 +16,20 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 export function Brand({ light = false }: { light?: boolean }) {
-  return (
+  const locale=useLocale();
+  return translatedNodes(
     <Link
       className={`brand ${light ? "brand-light" : ""}`}
       href="/"
       aria-label={`${business.name} — accueil`}
     >
-      <span className="brand-symbol" aria-hidden="true">
-        <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-          <path
-            d="M5 32V9h30v23H5Zm0-12h30M19 9v23M8 5h24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <path d="M15 13v3m8-3v3" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
-      </span>
-      <span>
-        <strong>{business.name}</strong>
-        <small>{business.descriptor}</small>
-      </span>
-    </Link>
+      <img className="brand-artwork" src={light?'/brand/albireno-logo.webp':'/brand/albireno-wordmark.webp'} alt="Logo AlbiReno" width={light?180:185} height={light?180:67}/>
+    </Link>,locale
   );
 }
 export function Header() {
-  const pathname = usePathname();
+  const locale=useLocale();
+  const pathname = frenchPath(usePathname());
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -49,7 +42,7 @@ export function Header() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
-  return (
+  return translatedNodes(
     <header className="site-header">
       <div className="container header-inner">
         <Brand />
@@ -75,6 +68,7 @@ export function Header() {
         <Link href="/devis?service=installation" className="button header-quote">
           Demander un devis <Icon name="arrow" width={17} />
         </Link>
+        <LanguageSwitcher locale={locale}/>
         <button
           ref={menuRef}
           type="button"
@@ -93,6 +87,7 @@ export function Header() {
           className="mobile-menu"
           aria-label="Navigation mobile"
         >
+          <a href={`tel:${business.phone.replace(/[^+\d]/g,"")}`}>Appeler AlbiReno <Icon name="arrow"/></a>
           {[...links, { href: "/devis?service=installation", label: "Demander un devis" }].map(
             (l) => (
               <Link
@@ -108,6 +103,6 @@ export function Header() {
           )}
         </nav>
       )}
-    </header>
+    </header>,locale
   );
 }

@@ -1,3 +1,4 @@
+import {estimatorPath} from "@/lib/estimator-path.mjs";
 import { business } from "@/lib/business";
 import Link from "next/link";
 import { Button, Eyebrow, ContactCTA } from "@/components/ui";
@@ -26,15 +27,14 @@ export default function Home() {
               <em>{business.descriptor}</em>
             </div>
             <Eyebrow>La Rochelle et ses alentours</Eyebrow>
-            <h1>Votre cuisine, de la conception 3D <em>à l’installation.</em></h1>
+            <h1>Votre cuisine, de la conception <em>à l’installation.</em></h1>
           </div>
           <div className="hero-intro">
             <p className="hero-subtitle">Votre projet à La Rochelle et ses alentours.</p>
-            <p className="hero-description">Nous concevons votre cuisine selon vos dimensions et vos envies. Vous choisissez et commandez vos meubles chez IKEA, Leroy Merlin ou le fournisseur de votre choix. Nous nous occupons ensuite de leur installation à La Rochelle et ses alentours.</p>
+            <p className="hero-description">Nous prenons les mesures, concevons votre cuisine en 3D et préparons son installation à La Rochelle et ses alentours. Vous choisissez et commandez votre cuisine chez le fournisseur de votre choix.</p>
             <div className="hero-actions">
-              <Button href="/devis?service=installation">Demander un devis</Button>
-              <Button href="/testing" variant="outline">Estimer le prix de pose</Button>
-              <Link className="text-link" href="/devis?service=conception">Concevoir ma cuisine <span>↗</span></Link>
+              <Button href="/devis?service=conception">Concevoir ma cuisine</Button>
+              <Button href={estimatorPath} variant="outline">Estimer le prix de pose</Button>
               <Link className="text-link" href="/realisations">Voir nos réalisations <span>↗</span></Link>
             </div>
             <p className="quiet-note">Vous achetez et organisez la livraison directement avec votre fournisseur. AlbiReno ne fournit ni ne livre les meubles.</p>
@@ -54,6 +54,7 @@ export default function Home() {
           <a href="#services">Trouver le point de départ de mon projet ↓</a>
         </div>
       </section>
+      <HowItWorks />
       <section id="services" className="section services-section">
         <div className="container">
           <div className="section-top">
@@ -78,7 +79,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <HowItWorks />
       <section className="section container selected-project">
         <div className="section-top">
           <div>

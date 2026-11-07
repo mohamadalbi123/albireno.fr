@@ -1,7 +1,3 @@
-/** Reserved integration contract only: public integration stays disabled; the separate noindex catalogue is linked from the homepage hero. */
-export const kitchenEstimatorIntegration = {
-  path: '/simulateur-pose-cuisine',
-  publicEnabled: false,
-  status: 'public-testing-catalog',
-  testingPath: '/testing',
-} as const;
+import {estimatorPath} from './estimator-path.mjs';
+/** One public, pre-launch calculator; commercial activity remains gated separately. */
+export const kitchenEstimatorIntegration={path:estimatorPath,publicEnabled:true,status:'production-estimator',testingPath:'/testing'} as const;

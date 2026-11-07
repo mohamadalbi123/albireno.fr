@@ -1,3 +1,4 @@
+import {publicContact,publicWhatsappUrl} from './public-contact.mjs';
 /** Central brand/contact configuration. Future trade registration remains unverified. */
 export const business = {
   name: "ALBI RENO",
@@ -6,9 +7,9 @@ export const business = {
   descriptor: "Conception et installation de cuisines",
   preparationNotice: "Activité cuisine en préparation. Aucune prestation payante ni réservation d’intervention n’est proposée à ce stade.",
   tagline: "AlbiReno — Conception et installation de cuisines à La Rochelle et ses alentours",
-  phone: "+33 7 63 73 43 72",
-  email: "albireno@icloud.com",
-  whatsappNumber: "33763734372",
+  phone: publicContact.phone,
+  email: publicContact.email,
+  whatsappNumber: publicContact.whatsappNumber,
   whatsappDisplay: "+33 7 63 73 43 72",
   areas: ["La Rochelle", "Charente-Maritime"],
   legalName: "Mohamad Albi",
@@ -29,5 +30,5 @@ export const business = {
 export const whatsappMessage =
   "Bonjour, je souhaite vous parler de mon projet de cuisine.";
 export function whatsappUrl(message = whatsappMessage) {
-  return `https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return publicWhatsappUrl(message);
 }

@@ -1,7 +1,7 @@
 {
-  "basePath": "/testing",
-  "htmlSha256": "8b760c89f70bd1aad7bd2c7529420b2ba1827e734acf524ebeb036cc67d2d543",
-  "assetEntries": 41,
+  "basePath": "/simulateur-pose-cuisine",
+  "htmlSha256": "73faf1e55c9ae4bde910abc72dcdf1707e2d68c48c5ff349da7b138f5935a90b",
+  "assetEntries": 46,
   "storageKey": "albireno-planner-testing-v1-projects",
   "indexable": false,
   "submissionBackend": false,
@@ -13,5 +13,10 @@
   "entryModes": [
     "visual-catalog"
   ],
-  "catalogItems": 33
+  "catalogItems": 33,
+  "languages": [
+    "fr",
+    "en",
+    "ar"
+  ]
 }

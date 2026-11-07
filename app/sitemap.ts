@@ -1,9 +1,12 @@
+import {localePath} from "@/lib/i18n";
+import {languageUrls} from "@/lib/language-routes";
 import type { MetadataRoute } from "next";
 import { isIndexable, siteUrl } from "@/lib/site";
 import { services } from "@/lib/services";
 import { publishedProjects } from "@/lib/projects";
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!isIndexable || !siteUrl) return [];
+  const origin=siteUrl;
   return [
     "",
     "/realisations",
@@ -12,9 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/devis",
     ...services.filter((s) => s.confirmed).map((s) => `/${s.slug}`),
     ...publishedProjects.filter((p) => p.indexable !== false).map((p) => `/realisations/${p.slug}`),
-  ].map((path) => ({
-    url: `${siteUrl}${path}`,
+  ].flatMap((path) => (["fr","en","ar"] as const).map(locale=>({
+    url: `${siteUrl}${localePath(path||"/",locale)}`,
+    alternates:{languages:languageUrls(path||"/",origin)},
     changeFrequency: "monthly",
     priority: path === "" ? 1 : 0.6,
-  }));
+  })));
 }

@@ -1,4 +1,7 @@
 "use client";
+import {useLocale} from "./language-context";
+import {translatedNodes} from "./translated-content";
+import {t} from "@/lib/i18n";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import type { ProjectImage as Media } from "@/lib/projects";
@@ -7,10 +10,11 @@ import { ProjectImage } from "./project-image";
 const roleLabels: Record<Media["role"], string> = { before: "Avant intervention", original: "État existant", design: "Conception 3D", finished: "Photographie réelle · Espace terminé", inspiration: "Inspiration générée par IA" };
 
 export function ProjectGallery({ images, label }: { images: Media[]; label: string }) {
+  const locale=useLocale();
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const [selected, setSelected] = useState(0);
-  return (
+  return translatedNodes(
     <>
       <div className="project-gallery">
         {images.map((image, i) => (
@@ -20,7 +24,7 @@ export function ProjectGallery({ images, label }: { images: Media[]; label: stri
               setSelected(i);
               dialog.current?.showModal();
             }}>
-              <ProjectImage image={image} sizes="(max-width: 700px) 90vw, 45vw" />
+              <ProjectImage image={{...image,alt:t(image.alt,locale)}} sizes="(max-width: 700px) 90vw, 45vw" />
               <span className="gallery-hint">Agrandir ↗</span>
             </button>
             <figcaption>{label} · {roleLabels[image.role]} · Vue {i + 1}</figcaption>
@@ -41,6 +45,6 @@ export function ProjectGallery({ images, label }: { images: Media[]; label: stri
         </div>
         <p>{images[selected].alt}</p>
       </dialog>
-    </>
+    </>,locale
   );
 }

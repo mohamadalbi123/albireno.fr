@@ -22,6 +22,8 @@ export default function Privacy() {
           restent dans la page. Après validation des champs, le bouton « Continuer sur WhatsApp » ouvre WhatsApp avec votre texte prérempli. Ce texte est transmis à WhatsApp à cette étape ; vous vérifiez ensuite le message et décidez de l’envoyer au destinataire dans l’application.
         </p>
         <h2>Estimation d’installation</h2><p>Le calcul est effectué dans votre navigateur. Si vous choisissez d’ajouter votre estimation à une demande, les quantités et options sont transmises au formulaire dans un fragment du lien, sans coordonnées ni fichier. Ce fragment est retiré de l’adresse après lecture et le récapitulatif reste dans la page. Il sera inclus dans le texte transmis à WhatsApp lorsque vous ouvrirez l’application. Aucun plan ni photographie n’est joint automatiquement.</p>
+        <p>La sélection du calculateur peut aussi être transmise dans un fragment du lien lorsque vous changez de langue, puis retirée de l’adresse. Aucune coordonnée n’y est incluse.</p>
+        <p>Les quantités et mesures du calculateur sont conservées dans la session de votre onglet pour retrouver votre estimation après un retour ou un rechargement. Aucune coordonnée, photo ou donnée du formulaire n’y est enregistrée. Vous pouvez réinitialiser l’estimation à tout moment.</p>
         <h2>Contact direct</h2>
         <p>
           Les liens de contact par téléphone et par e-mail ouvrent l’application choisie sur
