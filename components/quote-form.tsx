@@ -85,6 +85,8 @@ export function QuoteForm({mailEnabled=false,initialService='',simpleContact=fal
   const input={...data,...(simpleContact?{kind:"contact"}:{}),language:locale,projectType:simpleContact?'':controls.get('projectType'),postcode:simpleContact?'':controls.get('postcode'),name:controls.get('name'),email:controls.get('email'),phone:controls.get('phone'),comments:controls.get('comments'),planStatus:controls.get('planStatus'),website:controls.get('website'),consent:controls.get('consent')==='on'};
   const validation=validateQuote(input);setErrors(validation.errors);setStatus('');setSuccess(false);
   if(!validation.valid){const key=Object.keys(validation.errors)[0];requestAnimationFrame(()=>document.getElementById(key==='contact'?'email':key)?.focus());return;}
+  // Capture the actual controls as state too: autofill or input before hydration may not emit React changes.
+  setData(validation.data);
   if(mailEnabled&&!data.token){setStatus('Veuillez effectuer la vérification anti-spam.');return;}
   inFlight.current=true;setPending(true);
   try{
